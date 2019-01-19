@@ -345,7 +345,8 @@ $(document).ready(function () {
       if (CONFIG.sidebar.display === 'always') {
         NexT.utils.displaySidebar();
       }
-      integrator.next();
+      //integrator.next();
+       sidebarToggleMotion.clickHandler();    
     }
   };
 
