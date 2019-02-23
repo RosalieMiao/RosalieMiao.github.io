@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="TC第29章笔记 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1,x_2,\cdots,x_n$。我们给">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-23T13:54:51.146Z">
+<meta property="og:updated_time" content="2019-02-23T13:57:44.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之线性规划">
 <meta name="twitter:description" content="TC第29章笔记 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1,x_2,\cdots,x_n$。我们给">
@@ -395,7 +395,7 @@
 <li>可能有等式约束，即有一个等号而不是一个小于等于号。</li>
 <li>可能有不等式约束，但不是小于等于号，而是一个大于等于号。</li>
 </ol>
-<p>假如某个变量$x_j$不具有非负约束，那么把$x_j$每次出现的地方都以$x_j’-x_j’’$来替换，并增加非负约束$x_j’\ge0$和$x_j’’\ge0$。新的线性规划的任意可行解$\overhat{x}$对应于原来线性规划的一个可行解$\overline{x}$，其中$\overline{x_j}=\overhat{x_j’}-\overhat{x_j’’}$，而且具有相同的目标值。同样，原来线性规划的一个可行解对应于新的线性规划的可行解。因此，这两个线性规划是等价的。</p>
+<p>假如某个变量$x_j$不具有非负约束，那么把$x_j$每次出现的地方都以$x_j’-x_j’’$来替换，并增加非负约束$x_j’\ge0$和$x_j’’\ge0$。新的线性规划的任意可行解$\hat{x}$对应于原来线性规划的一个可行解$\overline{x}$，其中$\overline{x_j}=\hat{x_j’}-\hat{x_j’’}$，而且具有相同的目标值。同样，原来线性规划的一个可行解对应于新的线性规划的可行解。因此，这两个线性规划是等价的。</p>
 <p>假设一个线性规划有一个等式约束$f(x_1,x_2,\cdots,x_n)=b$，可以用一对不等式约束$f(x_1,x_2,\cdots,x_n)\ge{b}$和$f(x_1,x_2,\cdots,x_n)\le{b}$来替换这个等式约束。</p>
 <p>我们可以通过将大于等于的约束乘以-1，把大于等于约束转换称小于等于约束。</p>
 <h2 id="转化线性规划为松弛型"><a href="#转化线性规划为松弛型" class="headerlink" title="转化线性规划为松弛型"></a>转化线性规划为松弛型</h2><p>未来利用单纯形算法高效地求解线性规划，我们更喜欢将其表示成只有非负约束是不等式约束，而其他约束都是等式约束的形式。设</p>
