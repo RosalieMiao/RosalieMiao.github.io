@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="TC第29章笔记 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1,x_2,\cdots,x_n$。我们给">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-23T13:57:44.358Z">
+<meta property="og:updated_time" content="2019-02-23T14:43:27.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之线性规划">
 <meta name="twitter:description" content="TC第29章笔记 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1,x_2,\cdots,x_n$。我们给">
@@ -401,7 +401,8 @@
 <h2 id="转化线性规划为松弛型"><a href="#转化线性规划为松弛型" class="headerlink" title="转化线性规划为松弛型"></a>转化线性规划为松弛型</h2><p>未来利用单纯形算法高效地求解线性规划，我们更喜欢将其表示成只有非负约束是不等式约束，而其他约束都是等式约束的形式。设</p>
 <script type="math/tex; mode=display">\sum_{j=1}^na_{ij}x_j\le{b_i}</script><p>是一个不等式约束。我们引入一个新的变量s，并重写不等式为两个约束</p>
 <script type="math/tex; mode=display">s=b_i-\sum_{j=1}^na_{ij}x_j</script><script type="math/tex; mode=display">s\ge0</script><p>我们称s是一个<strong>松弛变量</strong>，因为它度量了等式左右之间的<strong>松弛</strong>或差别。<br>在转换完成的线性规划中，除了非负约束外，所有约束都是等式，而且每个变量都满足非负约束。我们把每个等式约束写成一个变量在等式左边，其余所有变量在等式右边。而且每个等式右边都有相同的变量集合，且这些变量也是出现在目标函数中仅有的变量。我们称等式左边的变量为<strong>基本变量</strong>，而等式右边的变量为<strong>非基本变量</strong>。</p>
-
+<hr>
+<h2 id="将问题表达为线性规划"><a href="#将问题表达为线性规划" class="headerlink" title="将问题表达为线性规划"></a>将问题表达为线性规划</h2>
       
     </div>
     
@@ -575,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一般线性规划"><span class="nav-number">1.</span> <span class="nav-text">一般线性规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性规划综述"><span class="nav-number">2.</span> <span class="nav-text">线性规划综述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性规划算法"><span class="nav-number">3.</span> <span class="nav-text">线性规划算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准型和松弛型"><span class="nav-number">4.</span> <span class="nav-text">标准型和松弛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准型"><span class="nav-number">5.</span> <span class="nav-text">标准型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换线性规划为标准型"><span class="nav-number">6.</span> <span class="nav-text">转换线性规划为标准型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转化线性规划为松弛型"><span class="nav-number">7.</span> <span class="nav-text">转化线性规划为松弛型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一般线性规划"><span class="nav-number">1.</span> <span class="nav-text">一般线性规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性规划综述"><span class="nav-number">2.</span> <span class="nav-text">线性规划综述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性规划算法"><span class="nav-number">3.</span> <span class="nav-text">线性规划算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准型和松弛型"><span class="nav-number">4.</span> <span class="nav-text">标准型和松弛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准型"><span class="nav-number">5.</span> <span class="nav-text">标准型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换线性规划为标准型"><span class="nav-number">6.</span> <span class="nav-text">转换线性规划为标准型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转化线性规划为松弛型"><span class="nav-number">7.</span> <span class="nav-text">转化线性规划为松弛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将问题表达为线性规划"><span class="nav-number">8.</span> <span class="nav-text">将问题表达为线性规划</span></a></li></ol></div>
             
 
           </div>
