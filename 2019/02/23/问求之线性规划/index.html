@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TC第29章笔记 &amp;nbsp; &amp;nbsp; &amp;nbsp;在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1">
+<meta name="description" content="TC第29章笔记 &amp;nbsp; &amp;nbsp; &amp;nbsp; 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="问求之线性规划">
 <meta property="og:url" content="http://yoursite.com/2019/02/23/问求之线性规划/index.html">
 <meta property="og:site_name" content="Rosalie Miao">
-<meta property="og:description" content="TC第29章笔记 &amp;nbsp; &amp;nbsp; &amp;nbsp;在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1">
+<meta property="og:description" content="TC第29章笔记 &amp;nbsp; &amp;nbsp; &amp;nbsp; 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-24T09:07:02.505Z">
+<meta property="og:updated_time" content="2019-02-24T09:08:52.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之线性规划">
-<meta name="twitter:description" content="TC第29章笔记 &amp;nbsp; &amp;nbsp; &amp;nbsp;在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1">
+<meta name="twitter:description" content="TC第29章笔记 &amp;nbsp; &amp;nbsp; &amp;nbsp; 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_">
 
 
 
@@ -377,7 +377,7 @@
 
       
         <p>TC第29章笔记</p>
-<p>&nbsp; &nbsp; &nbsp;在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个<strong>线性规划问题</strong>（linear-programming problem)。</p>
+<p>&nbsp; &nbsp; &nbsp; 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个<strong>线性规划问题</strong>（linear-programming problem)。</p>
 <h2 id="一般线性规划"><a href="#一般线性规划" class="headerlink" title="一般线性规划"></a>一般线性规划</h2><p>已知一组实数$a_1,a_2,\cdots,a_n$和一组变量$x_1,x_2,\cdots,x_n$。我们给出定义在这些变量上的一个<strong>线性函数f</strong>:</p>
 <script type="math/tex; mode=display">f(x_1,x_2,\cdots,x_n)=a_1x_1+a_2x_2+\cdots+a_nx_n=\sum_{j=1}^na_jx_j</script><p>我们用一般的词语线性约束来表示线性等式或线性不等式。在线性规划中，不允许严格的不等式。</p>
 <p>线性规划问题<strong>定义</strong>：一个<strong>线性规划问题</strong>是一个线性函数最小化或最大化的问题，该线性函数服从一组有限个线性约束。如果我们要最小化，则称此线性规划为<strong>最小化线性规划</strong>；如果我们要最大化，则称此线性规划为<strong>最大化线性规划</strong>。</p>
@@ -405,8 +405,8 @@
 <h1 id="将问题表达为线性规划"><a href="#将问题表达为线性规划" class="headerlink" title="将问题表达为线性规划"></a>将问题表达为线性规划</h1><h2 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h2><p>我们可以把单源最短路径问题形式化为一个线性规划。</p>
 <p>在单源最短路径问题中，已知一个带权有向图$G=(V,E)$，加权函数$\omega:E\to{R}$把边映射到实数权值、一个源顶点s，以及一个目的顶点t。我们希望计算从s到t的一条最短路径的权值$d_t$。为了把此问题表示成一个线性规划，需要确定变量和约束的一个集合来定义何时有从s到t的一条最短路径。幸运的是，Bellman-Ford算法正好完成此事。当Bellman-Ford算法终止时，对每个顶点v，它已计算了一个值$d_v$（这里使用的是下标记号，而不是属性记号），使得对每条边$(u,v)\in{E}$，有$d_v\le{d_u+\omega(u,v)}$。源顶点初始得到一个值$d_s=0$，之后不会改变。因此，我们得到如下的线性规划，来计算从s到t的最短路径权值：<br>最大化： $d_t$<br>满足约束</p>
 <script type="math/tex; mode=display">d_v\le{d_u+\omega(u,v)}, (u,v)\in{E}</script><script type="math/tex; mode=display">d_s=0</script><p>这边是最大化而不是最小化，为什么可以最大化求最短路径我看了好久（捂脸<br>我们并不像最小化目标函数，因为这样的话对所有的$v\in{V}$，设置$\overline{d_v}=0$生成的此线性规划的一个最优解（0）并不是最短路径的解。我们之所以最大化，是因为最短路径问题的一个最优解把每一个$\overline{d_v}$设置成$\min_{u:(u,v)\in{E}}\{\overline{d_u}+\omega(u,v)\}$，使得$\overline{d_v}$是小于等于集合$\{\overline{d_u}+\omega(u,v)\}$中所有值的最大值。对从s到t的一条最短路径上的所有顶点v，我们希望最大化$d_v$，在所有顶点v上都满足上述约束条件，并且最大化$d_t$以实现此目的。<br>这个线性规划中有|V|个变量$d_v$，对于每个顶点$v\in{V}$有一个相应变量。另外，还有|E|+1个约束：每条边上有一个，外加源顶点总有值为0的最短路径权值为额外约束。</p>
-<h2 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h2><p>回顾最大流问题，已知一个有向图$G=(V,E)$，其中每条边$(u,v)\in{E}$有一个非负的容量$c(u,v)\ge0$，以及两个特别的顶点：源点s和汇点t。一个流是一个非负的实数值函数$f:V\times{V}\to{R}$，它满足容量限制和流量守恒性。最大流是满足这些约束且最大化流量值的流，其中流量值是从源点流出的总流量值减去进入源点的总流量。因此流满足线性约束并且一个流的值是一个线性函数。我们还假设若$(u,v)\in{E}$，则$c(u,v)=0$，且没有反平行的边，因此可以将这个最大流问题表示为一个线性规划：<br>最大化： $</p>
-
+<h2 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h2><p>回顾最大流问题，已知一个有向图$G=(V,E)$，其中每条边$(u,v)\in{E}$有一个非负的容量$c(u,v)\ge0$，以及两个特别的顶点：源点s和汇点t。一个流是一个非负的实数值函数$f:V\times{V}\to{R}$，它满足容量限制和流量守恒性。最大流是满足这些约束且最大化流量值的流，其中流量值是从源点流出的总流量值减去进入源点的总流量。因此流满足线性约束并且一个流的值是一个线性函数。我们还假设若$(u,v)\in{E}$，则$c(u,v)=0$，且没有反平行的边，因此可以将这个最大流问题表示为一个线性规划：<br>最大化： $\sum_{v\in{V}}f_{sv}-\sum_{v\in{V}}f_{vs}$<br>满足约束</p>
+<script type="math/tex; mode=display">f_{uv}\le{c(u,v)} 对每个u,v\in{V}</script>
       
     </div>
     
