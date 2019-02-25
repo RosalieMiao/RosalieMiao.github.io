@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="TC第29章笔记&amp;nbsp; &amp;nbsp; &amp;nbsp; 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划&amp;nbsp; &amp;nbsp; &amp;nbsp; 已知一组实数$a_1,a_2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-25T12:55:43.855Z">
+<meta property="og:updated_time" content="2019-02-25T13:18:35.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之线性规划">
 <meta name="twitter:description" content="TC第29章笔记&amp;nbsp; &amp;nbsp; &amp;nbsp; 在给定有限的资源和竞争约束情况下，很多问题都可以表述为最大化或最小化某个目标。如果可以把目标描述为某些变量的一个线性函数，而且可以讲资源的约束指定为这些变量的等式或不等式，那么我们得到一个线性规划问题（linear-programming problem)。 一般线性规划&amp;nbsp; &amp;nbsp; &amp;nbsp; 已知一组实数$a_1,a_2">
@@ -425,6 +425,8 @@
 <li>如何确定一个线性规划是否无界？</li>
 <li>如何选择替入变量和替出变量？</li>
 </ul>
+<p>&nbsp; &nbsp; &nbsp; 假设有一个过程INITIALIZE-SIMPLEX(A,b,c)，输入为一个标准型的线性规划，即一个$m\times{n}$的矩阵$A=(a_{ij})$，一个m维向量$b=(b_i)$，一个n维向量$c=(c_j)$。如果这个问题是不可行的，此过程返回一个消息说明此线性规划不可行，然后终止。否则，此过程返回一个初始基本解可行的松弛型。<br>&nbsp; &nbsp; &nbsp; 如前所述，子过程SIMPLEX以一个标准型的线性规划作为输入。它返回一个n维向量$\overline{x}=(\overline{x_j})$，为一个最优解。</p>
+<p>SIMPLEX(A,b,c)<br>1&nbsp; &nbsp; (N,B,A,b,c)=INITIALIZE-SIMPLEX(A,b,c)<br>2&nbsp; &nbsp; let $\Delta$ be a new vector of length m<br>3&nbsp; &nbsp; while some index $j\in{N}$ has $c_j&gt;0$<br>4&nbsp; &nbsp; &nbsp; &nbsp; choose an index $e\in{N}$ for which $c_e&gt;0$<br>5&nbsp; &nbsp; &nbsp; &nbsp; for each index $i\in{B}$<br>6&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if $a_{ie}&gt;0$<br>7&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\Delta_i=b_i/a_ie$<br>8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else $\Delta_i=\infty$<br>9&nbsp; &nbsp; &nbsp; &nbsp; choose an index $l\in{B}$ that minimize $\Delta_l$<br>10&nbsp; &nbsp; &nbsp; &nbsp; if $\Delta_l==\infty$<br>11&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return “unbounded”<br>12&nbsp; &nbsp; &nbsp; &nbsp; else (N,B,A,b,c,v)=PIVOT(N,B,A,b,c,v,l,e)<br>13&nbsp; &nbsp; for $i=1$ to n<br>14&nbsp; &nbsp; &nbsp; &nbsp; if $i\in{B}$<br>15&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $\overline{x_i}=b_i$<br>16&nbsp; &nbsp; &nbsp; &nbsp; else $\overline{x_i}=0$<br>17&nbsp; &nbsp; return $(\overline{x_1},\overline{x_2},\cdots,\overline{x_n})$</p>
 
       
     </div>
