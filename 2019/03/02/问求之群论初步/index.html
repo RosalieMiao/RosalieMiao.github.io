@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称性&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.">
+<meta name="description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp; &amp;nbs">
 <meta name="keywords" content="理论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="问求之群论初步">
 <meta property="og:url" content="http://yoursite.com/2019/03/02/问求之群论初步/index.html">
 <meta property="og:site_name" content="Rosalie Miao">
-<meta property="og:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称性&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.">
+<meta property="og:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp; &amp;nbs">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-02T05:44:32.566Z">
+<meta property="og:updated_time" content="2019-03-02T07:21:58.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之群论初步">
-<meta name="twitter:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称性&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.">
+<meta name="twitter:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp; &amp;nbs">
 
 
 
@@ -377,9 +377,18 @@
 
       
         <h1 id="TJ第3章-群"><a href="#TJ第3章-群" class="headerlink" title="TJ第3章 群"></a>TJ第3章 群</h1><p>&nbsp; &nbsp; &nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。</p>
-<h2 id="3-1-整数等价类和对称性"><a href="#3-1-整数等价类和对称性" class="headerlink" title="3.1 整数等价类和对称性"></a>3.1 整数等价类和对称性</h2><p>&nbsp; &nbsp; &nbsp; <em>这里的single operations是指二元运算吗？</em></p>
-<h3 id="整数模n运算"><a href="#整数模n运算" class="headerlink" title="整数模n运算"></a>整数模n运算</h3><p>&nbsp; &nbsp; &nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.</p>
-
+<h2 id="3-1-整数等价类和对称"><a href="#3-1-整数等价类和对称" class="headerlink" title="3.1 整数等价类和对称"></a>3.1 整数等价类和对称</h2><p>&nbsp; &nbsp; &nbsp; <em>这里的single operations是指二元运算吗？</em></p>
+<h3 id="整数模n运算"><a href="#整数模n运算" class="headerlink" title="整数模n运算"></a>整数模n运算</h3><p>&nbsp; &nbsp; &nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.<br>&nbsp; &nbsp; &nbsp; 模n操作将Z划分为n个不同的等价类，我们用$Z_n$来表示这些等价类。我们可以在$Z_n$上进行计算，比如：$(a+b)(\mod{n})$或者$(ab)(\mod{n})$。<br>&nbsp; &nbsp; <strong>命题3.4</strong> 设$Z_n$是模n操作下将整数集划分成的整数等价类并且$a,b,c\in{Z_n}$，则有：</p>
+<ol>
+<li>满足加法交换律和乘法交换律：<script type="math/tex; mode=display">a+b\equiv{b+a}\quad(\mod{n})</script><script type="math/tex; mode=display">ab\equiv{ba}\quad(\mod{n})</script></li>
+<li>满足加法结合律和乘法结合律：<script type="math/tex; mode=display">(a+b)+c\equiv{a+(b+c)}\quad(\mod{n})</script><script type="math/tex; mode=display">(ab)c\equiv{a(bc)}\quad(\mod{n})</script></li>
+<li>存在加法恒等元和乘法恒等元：<script type="math/tex; mode=display">a+0\equiv{a}\quad(\mod{n})</script><script type="math/tex; mode=display">a\cdot1\equiv{a}\quad(\mod{n})</script></li>
+<li>满足分配律：<script type="math/tex; mode=display">a(b+c)\equiv{ab+ac}\quad(\mod{n})</script></li>
+<li>对于每一个整数a都存在一个加法逆元-a：<script type="math/tex; mode=display">a+(-a)\equiv0\quad(\mod{n})</script></li>
+<li>如果a是一个非零整数，那么$gcd(a,n)=1$当且仅当存在一个非零整数b是a的乘法逆元。即：<script type="math/tex; mode=display">ab\equiv1\quad(\mod{n})</script></li>
+</ol>
+<p>&nbsp; &nbsp; &nbsp; 证明中有用到一个结论：$gcd(a,n)=1$当且仅当存在r，s为整数，使得$ar+ns=1\quad(\mod{n})$.</p>
+<h3 id="对称"><a href="#对称" class="headerlink" title="对称"></a>对称</h3>
       
     </div>
     
@@ -553,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第3章-群"><span class="nav-number">1.</span> <span class="nav-text">TJ第3章 群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-整数等价类和对称性"><span class="nav-number">1.1.</span> <span class="nav-text">3.1 整数等价类和对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数模n运算"><span class="nav-number">1.1.1.</span> <span class="nav-text">整数模n运算</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第3章-群"><span class="nav-number">1.</span> <span class="nav-text">TJ第3章 群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-整数等价类和对称"><span class="nav-number">1.1.</span> <span class="nav-text">3.1 整数等价类和对称</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数模n运算"><span class="nav-number">1.1.1.</span> <span class="nav-text">整数模n运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称"><span class="nav-number">1.1.2.</span> <span class="nav-text">对称</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
