@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp; &amp;nbs">
+<meta name="description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称置换&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？不是。 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp;">
 <meta name="keywords" content="理论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="问求之群论初步">
 <meta property="og:url" content="http://yoursite.com/2019/03/02/问求之群论初步/index.html">
 <meta property="og:site_name" content="Rosalie Miao">
-<meta property="og:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp; &amp;nbs">
+<meta property="og:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称置换&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？不是。 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-02T07:21:58.172Z">
+<meta property="og:updated_time" content="2019-03-03T06:27:04.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之群论初步">
-<meta name="twitter:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？ 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp; &amp;nbs">
+<meta name="twitter:description" content="TJ第3章 群&amp;nbsp; &amp;nbsp; &amp;nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。 3.1 整数等价类和对称置换&amp;nbsp; &amp;nbsp; &amp;nbsp; 这里的single operations是指二元运算吗？不是。 整数模n运算&amp;nbsp; &amp;nbsp; &amp;nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.&amp;nbsp; &amp;nbsp;">
 
 
 
@@ -377,7 +377,7 @@
 
       
         <h1 id="TJ第3章-群"><a href="#TJ第3章-群" class="headerlink" title="TJ第3章 群"></a>TJ第3章 群</h1><p>&nbsp; &nbsp; &nbsp; 群(Groups)：在集合上的二元运算（加或乘）构成的代数结构。</p>
-<h2 id="3-1-整数等价类和对称"><a href="#3-1-整数等价类和对称" class="headerlink" title="3.1 整数等价类和对称"></a>3.1 整数等价类和对称</h2><p>&nbsp; &nbsp; &nbsp; <em>这里的single operations是指二元运算吗？</em></p>
+<h2 id="3-1-整数等价类和对称置换"><a href="#3-1-整数等价类和对称置换" class="headerlink" title="3.1 整数等价类和对称置换"></a>3.1 整数等价类和对称置换</h2><p>&nbsp; &nbsp; &nbsp; <em>这里的single operations是指二元运算吗？</em>不是。</p>
 <h3 id="整数模n运算"><a href="#整数模n运算" class="headerlink" title="整数模n运算"></a>整数模n运算</h3><p>&nbsp; &nbsp; &nbsp; 当$n=a-b$时，$a\mod{n} = b\mod{n}$.<br>&nbsp; &nbsp; &nbsp; 模n操作将Z划分为n个不同的等价类，我们用$Z_n$来表示这些等价类。我们可以在$Z_n$上进行计算，比如：$(a+b)(\mod{n})$或者$(ab)(\mod{n})$。<br>&nbsp; &nbsp; <strong>命题3.4</strong> 设$Z_n$是模n操作下将整数集划分成的整数等价类并且$a,b,c\in{Z_n}$，则有：</p>
 <ol>
 <li>满足加法交换律和乘法交换律：<script type="math/tex; mode=display">a+b\equiv{b+a}\quad(\mod{n})</script><script type="math/tex; mode=display">ab\equiv{ba}\quad(\mod{n})</script></li>
@@ -388,7 +388,28 @@
 <li>如果a是一个非零整数，那么$gcd(a,n)=1$当且仅当存在一个非零整数b是a的乘法逆元。即：<script type="math/tex; mode=display">ab\equiv1\quad(\mod{n})</script></li>
 </ol>
 <p>&nbsp; &nbsp; &nbsp; 证明中有用到一个结论：$gcd(a,n)=1$当且仅当存在r，s为整数，使得$ar+ns=1\quad(\mod{n})$.</p>
-<h3 id="对称"><a href="#对称" class="headerlink" title="对称"></a>对称</h3>
+<h3 id="对称置换"><a href="#对称置换" class="headerlink" title="对称置换"></a>对称置换</h3><p>&nbsp; &nbsp; &nbsp; 对称置换是将图形重新排列并且保证其边与角的长度、距离和角度。<br>&nbsp; &nbsp; &nbsp; 刚性运动？（rigid motion)<br>&nbsp; &nbsp; &nbsp; 对称置换可以复合；每一个对称置换都有一个对应的逆变换，即两者复合之后回到初始样子。</p>
+<h2 id="3-2-定义与例子"><a href="#3-2-定义与例子" class="headerlink" title="3.2 定义与例子"></a>3.2 定义与例子</h2><p>&nbsp; &nbsp; &nbsp; 整数模n和三角形或矩形对称置换是群的例子。<br>&nbsp; &nbsp; &nbsp; 一个在集合G上的二元运算（binary operation）或者构成规则（law of composition）是一个函数$G\times{G}\to{G}$，这个函数给每一个二元组$(a,b)\in{G\times{G}}$一个对应的G中的值$a\circ{b}$或者$ab$。$a\circ{b}$或者$ab$称为a和b的组合（composition）。<br>&nbsp; &nbsp; &nbsp; 一个<strong>群(group)</strong>$(G,\circ)$是指一个集合以及一个二元运算$(a,b)\mapsto{a\circ{b}}$且这个二元运算满足一下公理(axioms)：</p>
+<ul>
+<li>结合律(The law of composition is <strong>associative</strong>.)<script type="math/tex; mode=display">(a\circ{b})\circ{c}=a\circ(b\circ{c})\quad{for\quad{a,b,c\in{G}}}</script></li>
+<li>有单位元(There exists an element $e\in{G}$, called the <strong>identity element</strong>, such that for any element $a\in{G}$)<script type="math/tex; mode=display">e\circ{a}=a\circ{e}=a</script></li>
+<li>每个元素都有逆元(For each element $a\in{G}$, there exists an <strong>inverse element</strong> in G, denoted by $a^{-1}$, such that)<script type="math/tex; mode=display">a\circ{a^{-1}}=a^{-1}\circ{a}=e</script>&nbsp; &nbsp; &nbsp; 有交换律（对所有的$a,b\in{G}$, $a\circ{b}=b\circ{a}$）的群称为阿贝尔群(<strong>abelian</strong>)或可交换的(<strong>commutative</strong>)，否则称为不可交换的(<strong>nonabelian</strong> or <strong>noncommutative</strong>)。<em>不是每个群都有交换律</em>。<br>&nbsp; &nbsp; &nbsp; 群的一种方便的表达方式是以加法或乘法表的方式。一种这样的表称为凯莱表(<strong>Cayley table</strong>)。<br>&nbsp; &nbsp; &nbsp; 整数集$Z$上的加法构成阿贝尔群。$Z_n$上的加法也能构成群。$Z_n$上的乘法不能构成群，乘法作用在$Z_n$上时，1为单位元，只有与$n$互质的元素才有逆元素。这些元素组成集合$U(n)$，$U(n)$是一个群，称为$Z_n$的单位群(<strong>group of units</strong>)。<br>&nbsp; &nbsp; &nbsp; 等边三角形上的对称置换构成非阿贝尔群。可逆的$2\times2$矩阵构成的集合上的矩阵乘法运算构成非阿贝尔群。一个四元群(<strong>quaternion group</strong>)的例子。不含0的复数集上的乘法构成群。<br>&nbsp; &nbsp; &nbsp; 当群中元素的个数是有限个的时候，称这个群是有限的。$|G|$表示群G中元素的个数。</li>
+</ul>
+<h3 id="群的基本特征"><a href="#群的基本特征" class="headerlink" title="群的基本特征"></a>群的基本特征</h3><p>&nbsp; &nbsp; <strong>命题 3.17</strong> （单位元唯一。）The identity element in a group G is unique; that is, there exists only one element $e\in{G}$ such that $eg=ge=g$ for all $g\in{G}$.<br>&nbsp; &nbsp; <strong>命题 3.18</strong> （逆元唯一。）If g is any element in a group G, then the inverse of g, debited by $g^{-1}$, is unique.<br>&nbsp; &nbsp; <strong>命题 3.19</strong> Let G be a group. If $a,b\in{G}$, then $(ab)^{-1}=b^{-1}a^{-1}$.<br>&nbsp; &nbsp; <strong>命题 3.20</strong> Let G be a group. For any $a\in{G}$, $(a^{-1})^{-1}=a$.<br>&nbsp; &nbsp; <strong>命题 3.21</strong> Let G be a group and a and b be any two elements in G. Then the equations $ax=b$ and $xa=b$ have unique solutions in G.<br>&nbsp; &nbsp; <strong>命题 3.22</strong> If G is a group and $a,b,c\in{G}$, then $ba=ca$ implies $b=c$ and $ab=ac$ implies $b=c$.<br>&nbsp; &nbsp; &nbsp; <strong>right and left cancellation laws</strong>(左右消元法则？？？) are true in groups.<br>&nbsp; &nbsp; <strong>定理 3.23</strong> （指数运算）In a group, the usual laws of exponents hold; that is, for all $g,h\in{G}$,</p>
+<ol>
+<li>$g^mg^n=g^{m+n}$ for all $m,n\in{Z}$;</li>
+<li>$(g^m)^n=g^{mn}$ for all $m,n\in{Z}$;</li>
+<li>$(gh)^n=(h^{-1}g^{-1})^{-n}$ for all $n\in{Z}$. Furthermore, if G is abelian, then $(gh)^n=g^nh^n$.</li>
+</ol>
+<h2 id="3-3-子群"><a href="#3-3-子群" class="headerlink" title="3.3 子群"></a>3.3 子群</h2><h3 id="定义与例子"><a href="#定义与例子" class="headerlink" title="定义与例子"></a>定义与例子</h3><p>&nbsp; &nbsp; &nbsp; 偶数集在加法下构成的群是整数集在加法下构成的群的子群。<br>&nbsp; &nbsp; &nbsp; 子群的定义：如果H是群G的一个自己并且当G的群运算作用在H上时，H也是一个群，那么H称为是G的子群。<br>&nbsp; &nbsp; &nbsp; G的子群$H=\{e\}$称为是平凡子群(<strong>trivial subgroup</strong>)。一个子群如果是G的真子集，那这个子群称为真子群(<strong>proper subgroup</strong>)。<br>&nbsp; &nbsp; &nbsp; 不含0的有理数集在乘法下构成的群是不含0的实数集在乘法下构成的群的子群。<br>&nbsp; &nbsp; &nbsp; 特殊线性群(<strong>special linear group</strong>)。<br>&nbsp; &nbsp; &nbsp; 如果H是G的子集且是群，那么H不一定是G的子群，因为两个群的二元运算有可能不一样。<br>&nbsp; &nbsp; &nbsp; 可以用子群来判断两个群是否等价。</p>
+<h3 id="一些子群的定理"><a href="#一些子群的定理" class="headerlink" title="一些子群的定理"></a>一些子群的定理</h3><p>&nbsp; &nbsp; <strong>命题 3.30</strong> G的子集H是子群当且仅当其满足以下条件。</p>
+<ol>
+<li>G的单位元e在H中。</li>
+<li>（封闭性）如果$h_1,h_2\in{H}$，那么$h_1h_2\in{H}$。</li>
+<li>（有逆元）如果$h\in{H}$，那么$h^{-1}\in{H}$。</li>
+</ol>
+<p>&nbsp; &nbsp; <strong>命题 3.31</strong> 如果H是G的子集，那么H是G的子群当且仅当$H\neq\emptyset$并且任给$g,h\in{H}$，有$gh^{-1}\in{H}$。</p>
+
       
     </div>
     
@@ -562,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第3章-群"><span class="nav-number">1.</span> <span class="nav-text">TJ第3章 群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-整数等价类和对称"><span class="nav-number">1.1.</span> <span class="nav-text">3.1 整数等价类和对称</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数模n运算"><span class="nav-number">1.1.1.</span> <span class="nav-text">整数模n运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称"><span class="nav-number">1.1.2.</span> <span class="nav-text">对称</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第3章-群"><span class="nav-number">1.</span> <span class="nav-text">TJ第3章 群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-整数等价类和对称置换"><span class="nav-number">1.1.</span> <span class="nav-text">3.1 整数等价类和对称置换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数模n运算"><span class="nav-number">1.1.1.</span> <span class="nav-text">整数模n运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称置换"><span class="nav-number">1.1.2.</span> <span class="nav-text">对称置换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-定义与例子"><span class="nav-number">1.2.</span> <span class="nav-text">3.2 定义与例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#群的基本特征"><span class="nav-number">1.2.1.</span> <span class="nav-text">群的基本特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-子群"><span class="nav-number">1.3.</span> <span class="nav-text">3.3 子群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义与例子"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义与例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些子群的定理"><span class="nav-number">1.3.2.</span> <span class="nav-text">一些子群的定理</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
