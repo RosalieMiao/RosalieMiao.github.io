@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="第一章 随机事件与概率第一节 随机事件极其运算一、随机试验与随机事件&amp;nbsp; &amp;nbsp; &amp;nbsp; 各种现象可以分为确定性现象和非确定性现象。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 非确定性现象也称随机现象。随机现象可以通过随机试验来研究。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 所谓随机试验是指对随机现象进行的一次观测。把随机试验记为E，随机试验具有如下特点：  在相同的条件下试">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-09T06:47:25.583Z">
+<meta property="og:updated_time" content="2019-03-10T14:12:39.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论与数理统计">
 <meta name="twitter:description" content="第一章 随机事件与概率第一节 随机事件极其运算一、随机试验与随机事件&amp;nbsp; &amp;nbsp; &amp;nbsp; 各种现象可以分为确定性现象和非确定性现象。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 非确定性现象也称随机现象。随机现象可以通过随机试验来研究。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 所谓随机试验是指对随机现象进行的一次观测。把随机试验记为E，随机试验具有如下特点：  在相同的条件下试">
@@ -435,8 +435,49 @@
 <p>&nbsp; &nbsp; &nbsp; (2) $f_n(\Omega)=1$;</p>
 <p>&nbsp; &nbsp; &nbsp; 若$A_1,A_2,\cdots,A_n$互不相容，则</p>
 <script type="math/tex; mode=display">f_n(\bigcup_{i=1}^nA_i)=\sum_{i=1}^nf_n(A_i)</script><p>&nbsp; &nbsp; &nbsp; <strong>频率的稳定性</strong>： 在n次试验中，随着试验次数n的增加，事件的频率将在某个数值p附近稳定地摆动，一般来说n越大，摆动的幅度越小。此数值可以定义为A发生的概率，称为<strong>统计概率</strong>。</p>
-<h3 id="二、概率的定义及性质"><a href="#二、概率的定义及性质" class="headerlink" title="二、概率的定义及性质"></a>二、概率的定义及性质</h3><p>&nbsp; &nbsp; <strong>定义 1.1</strong> </p>
+<h3 id="二、概率的定义及性质"><a href="#二、概率的定义及性质" class="headerlink" title="二、概率的定义及性质"></a>二、概率的定义及性质</h3><p>&nbsp; &nbsp; <strong>定义 1.1</strong> 设E是随机试验，$\Omega$为其样本空间。对于E的每一个随机事件A，对应一个实数$P(A)$，如果集合函数$P(\cdot)$满足：<br>（1）非负性 $P(A)\ge0$；<br>（2）规范性 $P(\Omega)=1$；<br>（3）可列可加性 若$A_1,A_2,\cdots,A_n,\cdots$两两互不相容，则</p>
+<script type="math/tex; mode=display">P(\bigcup_{i=1}^{\infty}A_i)=\sum_{i=1}^{\infty}P(A_i)</script><p>则称$P(A)$为事件A的概率。</p>
+<p>&nbsp; &nbsp; <strong>性质1</strong> $P(\Phi)=0$。<br>&nbsp; &nbsp; <strong>性质2</strong> 若$A_1,A_2,\cdots,A_n$为n个两两互不相容事件，则有</p>
+<script type="math/tex; mode=display">P(\bigcup_{i=1}^{n}A_i)=\sum_{i=1}^{n}P(A_i)</script><p>&nbsp; &nbsp; <strong>性质3</strong> 对任意两事件A，B有</p>
+<script type="math/tex; mode=display">P(A-B)=P(A)-P(B)</script><p>&nbsp; &nbsp; <strong>性质4</strong> 对任意两事件A，B有<strong>加法定理</strong></p>
+<script type="math/tex; mode=display">P(A\cup{B})=P(A)+P(B)-P(AB)</script><p>利用归纳法可以推广到n个事件的加法定理。<br>&nbsp; &nbsp; <strong>性质5</strong> 对任意事件A，$P(\overline{A})=1-P(A)$。</p>
+<h2 id="第三节-等可能概型（古典概型）"><a href="#第三节-等可能概型（古典概型）" class="headerlink" title="第三节 等可能概型（古典概型）"></a>第三节 等可能概型（古典概型）</h2><p>&nbsp; &nbsp; &nbsp; 有一类随机试验，具有如下特点：<br>（1）样本空间$\Omega$的样本点个数为有限个；<br>（2）样本空间中的每个基本事件（样本点）发生的可能性相同。<br>把这类随机试验称为等可能概型，又称<strong>古典概型</strong>。</p>
+<p>&nbsp; &nbsp; &nbsp; 设随机试验E为等可能概型，若其样本空间$\Omega$含有n个样本点，而事件A含有m个样本点，则事件A的概率为$P(A)=\frac{m}{n}$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>抽签原理</strong> 袋中又a只白球，b只红球。若干人依次从中各取一球，取后不放回，则任一人取得红球的概率相等，都是$\frac{b}{a+b}$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>不放回抽样</strong> vs <strong>有放回抽样</strong></p>
+<h2 id="第四节-几何概率"><a href="#第四节-几何概率" class="headerlink" title="第四节 几何概率"></a>第四节 几何概率</h2><p>&nbsp; &nbsp; <strong>定义 1.2</strong> 若随机试验的样本空间$\Omega$对应一个度量有限的几何区域S，且所有的基本事件与S内的点一一对应，则任一随机事件A对应$\Omega$（应该是S？）中的某一子区域D。若事件A的概率和A对应的区域D的度量成正比，与D的形状及D在S中的位置无关。A发生的概率定义为$P(A)=\frac{m(A)}{m(\Omega)}=$A对应区域D的度量/$\Omega$对应区域S的度量。这样计算的概率称为几何概率。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>蒲丰投针问题</strong> 设M为针的中点，M点道最近平行线的距离为x，针与平行线的夹角为$\theta$。则针的位置可由$(x,\theta)$决定。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>蒙特卡罗方法</strong></p>
+<h2 id="第五节-条件概率"><a href="#第五节-条件概率" class="headerlink" title="第五节 条件概率"></a>第五节 条件概率</h2><h3 id="一、条件概率"><a href="#一、条件概率" class="headerlink" title="一、条件概率"></a>一、条件概率</h3><p>&nbsp; &nbsp; &nbsp; 在事件B发生的情况下，事件A发生的概率称为条件概率，记为$P(A|B)$。</p>
+<p>&nbsp; &nbsp; <strong>定义 1.3</strong> 设A，B为两个随机事件，且$P(B)&gt;0$，称</p>
+<script type="math/tex; mode=display">P(A|B)=\frac{P(AB)}{P(B)}</script><p>为在事件B发生的条件下，事件A发生的概率。</p>
+<h3 id="二、乘法公式"><a href="#二、乘法公式" class="headerlink" title="二、乘法公式"></a>二、乘法公式</h3><p>&nbsp; &nbsp; &nbsp; 由条件概率公式可得到，当$P(B)&gt;0$时，$P(AB)=P(A)P(B|A)$。这称为乘法公式。</p>
+<p>&nbsp; &nbsp; &nbsp; 乘法公式可以推广到多个的情况：</p>
+<script type="math/tex; mode=display">P(A_1A_2\cdots{A_n})=P(A_1)P(A_2|A_1)P(A_3|A_1A_2)\cdots{P(A_n|A_1A_2\cdots{A_{n-1}})}</script><h3 id="三、全概率公式与贝叶斯公式"><a href="#三、全概率公式与贝叶斯公式" class="headerlink" title="三、全概率公式与贝叶斯公式"></a>三、全概率公式与贝叶斯公式</h3><p>&nbsp; &nbsp; <strong>定义 1.4</strong> 若n个事件$A_1,A_2,\cdots,A_n$满足<br>（1）$A_1,A_2,\cdots,A_n$两两互不相容；<br>（2）$A_1\cup{A_2}\cup\cdots\cup{A_n}=\Omega$。<br>则称$A_1,A_2,\cdots,A_n$为样本空间$\Omega$的一个划分或完备事件组。</p>
+<p>&nbsp; &nbsp; <strong>定理 1.1</strong>（全概率公式） 设$A_1,A_2,\cdots,A_n$为完备事件组，则对事件B有</p>
+<script type="math/tex; mode=display">P(B)=\sum_{k=1}^nP(A_k)P(B|A_k)$$、
 
+&nbsp; &nbsp; **定理 1.2**（贝叶斯公式） 设$A_1,A_2,\cdots,A_n$为完备事件组，则对事件B有
+$$P(A_i|B)=\frac{P(A_i)P(B|A_i)}{\sum_{k=1}^nP(A_k)P(B|A_k)}</script><h2 id="第六节-独立性"><a href="#第六节-独立性" class="headerlink" title="第六节 独立性"></a>第六节 独立性</h2><h3 id="一、独立性定义"><a href="#一、独立性定义" class="headerlink" title="一、独立性定义"></a>一、独立性定义</h3><p>&nbsp; &nbsp; <strong>定义 1.5</strong> 设A,B是两个随机事件，若满足等式</p>
+<script type="math/tex; mode=display">P(AB)=P(A)P(B)</script><p>则称事件A,B相互独立，简称A,B独立。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>不放回取球</strong>A与B不独立；<strong>有放回取球</strong>A与B独立。</p>
+<p>&nbsp; &nbsp; <strong>定理 1.3</strong> 若随机事件A与B相互独立，则$\overline{A}$与B、A与$\overline{B}$、$\overline{A}$与$\overline{B}$也相互独立。</p>
+<h3 id="二、多个事件的独立性"><a href="#二、多个事件的独立性" class="headerlink" title="二、多个事件的独立性"></a>二、多个事件的独立性</h3><p>&nbsp; &nbsp; &nbsp; 一般，对n个事件$A_1,A_2,\cdots,A_n$，如果下列等式成立：</p>
+<script type="math/tex; mode=display">P(A_iA_j)=P(A_i)P(A_j)\quad(1\le{i}<{j}\le{n})</script><script type="math/tex; mode=display">P(A_iA_jA_k)=P(A_i)P(A_j)P(A_k)\quad(1\le{i}<{j}<{k}\le{n})</script><script type="math/tex; mode=display">\cdots\cdots</script><p>P(A_{i1}A_{i2}\cdots{A_{im}})=P(A_{i1})P(A_{i2})\cdots{P(A_{im})}(1\le{i_1}&lt;{i_2}&lt;\cdots&lt;{i_m}\le{n})$$</p>
+<script type="math/tex; mode=display">\cdots\cdots</script><script type="math/tex; mode=display">P(A_1A_2\cdots{A_n})=P(A_1)P(A_2)\cdots{P(A_n)}</script><p>则称事件$A_1,A_2,\cdots,A_n$相互独立。</p>
+<p>&nbsp; &nbsp; <strong>定理 1.4</strong> 设事件$A_1,A_2,\cdots,A_n$相互独立，将其任一分为没有公共事件的k个组，每个组任意作事件运算，得到一个新事件，则这k个新事件相互独立。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>小概率事件原理</strong></p>
+<h3 id="三、可靠性分析"><a href="#三、可靠性分析" class="headerlink" title="三、可靠性分析"></a>三、可靠性分析</h3><ol>
+<li><p>串联方式构成的系统</p>
+<script type="math/tex; mode=display">P(B_1)=P(A_1)P(A_2)\cdots{P(A_n)}=p_1p_2\cdots{p_n}</script></li>
+<li><p>并联方式构成的系统</p>
+<script type="math/tex; mode=display">P(B_2)=1-P(\overline{A_1}\overline{A_2}\cdots\overline{A_n})=1-\prod_{i=1}^n(1-p_i)</script></li>
+</ol>
+<h2 id="第七节-独立重复试验概型"><a href="#第七节-独立重复试验概型" class="headerlink" title="第七节 独立重复试验概型"></a>第七节 独立重复试验概型</h2><p>&nbsp; &nbsp; &nbsp; 有一类重要的独立重复试验概型，具有如下特点：<br>&nbsp; &nbsp; &nbsp; （1）每次试验只有两个结果，$A$与$\overline{A}$，且$P(A)=p,P(\overline{A})=1-p=q$。<br>&nbsp; &nbsp; &nbsp; （2）试验进行n次，每次试验的结果相互独立。<br>这样的试验我们称为n<strong>重伯努利试验</strong>。</p>
+<p>&nbsp; &nbsp; <strong>定理 1.5</strong> n重伯努利试验中，A发生k次的概率记为$P_n(k)$，</p>
+<script type="math/tex; mode=display">P_n(k)=C_n^kp^kq^{n-k},(k=0,1,\cdots,n;q=1-p)</script><p>注意，$\sum_{k=0}^nP_n(k)=\sum_{k=0}^nC_n^kp^kq^{n-k}=(p+q)^n=1$。</p>
+<p>&nbsp; &nbsp; <strong>定理 1.6</strong>（泊松定理）设n为正整数，$\lambda=np_n$为常数，则对任意正整数k有</p>
+<script type="math/tex; mode=display">\lim_{n\to{\infty}}C_n^kp_n^k(1-p_n)^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}</script>
       
     </div>
     
@@ -614,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-随机事件与概率"><span class="nav-number">1.</span> <span class="nav-text">第一章 随机事件与概率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一节-随机事件极其运算"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 随机事件极其运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、随机试验与随机事件"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、随机试验与随机事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、事件间的关系及运算"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、事件间的关系及运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）事件间的关系"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">（一）事件间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）事件的运算"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">（二）事件的运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二节-事件的概率及性质"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 事件的概率及性质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、频率与概率"><span class="nav-number">1.2.1.</span> <span class="nav-text">一、频率与概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、概率的定义及性质"><span class="nav-number">1.2.2.</span> <span class="nav-text">二、概率的定义及性质</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-随机事件与概率"><span class="nav-number">1.</span> <span class="nav-text">第一章 随机事件与概率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一节-随机事件极其运算"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 随机事件极其运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、随机试验与随机事件"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、随机试验与随机事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、事件间的关系及运算"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、事件间的关系及运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）事件间的关系"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">（一）事件间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）事件的运算"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">（二）事件的运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二节-事件的概率及性质"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 事件的概率及性质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、频率与概率"><span class="nav-number">1.2.1.</span> <span class="nav-text">一、频率与概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、概率的定义及性质"><span class="nav-number">1.2.2.</span> <span class="nav-text">二、概率的定义及性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三节-等可能概型（古典概型）"><span class="nav-number">1.3.</span> <span class="nav-text">第三节 等可能概型（古典概型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四节-几何概率"><span class="nav-number">1.4.</span> <span class="nav-text">第四节 几何概率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五节-条件概率"><span class="nav-number">1.5.</span> <span class="nav-text">第五节 条件概率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、条件概率"><span class="nav-number">1.5.1.</span> <span class="nav-text">一、条件概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、乘法公式"><span class="nav-number">1.5.2.</span> <span class="nav-text">二、乘法公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、全概率公式与贝叶斯公式"><span class="nav-number">1.5.3.</span> <span class="nav-text">三、全概率公式与贝叶斯公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六节-独立性"><span class="nav-number">1.6.</span> <span class="nav-text">第六节 独立性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、独立性定义"><span class="nav-number">1.6.1.</span> <span class="nav-text">一、独立性定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、多个事件的独立性"><span class="nav-number">1.6.2.</span> <span class="nav-text">二、多个事件的独立性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、可靠性分析"><span class="nav-number">1.6.3.</span> <span class="nav-text">三、可靠性分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七节-独立重复试验概型"><span class="nav-number">1.7.</span> <span class="nav-text">第七节 独立重复试验概型</span></a></li></ol></li></ol></div>
             
 
           </div>
