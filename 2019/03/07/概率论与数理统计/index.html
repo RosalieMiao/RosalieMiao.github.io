@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="第一章 随机事件与概率第一节 随机事件极其运算一、随机试验与随机事件&amp;nbsp; &amp;nbsp; &amp;nbsp; 各种现象可以分为确定性现象和非确定性现象。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 非确定性现象也称随机现象。随机现象可以通过随机试验来研究。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 所谓随机试验是指对随机现象进行的一次观测。把随机试验记为E，随机试验具有如下特点：  在相同的条件下试">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-10T14:12:39.826Z">
+<meta property="og:updated_time" content="2019-03-10T14:18:11.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论与数理统计">
 <meta name="twitter:description" content="第一章 随机事件与概率第一节 随机事件极其运算一、随机试验与随机事件&amp;nbsp; &amp;nbsp; &amp;nbsp; 各种现象可以分为确定性现象和非确定性现象。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 非确定性现象也称随机现象。随机现象可以通过随机试验来研究。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 所谓随机试验是指对随机现象进行的一次观测。把随机试验记为E，随机试验具有如下特点：  在相同的条件下试">
@@ -455,10 +455,8 @@
 <p>&nbsp; &nbsp; &nbsp; 乘法公式可以推广到多个的情况：</p>
 <script type="math/tex; mode=display">P(A_1A_2\cdots{A_n})=P(A_1)P(A_2|A_1)P(A_3|A_1A_2)\cdots{P(A_n|A_1A_2\cdots{A_{n-1}})}</script><h3 id="三、全概率公式与贝叶斯公式"><a href="#三、全概率公式与贝叶斯公式" class="headerlink" title="三、全概率公式与贝叶斯公式"></a>三、全概率公式与贝叶斯公式</h3><p>&nbsp; &nbsp; <strong>定义 1.4</strong> 若n个事件$A_1,A_2,\cdots,A_n$满足<br>（1）$A_1,A_2,\cdots,A_n$两两互不相容；<br>（2）$A_1\cup{A_2}\cup\cdots\cup{A_n}=\Omega$。<br>则称$A_1,A_2,\cdots,A_n$为样本空间$\Omega$的一个划分或完备事件组。</p>
 <p>&nbsp; &nbsp; <strong>定理 1.1</strong>（全概率公式） 设$A_1,A_2,\cdots,A_n$为完备事件组，则对事件B有</p>
-<script type="math/tex; mode=display">P(B)=\sum_{k=1}^nP(A_k)P(B|A_k)$$、
-
-&nbsp; &nbsp; **定理 1.2**（贝叶斯公式） 设$A_1,A_2,\cdots,A_n$为完备事件组，则对事件B有
-$$P(A_i|B)=\frac{P(A_i)P(B|A_i)}{\sum_{k=1}^nP(A_k)P(B|A_k)}</script><h2 id="第六节-独立性"><a href="#第六节-独立性" class="headerlink" title="第六节 独立性"></a>第六节 独立性</h2><h3 id="一、独立性定义"><a href="#一、独立性定义" class="headerlink" title="一、独立性定义"></a>一、独立性定义</h3><p>&nbsp; &nbsp; <strong>定义 1.5</strong> 设A,B是两个随机事件，若满足等式</p>
+<script type="math/tex; mode=display">P(B)=\sum_{k=1}^nP(A_k)P(B|A_k)</script><p>&nbsp; &nbsp; <strong>定理 1.2</strong>（贝叶斯公式） 设$A_1,A_2,\cdots,A_n$为完备事件组，则对事件B有</p>
+<script type="math/tex; mode=display">P(A_i|B)=\frac{P(A_i)P(B|A_i)}{\sum_{k=1}^nP(A_k)P(B|A_k)}</script><h2 id="第六节-独立性"><a href="#第六节-独立性" class="headerlink" title="第六节 独立性"></a>第六节 独立性</h2><h3 id="一、独立性定义"><a href="#一、独立性定义" class="headerlink" title="一、独立性定义"></a>一、独立性定义</h3><p>&nbsp; &nbsp; <strong>定义 1.5</strong> 设A,B是两个随机事件，若满足等式</p>
 <script type="math/tex; mode=display">P(AB)=P(A)P(B)</script><p>则称事件A,B相互独立，简称A,B独立。</p>
 <p>&nbsp; &nbsp; &nbsp; <strong>不放回取球</strong>A与B不独立；<strong>有放回取球</strong>A与B独立。</p>
 <p>&nbsp; &nbsp; <strong>定理 1.3</strong> 若随机事件A与B相互独立，则$\overline{A}$与B、A与$\overline{B}$、$\overline{A}$与$\overline{B}$也相互独立。</p>
