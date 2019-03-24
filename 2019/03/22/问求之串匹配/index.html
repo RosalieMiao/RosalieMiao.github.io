@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="TC第32章 字符串匹配&amp;nbsp; &amp;nbsp; &amp;nbsp; 字符串匹配问题的形式化定义：假设文本是一个长度为n的数组$T[1..n]$，而模式是一个长度为m的数组$P[1..m]$，其中$m\le{n}$，进一步假设P和T的元素都是来自一个有限字母集$\Sigma$的字符。字符数组P和T通常称为字符串。如果$0\le{s}\le{n-m}$，并且$T[s+1..s+m]=P[1..m]$，那">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-24T06:00:51.298Z">
+<meta property="og:updated_time" content="2019-03-24T06:04:32.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之串匹配">
 <meta name="twitter:description" content="TC第32章 字符串匹配&amp;nbsp; &amp;nbsp; &amp;nbsp; 字符串匹配问题的形式化定义：假设文本是一个长度为n的数组$T[1..n]$，而模式是一个长度为m的数组$P[1..m]$，其中$m\le{n}$，进一步假设P和T的元素都是来自一个有限字母集$\Sigma$的字符。字符数组P和T通常称为字符串。如果$0\le{s}\le{n-m}$，并且$T[s+1..s+m]=P[1..m]$，那">
@@ -377,7 +377,7 @@
 
       
         <h1 id="TC第32章-字符串匹配"><a href="#TC第32章-字符串匹配" class="headerlink" title="TC第32章 字符串匹配"></a>TC第32章 字符串匹配</h1><p>&nbsp; &nbsp; &nbsp; 字符串匹配问题的形式化定义：假设文本是一个长度为n的数组$T[1..n]$，而模式是一个长度为m的数组$P[1..m]$，其中$m\le{n}$，进一步假设P和T的元素都是来自一个有限字母集$\Sigma$的字符。字符数组P和T通常称为字符串。如果$0\le{s}\le{n-m}$，并且$T[s+1..s+m]=P[1..m]$，那么称模式P在文本T中出现，且偏移为$s$。如果P在T中以偏移$s$出现，那么称$s$是<strong>有效偏移</strong>，否则称它为<strong>无效偏移</strong>。字符串匹配问题就是找到所有的有效偏移。</p>
-<p>&nbsp; &nbsp; &nbsp; <strong>符号和术语</strong><br>&nbsp; &nbsp; &nbsp; $\Sigma^<em>$：所有有限长度的字符串的集合，还字符串是由字母表$\Sigma$中的字符组成。<br>&nbsp; &nbsp; &nbsp; $\varepsilon$：长度为零的空字符串，$\varepsilon\in\Sigma^</em>$。<br>&nbsp; &nbsp; &nbsp; $|x|$：字符串x的长度。<br>&nbsp; &nbsp; &nbsp; xy：两个字符串x和y的<strong>连结(concatenation)</strong>，长度为$|x|+|y|$，由x的字符后接y的字符构成。<br>&nbsp; &nbsp; &nbsp; 如果对某个字符串$y\in\Sigma^<em>$有$x=wy$，则称字符串$w$是字符串x的<strong>前缀</strong>，记作$w\sqsubset{x}$。如果$w\sqsubset{x}$，则$|w|\le|x|$。类似的，如果对某个字符串$y$有$x=yw$，则称字符串$w$是字符串x的<em>*后缀</em></em>，记作$w\sqsupset{x}$。如果$w\sqsupset{x}$，则$|w|\le|x|$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>符号和术语</strong><br>&nbsp; &nbsp; &nbsp; $\Sigma^{\ast}$：所有有限长度的字符串的集合，该字符串是由字母表$\Sigma$中的字符组成。<br>&nbsp; &nbsp; &nbsp; $\varepsilon$：长度为零的空字符串，$\varepsilon\in\Sigma^<em>$。<br>&nbsp; &nbsp; &nbsp; $|x|$：字符串x的长度。<br>&nbsp; &nbsp; &nbsp; xy：两个字符串x和y的<strong>连结(concatenation)</strong>，长度为$|x|+|y|$，由x的字符后接y的字符构成。<br>&nbsp; &nbsp; &nbsp; 如果对某个字符串$y\in\Sigma^</em>$有$x=wy$，则称字符串$w$是字符串x的<strong>前缀</strong>，记作$w\sqsubset{x}$。如果$w\sqsubset{x}$，则$|w|\le|x|$。类似的，如果对某个字符串$y$有$x=yw$，则称字符串$w$是字符串x的<strong>后缀</strong>，记作$w\sqsupset{x}$。如果$w\sqsupset{x}$，则$|w|\le|x|$。</p>
 <p>&nbsp; &nbsp; <strong>引理 32.1（后缀重叠引理）</strong> 假设x，y和z是满足$x\sqsupset{z}$和$y\sqsupset{z}$的字符串。如果$|x|\le|y|$，那么$x\sqsupset{y}$；如果$|x|\ge|y|$，那么$y\sqsupset{x}$；如果$|x|=|y|$，那么$x=y$。</p>
 <p>&nbsp; &nbsp; &nbsp; 把模式$P[1..m]$的由k个字符组成的前缀$P[1..k]$记作$P_k$，把文本T中由k个字符组成的前缀记为$T_k$。采用这种记号，我们能够把字符串匹配问题表述为：找到所有偏移$s(0\le{s}\le{n-m})$，使得$P\sqsupset{T_{s+m}}$。<br>&nbsp; &nbsp; &nbsp; 在伪代码中，把比较两个等长字符串是否相等的操作当做操作原语。假设检测“$x==y$”需要时间$\Theta(t+1)$，其中t是满足$z\sqsubset{x}$和$z\sqsubset{y}$的最长字符串z的长度。</p>
 <h2 id="32-1-朴素字符串匹配算法"><a href="#32-1-朴素字符串匹配算法" class="headerlink" title="32.1 朴素字符串匹配算法"></a>32.1 朴素字符串匹配算法</h2><p>&nbsp; &nbsp; &nbsp; 朴素字符串匹配算法是通过一个循环找到所有有效偏移，该循环对$n-m+1$个可能的s值进行检测，看是否满足条件$P[1..m]=T[s+1..s+m]$。</p>
