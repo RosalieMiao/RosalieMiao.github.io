@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="TC第32章 字符串匹配&amp;nbsp; &amp;nbsp; &amp;nbsp; 字符串匹配问题的形式化定义：假设文本是一个长度为n的数组$T[1..n]$，而模式是一个长度为m的数组$P[1..m]$，其中$m\le{n}$，进一步假设P和T的元素都是来自一个有限字母集$\Sigma$的字符。字符数组P和T通常称为字符串。如果$0\le{s}\le{n-m}$，并且$T[s+1..s+m]=P[1..m]$，那">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-24T06:04:32.670Z">
+<meta property="og:updated_time" content="2019-03-24T06:07:45.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问求之串匹配">
 <meta name="twitter:description" content="TC第32章 字符串匹配&amp;nbsp; &amp;nbsp; &amp;nbsp; 字符串匹配问题的形式化定义：假设文本是一个长度为n的数组$T[1..n]$，而模式是一个长度为m的数组$P[1..m]$，其中$m\le{n}$，进一步假设P和T的元素都是来自一个有限字母集$\Sigma$的字符。字符数组P和T通常称为字符串。如果$0\le{s}\le{n-m}$，并且$T[s+1..s+m]=P[1..m]$，那">
@@ -377,7 +377,7 @@
 
       
         <h1 id="TC第32章-字符串匹配"><a href="#TC第32章-字符串匹配" class="headerlink" title="TC第32章 字符串匹配"></a>TC第32章 字符串匹配</h1><p>&nbsp; &nbsp; &nbsp; 字符串匹配问题的形式化定义：假设文本是一个长度为n的数组$T[1..n]$，而模式是一个长度为m的数组$P[1..m]$，其中$m\le{n}$，进一步假设P和T的元素都是来自一个有限字母集$\Sigma$的字符。字符数组P和T通常称为字符串。如果$0\le{s}\le{n-m}$，并且$T[s+1..s+m]=P[1..m]$，那么称模式P在文本T中出现，且偏移为$s$。如果P在T中以偏移$s$出现，那么称$s$是<strong>有效偏移</strong>，否则称它为<strong>无效偏移</strong>。字符串匹配问题就是找到所有的有效偏移。</p>
-<p>&nbsp; &nbsp; &nbsp; <strong>符号和术语</strong><br>&nbsp; &nbsp; &nbsp; $\Sigma^{\ast}$：所有有限长度的字符串的集合，该字符串是由字母表$\Sigma$中的字符组成。<br>&nbsp; &nbsp; &nbsp; $\varepsilon$：长度为零的空字符串，$\varepsilon\in\Sigma^<em>$。<br>&nbsp; &nbsp; &nbsp; $|x|$：字符串x的长度。<br>&nbsp; &nbsp; &nbsp; xy：两个字符串x和y的<strong>连结(concatenation)</strong>，长度为$|x|+|y|$，由x的字符后接y的字符构成。<br>&nbsp; &nbsp; &nbsp; 如果对某个字符串$y\in\Sigma^</em>$有$x=wy$，则称字符串$w$是字符串x的<strong>前缀</strong>，记作$w\sqsubset{x}$。如果$w\sqsubset{x}$，则$|w|\le|x|$。类似的，如果对某个字符串$y$有$x=yw$，则称字符串$w$是字符串x的<strong>后缀</strong>，记作$w\sqsupset{x}$。如果$w\sqsupset{x}$，则$|w|\le|x|$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>符号和术语</strong><br>&nbsp; &nbsp; &nbsp; $\Sigma^{\ast}$：所有有限长度的字符串的集合，该字符串是由字母表$\Sigma$中的字符组成。<br>&nbsp; &nbsp; &nbsp; $\varepsilon$：长度为零的空字符串，$\varepsilon\in\Sigma^{\ast}$。<br>&nbsp; &nbsp; &nbsp; $|x|$：字符串x的长度。<br>&nbsp; &nbsp; &nbsp; xy：两个字符串x和y的<strong>连结(concatenation)</strong>，长度为$|x|+|y|$，由x的字符后接y的字符构成。<br>&nbsp; &nbsp; &nbsp; 如果对某个字符串$y\in\Sigma^{\ast}$有$x=wy$，则称字符串$w$是字符串x的<strong>前缀</strong>，记作$w\sqsubset{x}$。如果$w\sqsubset{x}$，则$|w|\le|x|$。类似的，如果对某个字符串$y$有$x=yw$，则称字符串$w$是字符串x的<strong>后缀</strong>，记作$w\sqsupset{x}$。如果$w\sqsupset{x}$，则$|w|\le|x|$。</p>
 <p>&nbsp; &nbsp; <strong>引理 32.1（后缀重叠引理）</strong> 假设x，y和z是满足$x\sqsupset{z}$和$y\sqsupset{z}$的字符串。如果$|x|\le|y|$，那么$x\sqsupset{y}$；如果$|x|\ge|y|$，那么$y\sqsupset{x}$；如果$|x|=|y|$，那么$x=y$。</p>
 <p>&nbsp; &nbsp; &nbsp; 把模式$P[1..m]$的由k个字符组成的前缀$P[1..k]$记作$P_k$，把文本T中由k个字符组成的前缀记为$T_k$。采用这种记号，我们能够把字符串匹配问题表述为：找到所有偏移$s(0\le{s}\le{n-m})$，使得$P\sqsupset{T_{s+m}}$。<br>&nbsp; &nbsp; &nbsp; 在伪代码中，把比较两个等长字符串是否相等的操作当做操作原语。假设检测“$x==y$”需要时间$\Theta(t+1)$，其中t是满足$z\sqsubset{x}$和$z\sqsubset{y}$的最长字符串z的长度。</p>
 <h2 id="32-1-朴素字符串匹配算法"><a href="#32-1-朴素字符串匹配算法" class="headerlink" title="32.1 朴素字符串匹配算法"></a>32.1 朴素字符串匹配算法</h2><p>&nbsp; &nbsp; &nbsp; 朴素字符串匹配算法是通过一个循环找到所有有效偏移，该循环对$n-m+1$个可能的s值进行检测，看是否满足条件$P[1..m]=T[s+1..s+m]$。</p>
@@ -398,9 +398,9 @@
 <li>$q_0\in{Q}$是**初始状态。</li>
 <li>$A\subseteq{Q}$是一个特殊的<strong>接受状态</strong>集合。</li>
 <li>$\Sigma$是有限<strong>输入字母表</strong>。</li>
-<li>$\delta$是一个从$Q\times\Sigma$到$Q$的函数，称为M的<strong>转移函数</strong>。<br>&nbsp; &nbsp; &nbsp; 有限状态机开始于状态$q_0$，每次读入输入字符串的一个字符。如果有限自动机在状态q时读入了字符a，则它从状态q变为状态$\delta(q,a)$（进行了一次转移）。每当其当前状态q属于A时，就说自动机M<strong>接受</strong>了迄今为止所读入的字符串。内有被接受的输入称为<strong>被拒绝</strong>的输入。<br>&nbsp; &nbsp; &nbsp; 有限自动机M引入一个函数$\phi$，称为<strong>终态函数</strong>，它是从$\Sigma^*$到$Q$的函数，满足$\phi(w)$是M在扫描字符串w后终止时的状态。因此，当且仅当$\phi(w)\in{A}$时，M接受字符串w。我们可以用转移函数递归定义$\phi$:<script type="math/tex; mode=display">\phi(\varepsilon)=q_0</script><script type="math/tex; mode=display">\phi(wa)=\delta(\phi(w),a), w\in\Sigma^*,a\in\Sigma</script></li>
+<li>$\delta$是一个从$Q\times\Sigma$到$Q$的函数，称为M的<strong>转移函数</strong>。<br>&nbsp; &nbsp; &nbsp; 有限状态机开始于状态$q_0$，每次读入输入字符串的一个字符。如果有限自动机在状态q时读入了字符a，则它从状态q变为状态$\delta(q,a)$（进行了一次转移）。每当其当前状态q属于A时，就说自动机M<strong>接受</strong>了迄今为止所读入的字符串。内有被接受的输入称为<strong>被拒绝</strong>的输入。<br>&nbsp; &nbsp; &nbsp; 有限自动机M引入一个函数$\phi$，称为<strong>终态函数</strong>，它是从$\Sigma^{\ast}$到$Q$的函数，满足$\phi(w)$是M在扫描字符串w后终止时的状态。因此，当且仅当$\phi(w)\in{A}$时，M接受字符串w。我们可以用转移函数递归定义$\phi$:<script type="math/tex; mode=display">\phi(\varepsilon)=q_0</script><script type="math/tex; mode=display">\phi(wa)=\delta(\phi(w),a), w\in\Sigma^{\ast},a\in\Sigma</script></li>
 </ul>
-<h3 id="字符串匹配自动机"><a href="#字符串匹配自动机" class="headerlink" title="字符串匹配自动机"></a>字符串匹配自动机</h3><p>&nbsp; &nbsp; &nbsp; 定义一个辅助函数$\sigma$，称为对应P的<strong>后缀函数</strong>。函数$\sigma$是一个从$\Sigma^*$到$\{0,1,\cdots,m\}$上的映射，满足$\sigma(x)$是同时为x的后缀P的前缀中最长的长度：</p>
+<h3 id="字符串匹配自动机"><a href="#字符串匹配自动机" class="headerlink" title="字符串匹配自动机"></a>字符串匹配自动机</h3><p>&nbsp; &nbsp; &nbsp; 定义一个辅助函数$\sigma$，称为对应P的<strong>后缀函数</strong>。函数$\sigma$是一个从$\Sigma^{\ast}$到$\{0,1,\cdots,m\}$上的映射，满足$\sigma(x)$是同时为x的后缀P的前缀中最长的长度：</p>
 <script type="math/tex; mode=display">\sigma(x)=\max\{k:P_k\sqsupset{x}\}</script><p>&nbsp; &nbsp; &nbsp; 对于一个长度为m的模式P，$\sigma(x)=m$当且仅当$P\sqsupset{x}$。根据后缀函数的定义：如果$x\sqsupset{y}$，则$\sigma(x)\le\sigma(y)$。<br>&nbsp; &nbsp; &nbsp; 给定模式$P[1..m]$，其相应的字符串匹配自动机定义如下：</p>
 <ul>
 <li>状态集合Q为$\{0,1,\cdots,m\}$。开始状态$q_0$是0状态，并且只有状态m是唯一被接受的状态。</li>
