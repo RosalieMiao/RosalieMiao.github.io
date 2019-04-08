@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="复习," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="样卷复习法大二上期末的垂死挣扎">
-<meta name="keywords" content="复习">
+<meta name="description" content="TJ第31章笔记&amp;nbsp; &amp;nbsp; &amp;nbsp; 输入规模和算术计算的代价&amp;nbsp; &amp;nbsp; &amp;nbsp; 在本章中，“大输入”通常指包含“大整数”的输入，而不是包含“很多整数”的输入（像排序问题中的那样）。因此，我们利用输入所需的位数来度量输入的大小，而不仅仅是输入中整数的数目。给定k个整数输入$a_1,a_2,\cdots,a_k$，如果算法可以在关于$\lg{a_1}, \l">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大物复习">
-<meta property="og:url" content="http://yoursite.com/2019/01/09/大物复习/index.html">
+<meta property="og:title" content="问求之数论算法">
+<meta property="og:url" content="http://yoursite.com/2019/04/06/问求之数论算法/index.html">
 <meta property="og:site_name" content="Rosalie Miao">
-<meta property="og:description" content="样卷复习法大二上期末的垂死挣扎">
+<meta property="og:description" content="TJ第31章笔记&amp;nbsp; &amp;nbsp; &amp;nbsp; 输入规模和算术计算的代价&amp;nbsp; &amp;nbsp; &amp;nbsp; 在本章中，“大输入”通常指包含“大整数”的输入，而不是包含“很多整数”的输入（像排序问题中的那样）。因此，我们利用输入所需的位数来度量输入的大小，而不仅仅是输入中整数的数目。给定k个整数输入$a_1,a_2,\cdots,a_k$，如果算法可以在关于$\lg{a_1}, \l">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/01/09/大物复习/~/source/img/energy_levels.png">
-<meta property="og:updated_time" content="2019-01-14T10:58:40.879Z">
+<meta property="og:updated_time" content="2019-04-07T08:39:59.115Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大物复习">
-<meta name="twitter:description" content="样卷复习法大二上期末的垂死挣扎">
-<meta name="twitter:image" content="http://yoursite.com/2019/01/09/大物复习/~/source/img/energy_levels.png">
+<meta name="twitter:title" content="问求之数论算法">
+<meta name="twitter:description" content="TJ第31章笔记&amp;nbsp; &amp;nbsp; &amp;nbsp; 输入规模和算术计算的代价&amp;nbsp; &amp;nbsp; &amp;nbsp; 在本章中，“大输入”通常指包含“大整数”的输入，而不是包含“很多整数”的输入（像排序问题中的那样）。因此，我们利用输入所需的位数来度量输入的大小，而不仅仅是输入中整数的数目。给定k个整数输入$a_1,a_2,\cdots,a_k$，如果算法可以在关于$\lg{a_1}, \l">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/09/大物复习/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/06/问求之数论算法/"/>
 
 
 
 
 
-  <title>大物复习 | Rosalie Miao</title>
+  <title>问求之数论算法 | Rosalie Miao</title>
   
 
 
@@ -289,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/09/大物复习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/问求之数论算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rosalie">
@@ -306,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">大物复习</h1>
+          <h1 class="post-title" itemprop="name headline">问求之数论算法</h1>
         
 
         <div class="post-meta">
@@ -318,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-09T21:05:18+08:00">
-                2019-01-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-06T17:19:46+08:00">
+                2019-04-06
               </time>
             
 
@@ -341,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/物理/" itemprop="url" rel="index">
-                    <span itemprop="name">物理</span>
+                  <a href="/categories/问题求解/" itemprop="url" rel="index">
+                    <span itemprop="name">问题求解</span>
                   </a>
                 </span>
 
@@ -378,54 +376,33 @@
       
 
       
-        <h2 id="样卷复习法"><a href="#样卷复习法" class="headerlink" title="样卷复习法"></a>样卷复习法</h2><p>大二上期末的垂死挣扎</p>
-<a id="more"></a>
-<p><strong> 康普顿效应 </strong><br>题目：样卷Dec.24,2003 第1题</p>
-<p><em>康普顿偏移公式</em>：</p>
-<script type="math/tex; mode=display">\Delta\lambda = \lambda' - \lambda = (\frac{h}{m_0c})(1-\cos{\phi})</script><p>题目第一问要求的是波长的最大增长量，就是$\cos{\phi}$取-1即$\phi = \pi$的时候，得到$\Delta\lambda_{max} = 2(\frac{h}{m_0c}) = 2\Lambda$，其中$\Lambda$是<em>康普顿波长</em>:</p>
-<script type="math/tex; mode=display">\Lambda = \frac{h}{m_0c} = 2.436 \times 10^{-12}m</script><p>第二问是说出射光子的波长是入射光子的2倍，求入射光子的最小能量。即$\lambda’=2\lambda$，得到$\Delta\lambda=\lambda=\Lambda(1-\cos{\phi})$，光子的波长越长能量越小，当$\phi=\pi$的时候波长最长，$\lambda_{max} = 2\Lambda$，此时得到最小能量：</p>
-<script type="math/tex; mode=display">E_{min} = \frac{hc}{\lambda_{max}}=\frac{hc}{2}\frac{m_ec}{h}=\frac{m_ec^2}{2}=0.26MeV</script><p>有关公式：$\nu$是频率，$\lambda$是波长。</p>
-<script type="math/tex; mode=display">E=h\nu=\frac{hc}{\lambda}, p=\frac{E}{c}</script><p>题目：样卷January 6th，2008 第1题<br>第一问，证明康普顿偏移公式：<br>能量关系：</p>
-<script type="math/tex; mode=display">E_e^2=c^2p_e^2+m_e^2c^4, E=cp, E'=cp'</script><script type="math/tex; mode=display">(E-E'+m_ec^2)^2=E_e^2=c^2p_e^2+m_e^2c^4</script><p>期望值：</p>
-<script type="math/tex; mode=display">\langle{O}\rangle=\int\Psi^*\hat{O}\Psi{dx}</script><p><strong> 薛定谔方程 </strong><br>题目：样卷Dec.24,2003 第2题</p>
-<p><em>薛定谔方程</em>：</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial{t}}\Psi = -\frac{\hbar^2}{2m}\nabla^2\Psi + U\Psi</script><p><em>定态薛定谔方程(stationary Schrodinger equation)</em>：</p>
-<script type="math/tex; mode=display">-\frac{\hbar^2}{2m}\nabla^2\Psi(r) + U(r)\Psi(r) = E\Psi(r)</script><p>第一问题目中给了U：$U(x) = \frac{1}{2}kx^2$，且是一维情况，故而：</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial\Psi(x,t)}{\partial{t}} = (-\frac{\hbar^2}{2m}\frac{d^2}{dx^2} + \frac{1}{2}kx^2)\Psi(x, t)</script><p>定态：</p>
-<script type="math/tex; mode=display">-\frac{\hbar^2}{2m}\frac{d^2\Psi(x)}{dx^2} + \frac{1}{2}kx^2\Psi(r) = E\Psi(r)</script><p>注意：$\nabla$是梯度符号，$\nabla\phi=\frac{\partial\phi}{\partial{x}}i + \frac{\partial\phi}{\partial{y}}j + \frac{\partial\phi}{\partial{z}}k$，这里是一维情况故而只有x。</p>
-<p>第二问没太看懂，大概列一下知识点？<br>谐振子基态的能量和函数的部分结果（？）：</p>
-<script type="math/tex; mode=display">E_n=\hbar\omega_0(n+\frac{1}{2})</script><script type="math/tex; mode=display">\psi_n(x) = (\frac{\alpha}{2^nn!\sqrt{\pi}})^{\frac{1}{2}}H_n(\alpha{x})e^{-\frac{1}{2}\alpha^2x^2}</script><p>其中$\alpha=(\frac{m\omega_0}{\hbar})^{\frac{1}{2}}$，$H_n$为厄米多项式（Hermite polynomial）：</p>
-<script type="math/tex; mode=display">H_n(\zeta) = (-1)^ne^{\zeta^2}\frac{d^n}{d\zeta^n}e^{-\zeta^2}</script><p>有$H_0=1, H_1=2\zeta, H_2=4\zeta^2-2, H_3=8\zeta^3-12\zeta$.<br>这里好像是因为小于0的时候势能为无穷大，故而波动方程为0，而为了保持波动方程的连续性，0点处波动方程的值也为0，所以只能取奇数（？？？）。</p>
-<p><strong> 费米子和玻色子 </strong><br>题目：样卷Dec.24,2003 第3题</p>
-<p><em>具有半奇整数自旋的粒子是费米子，而具有整数自旋的粒子是玻色子。</em></p>
-<ul>
-<li>费米子有：电子、质子、中子、$\mu$子(muon)、中微子和夸克等等；</li>
-<li>玻色子有：光子、$\pi$介子(pion)、介子(meson)和胶子等等。</li>
-</ul>
-<p>任意数量玻色子或偶数费米子组成的复合粒子在能量比起结合能足够低时，其行为如同玻色子。奇数费米子组成的复合粒子是费米子。例如：</p>
-<ul>
-<li>玻色子：氢$^{1}H$，氘核(deuteron)，氦核，$^4He$，$^7Li$，$Na$，$^{87}Rb$原子；</li>
-<li>费米子：氘$^2H$(deuterium)，氚核(triton)，$^3He$原子。</li>
-</ul>
-<p>第一问不太懂，记得问问，好像是画能级分布图？：<br><img src="~/source/img/energy_levels.png"></p>
-<p>玻色-爱因斯坦凝聚(Bose-Einstein condensation, BEC)：粒子大量占据零动量态的现象。<br>泡利不相容原理：在费米子组成的系统中，不能有两个或两个以上的粒子处于完全相同的状态。在原子中的表现：在一个原子轨道上最多可容纳两个电子，且这两个电子的自旋方向必须相反。</p>
-<p>第二问就求能量。</p>
-<p>第三问求费米能<br>公式：</p>
-<script type="math/tex; mode=display">E_F=\frac{\hbar^2k_F^2}{2m}</script><script type="math/tex; mode=display">k_F=(3\pi^2\frac{N}{V})^{\frac{1}{3}}</script><p>阿伏伽德罗常量：$N_A=6.023\times10^{23}$</p>
-<p><strong> 放射性衰变 </strong><br>题目：样卷Dec.24,2003 第4题</p>
-<p>公式：</p>
-<script type="math/tex; mode=display">-\frac{dN}{dt}=\lambda{N}</script><p>第一问，匀加速，所以$\frac{dN}{dt}=R_p-\lambda{N}$，第二问解这个微分方程（有$N(t=0)=0$的条件）得$N=\frac{R_p}{\lambda}(1-e^{-\lambda{t}})$.<br>第三问略。</p>
-<p>题目：样卷January 6th, 2008 第4题第3小问<br>$\beta$衰变中释放的能量（$Q$值）：<br>$\beta^-:Q=(M_P-M_D)c^2$<br>$\beta^+:Q=(M_P-M_D-2m_e)c^2$<br>electron capture:$Q=(M_P-M_D)c^2$</p>
-<p>$\lambda$：衰变常量</p>
-<script type="math/tex; mode=display">\lambda=\frac{\ln{2}}{t_{\frac{1}{2}}}</script><script type="math/tex; mode=display">N=N_0e^{-\lambda{t}}</script><p><strong> 结合能 </strong><br>题目：样卷Dec.24,2003 第5题<br>题目中：$N$是指中子数，$Z$是原子序数（即质子数），$A$是质量数，所以有$N+Z=A$。<br>最稳定的表现：$\frac{\partial{E_b}}{\partial{Z}}=0$。</p>
-<p><strong> 粒子、相互作用以及守恒定律 </strong><br>题目：样卷January 6th, 2008 第5题</p>
-<p>粒子和反粒子有同样的质量、自旋、同样的寿命、等量相反的电荷和磁矩（以及其他很多量子数）</p>
-<p>强相互作用是核子之间、核子与介子之间以及其他很多粒子之间的相互作用。<br>电磁作用是带电粒子之间的相互作用，是通过交换光子实现的。<br>弱相互作用是指衰变过程。</p>
-<p>守恒定律：<br>轻子数守恒：$e,\nu_e,\mu,\nu_{\mu},\tau,\nu{\tau}$的轻子数为1，它们的反粒子的轻子数为-1.<br>重子数守恒：对核子和超子赋予重子数为1，反重子的重子数为-1.<br>同位旋及选择规则？？？：$Q=I_3+\frac{1}{2}B$<br>奇异数？？？</p>
-<p>常见粒子分类：<br>光子：$\gamma$<br>轻子：$e^-,\mu^-,\tau^-,\nu$<br>介子：$\pi^{\pm},\pi^0,K^{\pm},K^0,J/\psi$<br>核子：$p,n,\Delta^+$<br>超子：$\Lambda^0,\sum^+,\Omega^-$</p>
-<p>奇异粒子极其奇异数：<br>$K^+,K^0:1$<br>$K^-,\overline{K}^0:-1$<br>$\Lambda:-1$<br>$\sum^{\pm},\sum^0:-1$<br>$\Xi^0,\Xi^-:-2$<br>$\Omega:-3$</p>
-<p>公式：</p>
-<script type="math/tex; mode=display">S=2(Q-I_3)-B</script><p>S：奇异数；Q：电荷数；$I_3$同位旋分量。</p>
+        <h1 id="TJ第31章笔记"><a href="#TJ第31章笔记" class="headerlink" title="TJ第31章笔记"></a>TJ第31章笔记</h1><p>&nbsp; &nbsp; &nbsp; <strong>输入规模和算术计算的代价</strong><br>&nbsp; &nbsp; &nbsp; 在本章中，“大输入”通常指包含“大整数”的输入，而不是包含“很多整数”的输入（像排序问题中的那样）。因此，我们利用输入所需的<em>位数</em>来度量输入的大小，而不仅仅是输入中整数的数目。给定k个整数输入$a_1,a_2,\cdots,a_k$，如果算法可以在关于$\lg{a_1}, \lg{a_2}, \cdots, \lg_{a_k}$的多项式时间内完成，即算法在关于二进制编码后的输入长度的多项式时间内完成，则该算法称为<strong>多项式时间算法</strong>。<br>&nbsp; &nbsp; &nbsp; 用数论算法所需的<strong>位运算</strong>数目作为基准来衡量算法的时间代价。在此模型中，讲两个$\beta$位整数用常规方法相乘需要$\Theta(\beta^2)$次位运算。</p>
+<h2 id="31-1-基础数论概念"><a href="#31-1-基础数论概念" class="headerlink" title="31.1 基础数论概念"></a>31.1 基础数论概念</h2><h3 id="整除性与约数"><a href="#整除性与约数" class="headerlink" title="整除性与约数"></a>整除性与约数</h3><p>&nbsp; &nbsp; &nbsp; 符号$d\mid{a}$（读作“d整除a”）的含义是，存在某个整数k，使得$a=kd$。任何整数均可整除0.如果$a&gt;0$且$d\mid{a}$，那么$|d|\le|a|$。如果$d\mid{a}$，则称a是d的<strong>倍数</strong>。如果d不能整除a，则写作$d\nmid{a}$。<br>&nbsp; &nbsp; &nbsp; 如果$d\mid{a}$且$d\ge0$，则称d是a的<strong>约数</strong>。注意，$d\mid{a}$当且仅当$-d\mid{a}$，即a的任何约数的负数同样可以整除a。因此，不失一般性，可规定约束位非负数。非零整数a的约数应至少为1，且不会大于$|a|$。<br>&nbsp; &nbsp; &nbsp; 任何正整数a均可被<strong>平凡约数</strong>1和其自身a所整除.整数a的非平凡约数统称为a的因子。</p>
+<h3 id="素数与合数"><a href="#素数与合数" class="headerlink" title="素数与合数"></a>素数与合数</h3><p>&nbsp; &nbsp; &nbsp; 如果一个整数$a&gt;1$且只能被平凡约束1和它自身所整除，则这个数是<strong>素数</strong>。<br>&nbsp; &nbsp; &nbsp; 如果一个整数$a&gt;1$且不是素数，则称之为<strong>合数</strong>。称整数1为<strong>基本单位</strong>，并且它既不是素数也不是合数。同样，整数0和所有负整数既不是素数也不是合数。</p>
+<h3 id="除法定理、余数和等模"><a href="#除法定理、余数和等模" class="headerlink" title="除法定理、余数和等模"></a>除法定理、余数和等模</h3><p>&nbsp; &nbsp; &nbsp; <strong>定理31.1</strong>（除法定理） 对于任何整数a和任何正整数n，存在唯一整数q和r，满足$0\le{r}&lt;n$且$a=qn+r$。<br>&nbsp; &nbsp; &nbsp; 称$q=\lfloor{a/n}\rfloor$为除法的<strong>商</strong>，值$r=a\mod{n}$为除法的<strong>余数</strong>。$n\mid{a}$当且仅当$a\mod{n}=0$。<br>&nbsp; &nbsp; &nbsp; 更具整数模n的余数，我们可以讲所有整数划分成n个等价类。包含整数a的<strong>模n等价类</strong>为</p>
+<script type="math/tex; mode=display">[a]_n=\{a+kn:k\in\mathbb{Z}\}</script><h3 id="公约数与最大公约数"><a href="#公约数与最大公约数" class="headerlink" title="公约数与最大公约数"></a>公约数与最大公约数</h3><p>&nbsp; &nbsp; &nbsp; 如果d是a的约数并且d也是b的约数，则d是a与b的公约数。需要注意的是，1是任意两个整数的公约数。<br>&nbsp; &nbsp; &nbsp; 公约数的一条重要性质是：$d\mid{a}$且$d\mid{b}$蕴涵着$d\mid(a+b)$且$d\mid(a-b)$。更一般地，对任意整数x和y有$d\mid{a}$且$d\mid{b}$蕴涵着$d\mid(ax+by)$。并且，如果$a\mid{b}$，那么$|a|\le|b|$，或者$b=0$，而这说明$a\mid{b}$且$b\mid{a}$蕴涵着$a=\pm{b}$。<br>&nbsp; &nbsp; &nbsp; 两个不同时为0的整数a与b的公约数中最大的称为其<strong>最大公约数</strong>，记作$\gcd(a,b)$。<br>&nbsp; &nbsp; &nbsp; 下列性质是$\gcd$函数的基本性质：</p>
+<script type="math/tex; mode=display">\gcd(a,b)=\gcd(b,a)</script><script type="math/tex; mode=display">\gcd(a,b)=\gcd(-a,b)</script><script type="math/tex; mode=display">\gcd(a,b)=\gcd(|a|,|b|)</script><script type="math/tex; mode=display">\gcd(a,0)=|a|</script><script type="math/tex; mode=display">\gcd(a,ka)=|a|, \forall{k\in\mathbb{Z}}</script><p>&nbsp; &nbsp; &nbsp; <strong>定理31.2</strong> 如果任意整数a和b不都为0，则$\gcd(a,b)$是a与b的线性组合集$\{ax+by:x,y\in\mathbb{Z}\}$中的最小正元素。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.3</strong> 对任意整数a与b，如果$d\mid{a}$且$d\mid{b}$，则$d\mid\gcd(a,b)$。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.4</strong> 对所有整数a和b以及任意非负整数n，有$\gcd(an,bn)=n\gcd(a,b)$。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.5</strong> 对于任意正整数n、a和b，如果$n\mid{ab}$且$\gcd(a,n)=1$，则$n\mid{b}$。</p>
+<h3 id="互质数"><a href="#互质数" class="headerlink" title="互质数"></a>互质数</h3><p>&nbsp; &nbsp; &nbsp; 如果两个整数a与b只有公约数1，即$\gcd(a,b)=1$，则a与b称为<strong>互质数</strong>。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.6</strong> 对任意整数a、b和p，如果$\gcd(a,p)=1$且$\gcd(b,p)=1$，则$\gcd(ab,p)=1$。<br>&nbsp; &nbsp; &nbsp; 对于整数$n_1,n_2,\cdots,n_k$，如果对任何$i\ne{j}$都有$\gcd(n_i,n_j)=1$，则称整数$n_1,n_2,\cdots,n_k$<strong>两两互质</strong>。</p>
+<h3 id="唯一因子分解定理"><a href="#唯一因子分解定理" class="headerlink" title="唯一因子分解定理"></a>唯一因子分解定理</h3><p>&nbsp; &nbsp; &nbsp; <strong>定理31.7</strong> 对所有素数p和所有整数a，b，如果$p\mid{ab}$，则$p\mid{a}$或$p\mid{b}$（或两者都成立）。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.8</strong>（唯一因子分解定理） 合数a仅能以一种方式写成如下乘积形式：</p>
+<script type="math/tex; mode=display">a=p_1^{e_1}p_2^{e_2}\cdots{p_r^{e_r}}</script><p>其中$p_i$为素数，$p_1&lt;p_2&lt;\cdots&lt;p_r$，且$e_i$为正整数。</p>
+<h2 id="31-3-模运算"><a href="#31-3-模运算" class="headerlink" title="31.3 模运算"></a>31.3 模运算</h2><p>&nbsp; &nbsp; &nbsp; 可以把模运算非正式地与通常的整数运算一样看待，如果执行模n运算，则每个结果值x都由集合$\{0,1,\cdots,n-1\}$中的某个元素所取代，该元素在模n的意义下与x等价（即用$x\mod{n}$来取代x）。如果仅限于运用加法、减法和乘法运算，则用这样的非正式模型就足够了。下面给出更为形式化的模型。</p>
+<h3 id="有限群"><a href="#有限群" class="headerlink" title="有限群"></a>有限群</h3><p>&nbsp; &nbsp; &nbsp; <strong>群</strong>（$S,\oplus$）是一个集合S和定义在S上的二进制运算$\oplus$，该运算满足下列性质：</p>
+<ol>
+<li><strong>封闭性</strong>：对所有$a,b\in{S}$，有$a\oplus{b}\in{S}$。</li>
+<li><strong>单位元</strong>：存在一个元素$e\in{S}$，称为群的<strong>单位元</strong>，满足对所有$a\in{S},e\oplus{a}=a\oplus{e}=a$。</li>
+<li><strong>结合律</strong>：对所有$a,b,c\in{S}$，有$(a\oplus{b})\oplus{c}=a\oplus(b\oplus{c})$。</li>
+<li><strong>逆元</strong>：对每个$a\in{S}$，存在唯一的元素$b\in{S}$，称为a的<strong>逆元</strong>，满足$a\oplus{b}=b\oplus{a}=e$。<br>&nbsp; &nbsp; &nbsp; 如果群$(S,\oplus)$满足<strong>交换律</strong>，即对所有$a,b\in{S}$，有$a\oplus{b}=b\oplus{a}$，则它是一个<strong>交换群</strong>。如果群$(S,\oplus)$满足$|S|&lt;\infty$，则它是一个<strong>有限群</strong>。</li>
+</ol>
+<h3 id="由模加法与模乘法所定义的群"><a href="#由模加法与模乘法所定义的群" class="headerlink" title="由模加法与模乘法所定义的群"></a>由模加法与模乘法所定义的群</h3><p>&nbsp; &nbsp; &nbsp; <strong>定理31.12</strong> 系统$(\mathbb{Z}_n,+_n)$是一个有限交换群。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.13</strong> 系统$(\mathbb{Z}_n^{\ast},\cdot_n)$是一个有限交换群。<br>&nbsp; &nbsp; &nbsp; 一个元素a的（乘法）逆元表示为$(a^{-1}\mod{n})$。$\mathbb{Z}_n^{\ast}$中的除法由等式$a/b\equiv{ab^{-1}(\mod{n})}$定义。<br>&nbsp; &nbsp; &nbsp; $\mathbb{Z}_n^{\ast}$的规模表示为$\phi(n)$，这个函数称为<strong>欧拉phi函数</strong>，满足下式：<script type="math/tex">\phi(n)=n\prod_{p:p\quad{is}\quad{prime}\quad{and}\quad{p}\mid{n}}(1-\frac{1}{p})</script></p>
+<h3 id="子群"><a href="#子群" class="headerlink" title="子群"></a>子群</h3><p>&nbsp; &nbsp; &nbsp; 如果$(S,\oplus)$是一个群，$S’\subseteq{S}$，并且$(S’,\oplus)$也是一个群，则$(S’,\oplus)$称为$(S,\oplus)$的<strong>子群</strong>。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.14</strong>（一个有限群的非空封闭子集是一个子群）如果$(S,\oplus)$是一个有限群，$S’$是S的任意一个非空子集并满足对所有$a,b\in{S’}$，有$a\oplus{b}\in{S’}$，则$(S’,\oplus)$是$(S,\oplus)$的一个子群。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.15</strong>（拉格朗日定理） 如果$(S,\oplus)$是一个有限群，$(S’,\oplus)$是$(S,\oplus)$的一个子群，则$|S’|$是$|S|$的一个约数。<br>&nbsp; &nbsp; &nbsp; 对一个群S的子群S’，如果$S’\ne{S}$，则子群S’称为群S的<strong>真子群</strong>。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.16</strong> 如果S’是有限群S的真子群，则$|S’|\le|S|/2$。</p>
+<h3 id="由一个元素生成的子群"><a href="#由一个元素生成的子群" class="headerlink" title="由一个元素生成的子群"></a>由一个元素生成的子群</h3><p>&nbsp; &nbsp; &nbsp; <strong>由a生成的子群</strong>用$\langle{a}\rangle$或$(\langle{a}\rangle,\oplus)$来表示，其定义如下：$\langle{a}\rangle=\{a^{(k)}:k\ge1\}$。我们称a<strong>生成</strong>子群$\langle{a}\rangle$，或者a是$\langle{a}\rangle$的<strong>生成元</strong>。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.17</strong> 对任意有限群$(S,\oplus)$和任意$a\in{S}$，一个元素的阶等于它所生成子群的规模，即$ord(a)=|\langle{a}\rangle|$。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.18</strong> 序列$a^{(1)},a^{(2)},\cdots$是周期序列，其周期为$t=ord(a)$，即$a^{(i)}=a^{(j)}$当且仅当$i\equiv{j(\mod{t})}$。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.19</strong> 如果$(S,\oplus)$是具有单位元e的有限群，则对所有$a\in{S},a^{|S|}=e$。</p>
+<h2 id="31-4-求解模线性方程"><a href="#31-4-求解模线性方程" class="headerlink" title="31.4 求解模线性方程"></a>31.4 求解模线性方程</h2><p>&nbsp; &nbsp; &nbsp; 现在来考虑求解下列方程的问题：$ax\equiv{b(\mod{n})}$，其中$a&gt;0,n&gt;0$。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.20</strong> 对任意正整数a和n，如果$d=\gcd(a,n)$，则在$\mathbb{Z}_n$中，$\langle{a}\rangle=\langle{b}\rangle=\{0,d,2d,\cdots,((n/d)-1)d\}$。因此$|\langle{a}\rangle|=n/d$。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.21</strong> 当且仅当$d\mid{b}$时，方程$ax\equiv{b(\mod{n})}$对于未知量x有解，这里$d=\gcd(a,n)$。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.22</strong> 方程$ax\equiv{b(\mod{n})}$要么对模n有d个不同的解，要么无解，这里$d=\gcd(a,n)$。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.23</strong> 令$d=\gcd(a,n)$，假设对某些整数x’和y’，有$d=ax’+ny’$（例如EXTENDED-EUCLID所计算出的结果）。如果$d\mid{b}$，则方程$ax\equiv{b(\mod{n})}$有一个解的值为$x_0$，这里$x_0=x’(b/d)\mod{n}$。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.24</strong> 假设方程$ax\equiv{b(\mod{n})}$有解，（即$d\mid{b}$，这里$d=\gcd(a,n)$），且$x_0$是该方程的任意一个解。因此，该方程对模n恰有d个不同的解，分别为$x_i=x_0+i(n/d)$，这里$i=0,1,\cdots,d-1$。<br>&nbsp; &nbsp; &nbsp; 仙子啊已经为求解方程$ax\equiv{b(\mod{n})}$完成了数学上的必要准备，下列算法可输出该方程的所有解。输入a和n为任意正整数，b为任意整数。<br>MODULAR-LINEAR-EQUATION-SOLVER(a,b,n)<br>1&nbsp; (d,x’,y’)=EXTENDED-EUCLID(a,n)<br>2&nbsp; <strong>if</strong> $d\mid{b}$<br>3&nbsp; &nbsp; &nbsp; &nbsp; $x_0=x’(b/d)\mod{n}$<br>4&nbsp; &nbsp; &nbsp; &nbsp; <strong>for</strong> i=0 <strong>to</strong> d-1<br>5&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print$(x_0+i(n/d))\mod{n}$<br>6&nbsp; <strong>else</strong> print “no solutions”</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>推论31.25</strong> 对任意$n&gt;q$，如果$\gcd(a,n)=1$，则方程$ax\equiv{b}(\mod{n})$对模n有唯一解。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.26</strong> 对任意$n&gt;1$，如果$\gcd(a,n)=1$，那么方程$ax\equiv1(\mod{n})$对模n有唯一解；否则方程无解。</p>
+<h2 id="31-5-中国余数定理"><a href="#31-5-中国余数定理" class="headerlink" title="31.5 中国余数定理"></a>31.5 中国余数定理</h2><p>&nbsp; &nbsp; &nbsp; <strong>定理31.27</strong>（中国余数定理） 令$n=n_1n_2\cdots{n_k}$，其中因子$n_i$两两互质。考虑以下对应关系：$a\leftrightarrow(a_1,a_2,\cdots,a_k)$，这里$a\in\mathbb{Z}_n$，$a_i\in\mathbb{Z}_{n_i}$，而且对$i=1,2,\cdots,k$，$a_i=a\mod{n_i}$。因此，上述关系是一个而在$\mathbb{Z}_n$与笛卡儿积$\mathbb{Z}_{n_1}\times\mathbb{Z}_{n_2}\times\cdots\times\mathbb{Z}_{n_k}$之间的一一对应（双射）。通过在合适的系统中对每个坐标位置独立地执行操作，对$\mathbb{Z}_n$中元素所执行的运算可以等价地作用于对应的k元组。也就是说，如果$a\leftrightarrow(a_1,a_2,\cdots,a_k),b\leftrightarrow(b_1,b_2\cdots,b_k)$，那么</p>
+<script type="math/tex; mode=display">(a+b)\mod{n}\leftrightarrow((a_1+b_1)\mod{n_1},\cdots,(a_k+b_k)\mod{n_k})</script><script type="math/tex; mode=display">(a-b)\mod{n}\leftrightarrow((a_1-b_1)\mod{n_1},\cdots,(a_k-b_k)\mod{n_k})</script><script type="math/tex; mode=display">(ab)\mod{n}\leftrightarrow(a_1b_1\mod{n_1},\cdots,a_kb_k\mod{n_k})</script><p>&nbsp; &nbsp; &nbsp; <strong>推论31.28</strong> 如果$n_1,n_2,\cdots,n_k$两两互质，且$n=n_1n_2\cdots{n_k}$，则对任意整数$a_1,a_2,\cdots,a_k$，关于未知量x的联立方程组$x\equiv{a_i(\mod{n_i})},i=1,2,\cdots,k$对模n有唯一解。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.29</strong> 如果$n_1,n_2,\cdots,n_k$两两互质，且$n=n_1n_2\cdots{n_k}$，则对所有整数x和a，$x\equiv{a(\mod{n_i})}$（其中$i=1,2,\cdots,k$）当且仅当$x\equiv{a(\mod{n})}$。</p>
+<h2 id="31-6-元素的幂"><a href="#31-6-元素的幂" class="headerlink" title="31.6 元素的幂"></a>31.6 元素的幂</h2><p>&nbsp; &nbsp; &nbsp; <strong>定理31.30</strong>（欧拉定理） 对于任意整数$n&gt;1$，$a^{\phi(n)}=1(\mod{n})$对所有$a\in\mathbb{Z}_n^{\ast}$都成立。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.31</strong>（费马定理） 如果$p$是素数，则$a^{p-1}=1(\mod{n})$对所有$a\in\mathbb{Z}_n^{\ast}$都成立。<br>&nbsp; &nbsp; &nbsp; 如果$ord_n(g)=|\mathbb{Z}_n^{\ast}|$，则对模n，$\mathbb{Z}_n^{\ast}$中的每个元素都是g的一个幂，且g是$\mathbb{Z}_n^{\ast}$的一个<strong>原根</strong>或<strong>生成元</strong>。如果$\mathbb{Z}_n^{\ast}$包含一个原根，就称群$\mathbb{Z}_n^{\ast}$是<strong>循环的</strong>。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.32</strong> 对所有的素数$p&gt;2$和所有正整数e，使得$\mathbb{Z}_n^{\ast}$是循环群的$n&gt;1$的值为$2,4,p^e,2p^e$。<br>&nbsp; &nbsp; &nbsp; 如果g是$\mathbb{Z}_n^{\ast}$的一个原根且a是$\mathbb{Z}_n^{\ast}$中的任意元素，则存在一个z，使得$g^z=a(\mod{n})$。这个z称为对模n到基g上的a的一个<strong>离散对数</strong>或<strong>指数</strong>，将这个值表示为$ind_{n,g}(a)$。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.33</strong>（离散对数定理） 如果g是$\mathbb{Z}_n^{\ast}$的一个原根，则当且仅当等式$x\equiv{y(\mod\phi(n))}$成立时，有等式$g^x\equiv{g^y}(\mod{n})$成立。<br>&nbsp; &nbsp; &nbsp; <strong>定理31.34</strong> 如果p是一个奇素数且$e\ge1$，则方程$x^2\equiv1(\mod{p^e})$仅有两个解，即$x=1$和$x=-1$。<br>&nbsp; &nbsp; &nbsp; 如果一个数x满足方程$x^2\equiv1(\mod{n})$，但x不等于以n为模的1的两个“平凡”平方根：1或-1，则x是一个<strong>以n为模的1的非平凡平方根</strong>。<br>&nbsp; &nbsp; &nbsp; <strong>推论31.35</strong> 如果对模n存在1的非平凡平方根，则n是合数。</p>
+<h3 id="用反复平方法求数的幂"><a href="#用反复平方法求数的幂" class="headerlink" title="用反复平方法求数的幂"></a>用反复平方法求数的幂</h3><p>&nbsp; &nbsp; &nbsp; 数论计算中经常出现一种运算，就是求一个数的幂对另一个数的模运算，也称为<strong>模取幂</strong>。更明确地说，希望有一种高效的方法来计算$a^b\mod{n}$的值，其中a，b为非负整数，n是一个正整数。采用b的二进制表示，<strong>反复平方法</strong>可以高效地解决这个问题。<br>&nbsp; &nbsp; &nbsp; 设$\langle{b_k,b_{k-1},\cdots,b_1,b_0}\rangle$是b的二进制表示（即二进制表示有k+1位场，$b_k$位最高有效位，$b_0$为最低有效位。<br>MODULAR-EXPONENTIATION(a,b,n)<br>1&nbsp; c = 0<br>2&nbsp; d = 1<br>3&nbsp; let $\langle{b_k,b_{k-1},\cdots,b_1,b_0}\rangle$ be the binary representation of b<br>4&nbsp; <strong>for</strong> i=k <strong>downto</strong> 0<br>5&nbsp; &nbsp; &nbsp; &nbsp; c = 2c<br>6&nbsp; &nbsp; &nbsp; &nbsp; $d = (d\cdot{d})\mod{n}$<br>7&nbsp; &nbsp; &nbsp; &nbsp; <strong>if</strong> $b_i==1$<br>8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c = c + 1<br>9&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $d = (d\cdot a)\mod{n}$<br>10&nbsp; <strong>return</strong> d</p>
+<p>&nbsp; &nbsp; &nbsp; 如果输入a,b与n都是$\beta$位的数，则需要的算术运算的总次数是$O(\beta)$，并且需要的位操作的总次数是$O(\beta^3)$。</p>
 
       
     </div>
@@ -443,7 +420,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/复习/" rel="tag"># 复习</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -456,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/16/线性代数期中复习/" rel="next" title="线性代数期中复习">
-                <i class="fa fa-chevron-left"></i> 线性代数期中复习
+              <a href="/2019/03/31/问求之数论基础/" rel="next" title="问求之数论基础">
+                <i class="fa fa-chevron-left"></i> 问求之数论基础
               </a>
             
           </div>
@@ -466,8 +443,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/14/19hk散记/" rel="prev" title="19hk散记">
-                19hk散记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/08/字符串匹配/" rel="prev" title="字符串匹配">
+                字符串匹配 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -604,7 +581,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#样卷复习法"><span class="nav-number">1.</span> <span class="nav-text">样卷复习法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第31章笔记"><span class="nav-number">1.</span> <span class="nav-text">TJ第31章笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#31-1-基础数论概念"><span class="nav-number">1.1.</span> <span class="nav-text">31.1 基础数论概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整除性与约数"><span class="nav-number">1.1.1.</span> <span class="nav-text">整除性与约数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#素数与合数"><span class="nav-number">1.1.2.</span> <span class="nav-text">素数与合数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#除法定理、余数和等模"><span class="nav-number">1.1.3.</span> <span class="nav-text">除法定理、余数和等模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公约数与最大公约数"><span class="nav-number">1.1.4.</span> <span class="nav-text">公约数与最大公约数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互质数"><span class="nav-number">1.1.5.</span> <span class="nav-text">互质数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯一因子分解定理"><span class="nav-number">1.1.6.</span> <span class="nav-text">唯一因子分解定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-3-模运算"><span class="nav-number">1.2.</span> <span class="nav-text">31.3 模运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有限群"><span class="nav-number">1.2.1.</span> <span class="nav-text">有限群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由模加法与模乘法所定义的群"><span class="nav-number">1.2.2.</span> <span class="nav-text">由模加法与模乘法所定义的群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子群"><span class="nav-number">1.2.3.</span> <span class="nav-text">子群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由一个元素生成的子群"><span class="nav-number">1.2.4.</span> <span class="nav-text">由一个元素生成的子群</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-4-求解模线性方程"><span class="nav-number">1.3.</span> <span class="nav-text">31.4 求解模线性方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-5-中国余数定理"><span class="nav-number">1.4.</span> <span class="nav-text">31.5 中国余数定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-6-元素的幂"><span class="nav-number">1.5.</span> <span class="nav-text">31.6 元素的幂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用反复平方法求数的幂"><span class="nav-number">1.5.1.</span> <span class="nav-text">用反复平方法求数的幂</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
