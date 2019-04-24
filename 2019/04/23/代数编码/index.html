@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TJ第5章 置换群(Permutation Groups)&amp;nbsp; &amp;nbsp; &amp;nbsp; 集合$S=\{A,B,C\}$的一个置换(permutation)是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。 5.1 定义以及记号&amp;nbsp; &amp;nbsp; 定理5.1 n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元">
+<meta name="description" content="TJ 第8章 代数编码（Algebraic Coding Theory）8.1 检错和纠错编码&amp;nbsp; &amp;nbsp; &amp;nbsp; 一个简单的传输系统模型：m-digit message $\to$ Encoder $\to$ n-digit code word $\to$ Transmitter $\to$ Noise $\to$ Receiver $\to$ n-digit receive">
 <meta name="keywords" content="理论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="问求之置换群与拉格朗日定理">
-<meta property="og:url" content="http://yoursite.com/2019/03/09/问求之置换群与拉格朗日定理/index.html">
+<meta property="og:title" content="代数编码">
+<meta property="og:url" content="http://yoursite.com/2019/04/23/代数编码/index.html">
 <meta property="og:site_name" content="Rosalie Miao">
-<meta property="og:description" content="TJ第5章 置换群(Permutation Groups)&amp;nbsp; &amp;nbsp; &amp;nbsp; 集合$S=\{A,B,C\}$的一个置换(permutation)是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。 5.1 定义以及记号&amp;nbsp; &amp;nbsp; 定理5.1 n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元">
+<meta property="og:description" content="TJ 第8章 代数编码（Algebraic Coding Theory）8.1 检错和纠错编码&amp;nbsp; &amp;nbsp; &amp;nbsp; 一个简单的传输系统模型：m-digit message $\to$ Encoder $\to$ n-digit code word $\to$ Transmitter $\to$ Noise $\to$ Receiver $\to$ n-digit receive">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-18T09:32:37.400Z">
+<meta property="og:updated_time" content="2019-04-23T14:33:43.446Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="问求之置换群与拉格朗日定理">
-<meta name="twitter:description" content="TJ第5章 置换群(Permutation Groups)&amp;nbsp; &amp;nbsp; &amp;nbsp; 集合$S=\{A,B,C\}$的一个置换(permutation)是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。 5.1 定义以及记号&amp;nbsp; &amp;nbsp; 定理5.1 n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元">
+<meta name="twitter:title" content="代数编码">
+<meta name="twitter:description" content="TJ 第8章 代数编码（Algebraic Coding Theory）8.1 检错和纠错编码&amp;nbsp; &amp;nbsp; &amp;nbsp; 一个简单的传输系统模型：m-digit message $\to$ Encoder $\to$ n-digit code word $\to$ Transmitter $\to$ Noise $\to$ Receiver $\to$ n-digit receive">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/09/问求之置换群与拉格朗日定理/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/23/代数编码/"/>
 
 
 
 
 
-  <title>问求之置换群与拉格朗日定理 | Rosalie Miao</title>
+  <title>代数编码 | Rosalie Miao</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/问求之置换群与拉格朗日定理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/23/代数编码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rosalie">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">问求之置换群与拉格朗日定理</h1>
+          <h1 class="post-title" itemprop="name headline">代数编码</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T14:06:09+08:00">
-                2019-03-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-23T14:35:23+08:00">
+                2019-04-23
               </time>
             
 
@@ -376,62 +376,27 @@
       
 
       
-        <h1 id="TJ第5章-置换群-Permutation-Groups"><a href="#TJ第5章-置换群-Permutation-Groups" class="headerlink" title="TJ第5章 置换群(Permutation Groups)"></a>TJ第5章 置换群(Permutation Groups)</h1><p>&nbsp; &nbsp; &nbsp; 集合$S=\{A,B,C\}$的一个<strong>置换(permutation)</strong>是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。</p>
-<h2 id="5-1-定义以及记号"><a href="#5-1-定义以及记号" class="headerlink" title="5.1 定义以及记号"></a>5.1 定义以及记号</h2><p>&nbsp; &nbsp; <strong>定理5.1</strong> n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元素的，二元操作为置换的复合的群。</p>
-<p>&nbsp; &nbsp; &nbsp; $S_n$的子群称为<strong>置换群(permutation group)</strong>。</p>
-<p>&nbsp; &nbsp; &nbsp; 按照惯例，置换的复合计算从右向左，即计算$\sigma\tau$时，先计算$\tau$再计算$\sigma$，$\sigma\tau(x)=\sigma(\tau(x))$。</p>
-<p>&nbsp; &nbsp; &nbsp; 置换的复合不一定有交换律。</p>
-<h3 id="循环记号"><a href="#循环记号" class="headerlink" title="循环记号"></a>循环记号</h3><p>&nbsp; &nbsp; &nbsp; 对于一个置换$\sigma\in{S_X}$，如果存在$a_1,a_2,\cdots,a_k\in{X}$满足：</p>
-<script type="math/tex; mode=display">\sigma(a_1)=a_2</script><script type="math/tex; mode=display">\sigma(a_2)=a_3</script><script type="math/tex; mode=display">\vdots</script><script type="math/tex; mode=display">\sigma(a_k)=a_1</script><p>并且对于所有其他的元素$x\in{X}$，有$\sigma(x)=x$，那么称这个置换是一个长度为k的循环。我们用$(a_1,a_2,\cdots,a_k)$来表示循环$\sigma$。Cycles are building blocks of all permutations.（这句话不知道啥意思。）</p>
-<p>&nbsp; &nbsp; &nbsp; 对于$S_X$中的两个置换$\sigma=(a_1,a_2,\cdots,a_k)$和$\tau=(b_1,b_2,\cdots,b_t)$，如果对于所有的i和j，有$a_i\neq{b_j}$，则称这两个置换是<strong>不相交的(disjoint)</strong>。</p>
-<p>&nbsp; &nbsp; <strong>命题 5.8</strong> 如果$\sigma$和$\tau$是$S_X$种的两个不相交的循环，那么有$\sigma\tau=\tau\sigma$。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.9</strong> 任何一个$S_X$种的置换都可以被写成是不相交循环的乘积(product)。</p>
-<h3 id="换位-Transposition"><a href="#换位-Transposition" class="headerlink" title="换位(Transposition)"></a>换位(Transposition)</h3><p>&nbsp; &nbsp; &nbsp; 长度为2的循环被称作是<strong>换位(transpositions)</strong>。</p>
-<p>&nbsp; &nbsp; <strong>命题 5.12</strong> 所有包含至少两个元素的有限集合的置换都可以被写成是换位的乘积。</p>
-<p>&nbsp; &nbsp; <strong>推论 5.14</strong> 如果一个标准型被写成是r个换位的乘积，即$id=\tau_1\tau_2\cdots\tau_r$，那么r是一个偶数。</p>
-<p>&nbsp; &nbsp; &nbsp; 即标准型可以由本身经过偶数次换位得到（包括0次，即不作换位）。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.15</strong> 如果一个置换$\tau$可以被表示为偶数个换位的乘积，那么所有其他的等于$\tau$的换位的乘积都包含偶数个换位。类似的，如果一个置换$\tau$可以被表示为奇数个换位的乘积，那么所有其他的等于$\tau$的换位的乘积都包含奇数个换位。</p>
-<p>&nbsp; &nbsp; &nbsp; 在定理5.15中，如果一个置换可以被表示为偶数个换位的乘积，那么我们定义这个置换为偶的；如果一个置换可以被表示为及数个换位的乘积，我们定义这个置换为奇的。</p>
-<h3 id="The-Alternating-groups（交错群）"><a href="#The-Alternating-groups（交错群）" class="headerlink" title="The Alternating groups（交错群）"></a>The Alternating groups（交错群）</h3><p>&nbsp; &nbsp; &nbsp; $S_n$的最重要的一个子群之一是所有偶置换的集合$A_n$。群$A_n$被称为是<strong>n个字母上的交错群(the alternating group on n letters)</strong>。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.16</strong> 集合$A_n$是$S_n$的子群。</p>
-<p>&nbsp; &nbsp; <strong>命题 5.17</strong> $S_n(n\ge2)$中偶置换的个数等于奇置换的个数。所以，$A_n$的阶数为$\frac{n!}{2}$。</p>
-<h2 id="5-2-Dihedral-Groups（二平面群）"><a href="#5-2-Dihedral-Groups（二平面群）" class="headerlink" title="5.2 Dihedral Groups（二平面群）"></a>5.2 Dihedral Groups（二平面群）</h2><p>&nbsp; &nbsp; &nbsp; 我们定义正n边形(regular n-gon)的刚性运动(rigid motion)上的群为<strong>n阶平面群(nth dihedral group)</strong>，记作$D_n$</p>
-<p>&nbsp; &nbsp; <strong>定理 5.20</strong> 平面群$D_n$是$S_n$的2n阶子群。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.23</strong> $D_n(n\ge3)$由两个元素r和s的所有积组成。这两个元素满足如下关系：</p>
-<script type="math/tex; mode=display">r^n=1</script><script type="math/tex; mode=display">s^2=1</script><script type="math/tex; mode=display">srs=r^{-1}</script><p>&nbsp; &nbsp; &nbsp; 这里的r是指顺时针旋转$\frac{360}{n}$度，s是指翻折。</p>
-<h3 id="The-Motion-Group-of-a-Cube"><a href="#The-Motion-Group-of-a-Cube" class="headerlink" title="The Motion Group of a Cube"></a>The Motion Group of a Cube</h3><p><del>完全不知道中文应该是啥</del></p>
-<p>&nbsp; &nbsp; <strong>命题 5.27</strong> The group of rigid motions of a cube contains 24 elements.</p>
-<p>&nbsp; &nbsp; <strong>定理 5.28</strong> The group of rigid motions of a cube is $S_4$.</p>
-<h1 id="TJ第6章-陪集-Cosets-和拉格朗日定理"><a href="#TJ第6章-陪集-Cosets-和拉格朗日定理" class="headerlink" title="TJ第6章 陪集(Cosets)和拉格朗日定理"></a>TJ第6章 陪集(Cosets)和拉格朗日定理</h1><p>&nbsp; &nbsp; &nbsp; 陪集的概念是理解拉格朗日定理的核心。</p>
-<h2 id="6-1-陪集-Cosets"><a href="#6-1-陪集-Cosets" class="headerlink" title="6.1 陪集(Cosets)"></a>6.1 陪集(Cosets)</h2><p>&nbsp; &nbsp; &nbsp; G是一个群，H是G的子群。则以$g,g\in{G}$为代表的H的左陪集定义为集合：</p>
-<script type="math/tex; mode=display">gH=\{gh:h\in{H}\}</script><p>右陪集定义为集合：</p>
-<script type="math/tex; mode=display">Hg=\{hg:h\in{H}\}</script><p>&nbsp; &nbsp; &nbsp; 在有交换律的群中，左陪集和右陪集总是相等的。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.3</strong> G是一个群，H是G的子群。假设$g_1,g_2\in{G}$。以下等式等价：</p>
+        <h1 id="TJ-第8章-代数编码（Algebraic-Coding-Theory）"><a href="#TJ-第8章-代数编码（Algebraic-Coding-Theory）" class="headerlink" title="TJ 第8章 代数编码（Algebraic Coding Theory）"></a>TJ 第8章 代数编码（Algebraic Coding Theory）</h1><h2 id="8-1-检错和纠错编码"><a href="#8-1-检错和纠错编码" class="headerlink" title="8.1 检错和纠错编码"></a>8.1 检错和纠错编码</h2><p>&nbsp; &nbsp; &nbsp; 一个简单的传输系统模型：<br>m-digit message $\to$ <strong>Encoder</strong> $\to$ n-digit code word $\to$ <strong>Transmitter</strong> $\to$ Noise $\to$ <strong>Receiver</strong> $\to$ n-digit received word $\to$ <strong>Decoder</strong> $\to$ m-digit received message or error<br>&nbsp; &nbsp; &nbsp; 当在传输过程中有一个或很多位被改变了，那么称一个<strong>错误</strong>出现了。一个<strong>译码方案</strong>是指一个方法要么将收到的n元组转变位一个有意义的消息，要么给出一个对应n元组的错误信息。<br>&nbsp; &nbsp; &nbsp; 我们的目标是尽可能便宜且快速的传输没有错误的消息。</p>
+<h3 id="奇偶校验"><a href="#奇偶校验" class="headerlink" title="奇偶校验"></a>奇偶校验</h3><p>&nbsp; &nbsp; &nbsp; <strong>校验位</strong>：偶校验中，校验位保证所有位中1的个数为偶数。<br>&nbsp; &nbsp; &nbsp; 奇偶校验法有两个缺陷：一是多位错误无法检测，二是无法改正错误。</p>
+<h3 id="Maximun-Likelihood-Decoding"><a href="#Maximun-Likelihood-Decoding" class="headerlink" title="Maximun-Likelihood Decoding"></a>Maximun-Likelihood Decoding</h3><p>&nbsp; &nbsp; &nbsp; <strong>定理8.7</strong> 如果一个二进制n元组$(x_1,\cdots,x_n)$通过一个二进制对称通道被传输，其中每一个坐标的传输不出现错误的概率为p，则正好有k个坐标出现错误的概率是<script type="math/tex">(_k^n)q^kp^{n-k}</script></p>
+<h3 id="划区编码？（Block-Codes）"><a href="#划区编码？（Block-Codes）" class="headerlink" title="划区编码？（Block Codes）"></a>划区编码？（Block Codes）</h3><p>&nbsp; &nbsp; &nbsp; 一个编码是一个$(n,m)$-块编码，如果信息可以被划分成$m$二进制位的小块，被一个小块可以被编码称n个二进制位。更进一步的，一个$(n,m)$-块编码由一个编码函数<script type="math/tex">E:\mathbb{Z}_2^m\to\mathbb{Z}_2^n</script>和一个解码函数<script type="math/tex">D:\mathbb{Z}_2^n\to\mathbb{Z}_2^m</script>组成。<br>&nbsp; &nbsp; &nbsp; 一个<strong>码字</strong>是指任意一个$E$的值域中的元素。我们也要求$E$是单射的，$D$是满射的。<br>&nbsp; &nbsp; &nbsp; 令$x=(x_1,\cdots,x_n)$，$y=(y_1,\cdots,y_n)$是二进制n元组。则x和y的<strong>汉明距离</strong>或<strong>距离</strong>，$d(x,y)$，是指x和y不同的位的个数。两个码字之间的距离是传输过程中需要把一个码字转换成另一个码字的最少出现的错误次数。一个编码的<strong>最小距离</strong>，$d_{min}$，是对于所有不同的码字$x,y$，最短的距离$d(x,y)$。码字x的<strong>权重</strong>，$w(x)$，是指x中1的个数。$w(x)=d(x,0)$。<br>&nbsp; &nbsp; &nbsp; <strong>命题8.11</strong> 令$x,y,z$是二进制n元组，则</p>
 <ol>
-<li>$g_1H=g_2H$</li>
-<li>$Hg_1^{-1}=Hg_2^{-1}$</li>
-<li>$g_1H\subseteq{g_2H}$</li>
-<li>$g_2\in{g_1H}$</li>
-<li>$g_1^{-1}g_2\in{H}$</li>
+<li>$w(x)=d(x,0)$</li>
+<li>$d(x,y)\ge0$</li>
+<li>$d(x,y)=0$当且仅当$x=y$</li>
+<li>$d(x,y)=d(y,x)$</li>
+<li>$d(x,y)\le{d(x,z)+d(z,y)}$</li>
 </ol>
-<p>&nbsp; &nbsp; <strong>定理 6.4</strong> 如果H是群G的子群，那么H在G中的左陪集划分G。也就是说，G等于H在G中的左陪集的不相交交集。</p>
-<p>&nbsp; &nbsp; &nbsp; H的右陪集也划分G。</p>
-<p>&nbsp; &nbsp; &nbsp; H是G的子群，那么定义H的<strong>索引(index)</strong>为H在G中的左陪集的个数。记为[G:H].</p>
-<p>&nbsp; &nbsp; <strong>定理 6.8</strong> H是群G的子群。H在G中左陪集的个数等于H在G中右陪集的个数。</p>
-<h2 id="6-2-拉格朗日定理"><a href="#6-2-拉格朗日定理" class="headerlink" title="6.2 拉格朗日定理"></a>6.2 拉格朗日定理</h2><p>&nbsp; &nbsp; <strong>命题 6.9</strong> H是G的子群，$g\in{G}$。定义映射$\phi:H\to{gH}$为$\phi(h)=gh$，那么映射$\phi$是一个双射。因此，H中元素的个数和gH中元素的个数相等。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.10(Lagrange)</strong> 如果G是一个有限群，H是G的子群。那么$|H|/|G|=[G:H]$，[G:H]是H在G中左陪集的个数。特别的，H中元素的个数整除G中元素的个数。</p>
-<p>&nbsp; &nbsp; &nbsp; 整除是因为H的陪集划分G。</p>
-<p>&nbsp; &nbsp; <strong>推论 6.11</strong> 假设G是有限群并且$g\in{G}$，那么g的阶数一定整除G中元素的个数。</p>
-<p>&nbsp; &nbsp; <strong>推论 6.12</strong> 如果$|G|=p$并且p是一个素数，那么G是循环的并且任何$g\in{G},g\neq{e}$是G的生成器。</p>
-<p>&nbsp; &nbsp; <strong>推论 6.13</strong> 如果H和K都是有限群G的子群，且有$G\supset{H}\supset{K}$。那么：</p>
-<script type="math/tex; mode=display">[G:K]=[G:H][H:K]</script><p>&nbsp; &nbsp; &nbsp; <em>拉格朗日定理的逆命题是错的</em></p>
-<p>&nbsp; &nbsp; <strong>命题 6.15</strong> 群$A_4$没有6阶子群。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.16</strong> $S_n$中的两个循环$\tau$和$\mu$有相同的长度当且仅当存在一个$\sigma\in{S_n}$使得$\mu=\sigma\tau\sigma^{-1}$。</p>
-<h2 id="6-3-费马定理和欧拉定理"><a href="#6-3-费马定理和欧拉定理" class="headerlink" title="6.3 费马定理和欧拉定理"></a>6.3 费马定理和欧拉定理</h2><p>&nbsp; &nbsp; &nbsp; <strong>欧拉$\phi$函数(Euler $\phi$-function)</strong> 是映射$\phi:H\to{H}$，定义为当$n=1$时$\phi(n)=1$，当$n&gt;1$时，$\phi(n)$是如下定义的正整数m的个数：$1\le{m}&lt;{n}$并且$\gcd(m,n) = 1$。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.17</strong> $U(n)$为$\mathbb{Z}_n$中的单位元素群，那么$|U(n)|=\phi(n)$。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.18(Euler’s Theorem)</strong> 整数a和n满足$n&gt;0$并且$\gcd(a,n)=1$，那么$a^{\phi(n)}\equiv1(\mod{n})$。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.19(Fermat’s Little Theorem)</strong> p是一个素数，假设$p\nmid{a}$（p不整除a），那么：</p>
-<script type="math/tex; mode=display">a^{p-1}\equiv1(\mod{p})</script><p>更进一步的，对于任何整数b，有$b^p\equiv{b}(\mod{p})$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定理8.13</strong> 令$C$是一个最小距离$d_{min}=2n+1$的编码，那么$C$可以纠正任何小于等于n位的错，$C$可以检查任何小于等于2n位的错。</p>
+<h2 id="8-2-线性编码？（Linear-Codes）"><a href="#8-2-线性编码？（Linear-Codes）" class="headerlink" title="8.2 线性编码？（Linear Codes）"></a>8.2 线性编码？（Linear Codes）</h2><p>&nbsp; &nbsp; &nbsp; 一个<strong>群编码</strong>（group code)是指一个是$\mathbb{Z}_2^n$子群的编码。<br>&nbsp; &nbsp; &nbsp; 我们只需要证实一件事以检验一个编码是不是群编码。如果我们将群编码中的任意两个元素相加，所得到的结果一定也是这个编码中的一个n元组。<br>&nbsp; &nbsp; &nbsp; <strong>引理8.17</strong> 令$x,y$是二进制n元组，那么$w(x+y)=d(x,y)$<br>&nbsp; &nbsp; &nbsp; <strong>定理8.18</strong> 令$d_{min}$是群编码$C$的最小距离，那么$d_{min}$是所有$C$中非0元素的最小权重。即：<script type="math/tex">d_{min}=min\{w(x):x\ne0\}</script><br>&nbsp; &nbsp; &nbsp; 定义2个二进制n元组的<strong>内积</strong>(inner product)为：<script type="math/tex">x\cdot{y}=x_1y_1+\cdots+x_ny_n</script><br>&nbsp; &nbsp; &nbsp; 令$\mathbb{M}_{m\times{n}}(\mathbb{Z}_2)$代表元素为$\mathbb{Z}_2$中所有$m\times{n}$矩阵的集合。定义一个矩阵$H\in\mathbb{M}_{m\times{n}}(\mathbb{Z}_2)$的<strong>零空间</strong>(null space)为元素为所有满足$Hx=0$的n元组x的集合。记作$Null(H)$。<br>&nbsp; &nbsp; &nbsp; <strong>定理8.21</strong> 如果$H\in\mathbb{M}_{m\times{n}}(\mathbb{Z}_2)$，那么$H$的零空间是一个群编码。</p>
+<h2 id="8-3-监督矩阵和生成矩阵（Parity-Check-and-Generator-Matrices）"><a href="#8-3-监督矩阵和生成矩阵（Parity-Check-and-Generator-Matrices）" class="headerlink" title="8.3 监督矩阵和生成矩阵（Parity-Check and Generator Matrices）"></a>8.3 监督矩阵和生成矩阵（Parity-Check and Generator Matrices）</h2><p>&nbsp; &nbsp; &nbsp; 假设$H$是一个$m\times{n}$的矩阵且$n&gt;m$，如果矩阵的后m列构成$m\times{m}$的单位矩阵$I_m$，那么这个矩阵就是一个规范监督矩阵。$H=(A|I_m)$，每一个规范监督矩阵都有一个对应的标准生成矩阵$G=(\frac{I_{n-m}}{A})$。我们的目标是展示$x$满足$Gx=y$当且仅当$Hy=0$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定理8.25</strong> 如果$H\in\mathbb{M}_{m\times{n}}(\mathbb{Z}_2)$是一个监督矩阵，那么$Null(H)$由所有的满足以下条件的$x\in\mathbb{Z}_2$组成，x的前$n-m$位任意代数最后m位由$Hx=0$决定。最后m位中的每一位都是一个偶校验位，服务于前面$n-m$位中的一些位。因此，$H$决定了一个$(n,n-m)$-块编码。<br>&nbsp; &nbsp; &nbsp; 以上定理中，x的前$n-m$位称作<strong>信息位</strong>(information bits)，x的后m位称作<strong>校验位</strong>(check bits)。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定理8.26</strong> 假设$G$是一个$n\times{k}$的标准生成矩阵，那么$C=\{y:Gx=y$ for $x\in\mathbb{Z}_2^k\}$是一个$(n,k)$-块编码，更进一步的，$C$是一个群编码。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>引理8.27</strong> 令$H=(A|I_m)$是一个$m\times{n}$的监督矩阵，$G=(\frac{I_{n-m}}{A})$是一个对应的$n\times(n-m)$的标准生成矩阵，那么$HG=0$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定理8.28</strong> 令$H=(A|I_m)$是一个$m\times{n}$的监督矩阵，$G=(\frac{I_{n-m}}{A})$是与之对应的$n\times(n-m)$的生成矩阵。令$C$是由$G$生成的一个编码，那么$y$在$C$中当且仅当$Hy=0$。更进一步的，$C$是一个监督矩阵H的线性编码。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>命题8.30</strong> 令$e_i$是一个二进制n元组，其中第i位是1，其余位都是0.假设$H\in\mathbb{M}_{m\times{n}}(\mathbb{Z}_2)$，那么$He_i$是矩阵$H$的第i列。<br>&nbsp; &nbsp; &nbsp; <strong>定理8.31</strong> 令$H$是一个$m\times{n}$的二进制矩阵，那么$H$的零空间是一个单错检查编码当且仅当$H$中没有全0列。<br>&nbsp; &nbsp; &nbsp; <strong>定理8.34</strong> 令$H$是一个二进制矩阵，那么$H$的零空间是一个单错纠正编码当且仅当$H$不含有全零列且每一列都不相同。</p>
+<h2 id="8-4-有效解码"><a href="#8-4-有效解码" class="headerlink" title="8.4 有效解码"></a>8.4 有效解码</h2><p>&nbsp; &nbsp; &nbsp; 如果$H$是一个$m\times{n}$的矩阵并且$x\in\mathbb{Z}_2^n$，那么我们称x的<strong>伴随式</strong>（syndrome)为$Hx$。<br>&nbsp; &nbsp; &nbsp; <strong>命题8.36</strong> 令$m\times{n}$矩阵$H$决定一个线性编码并且令$x$是一个接收到的n元组。将$x$写成$x=c+e$的形式，其中$c$是传输过来的码字，e是传输的错误。那么x的伴随式$Hx$也是错误$e$的伴随式。<br>&nbsp; &nbsp; &nbsp; <strong>定理8.37</strong> 令$H\in\mathbb{M}_{m\times{n}}(\mathbb{Z}_2)$且假设$H$决定的线性编码是单错纠正的。令$r$是一个接收到的n元组，且最多只会出现1个错误。如果$r$的伴随式为0，那么没有错误出现，否则，如果$r$的伴随式等于$H$的某一列，比如说第i列，那么错误出现在第i位。</p>
+<h3 id="陪集译码（Coset-Decoding"><a href="#陪集译码（Coset-Decoding" class="headerlink" title="陪集译码（Coset Decoding)"></a>陪集译码（Coset Decoding)</h3><p>&nbsp; &nbsp; &nbsp; <strong>陪集</strong>或<strong>标准译码</strong>使用$C$在$\mathbb{Z}_2^n$中的陪集来完成译码。假设$C$是一个$(n,m)$-线性编码，$C$在$\mathbb{Z}_2^n$中的一个陪集写为$x+C$，其中$x\in\mathbb{Z}_2^n$。根据拉格朗日定理，$C$在$\mathbb{Z}_2^n$中有$2^{n-m}$个不同的陪集。<br>&nbsp; &nbsp; &nbsp; <strong>命题8.43</strong> 令$C$是一个由矩阵$H$给出的$(n,k)$-线性编码，假设$x,y\in\mathbb{Z}_2^n$，那么$x$和$y$在C的相同的陪集中当且仅当$Hx=Hy$，也就是说，两个n元组在相同的陪集中当且仅当它们的伴随式相同。</p>
 
       
     </div>
@@ -462,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/07/概率论与数理统计/" rel="next" title="概率论与数理统计">
-                <i class="fa fa-chevron-left"></i> 概率论与数理统计
+              <a href="/2019/04/13/密码算法/" rel="next" title="密码算法">
+                <i class="fa fa-chevron-left"></i> 密码算法
               </a>
             
           </div>
@@ -471,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/11/气候与全球变化科学基础/" rel="prev" title="气候与全球变化科学基础">
-                气候与全球变化科学基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -610,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第5章-置换群-Permutation-Groups"><span class="nav-number">1.</span> <span class="nav-text">TJ第5章 置换群(Permutation Groups)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-定义以及记号"><span class="nav-number">1.1.</span> <span class="nav-text">5.1 定义以及记号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#循环记号"><span class="nav-number">1.1.1.</span> <span class="nav-text">循环记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换位-Transposition"><span class="nav-number">1.1.2.</span> <span class="nav-text">换位(Transposition)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Alternating-groups（交错群）"><span class="nav-number">1.1.3.</span> <span class="nav-text">The Alternating groups（交错群）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Dihedral-Groups（二平面群）"><span class="nav-number">1.2.</span> <span class="nav-text">5.2 Dihedral Groups（二平面群）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Motion-Group-of-a-Cube"><span class="nav-number">1.2.1.</span> <span class="nav-text">The Motion Group of a Cube</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第6章-陪集-Cosets-和拉格朗日定理"><span class="nav-number">2.</span> <span class="nav-text">TJ第6章 陪集(Cosets)和拉格朗日定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-陪集-Cosets"><span class="nav-number">2.1.</span> <span class="nav-text">6.1 陪集(Cosets)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-拉格朗日定理"><span class="nav-number">2.2.</span> <span class="nav-text">6.2 拉格朗日定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-费马定理和欧拉定理"><span class="nav-number">2.3.</span> <span class="nav-text">6.3 费马定理和欧拉定理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ-第8章-代数编码（Algebraic-Coding-Theory）"><span class="nav-number">1.</span> <span class="nav-text">TJ 第8章 代数编码（Algebraic Coding Theory）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-检错和纠错编码"><span class="nav-number">1.1.</span> <span class="nav-text">8.1 检错和纠错编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#奇偶校验"><span class="nav-number">1.1.1.</span> <span class="nav-text">奇偶校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximun-Likelihood-Decoding"><span class="nav-number">1.1.2.</span> <span class="nav-text">Maximun-Likelihood Decoding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#划区编码？（Block-Codes）"><span class="nav-number">1.1.3.</span> <span class="nav-text">划区编码？（Block Codes）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-线性编码？（Linear-Codes）"><span class="nav-number">1.2.</span> <span class="nav-text">8.2 线性编码？（Linear Codes）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-监督矩阵和生成矩阵（Parity-Check-and-Generator-Matrices）"><span class="nav-number">1.3.</span> <span class="nav-text">8.3 监督矩阵和生成矩阵（Parity-Check and Generator Matrices）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4-有效解码"><span class="nav-number">1.4.</span> <span class="nav-text">8.4 有效解码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#陪集译码（Coset-Decoding"><span class="nav-number">1.4.1.</span> <span class="nav-text">陪集译码（Coset Decoding)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

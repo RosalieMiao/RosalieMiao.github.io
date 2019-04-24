@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="理论," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TJ第5章 置换群(Permutation Groups)&amp;nbsp; &amp;nbsp; &amp;nbsp; 集合$S=\{A,B,C\}$的一个置换(permutation)是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。 5.1 定义以及记号&amp;nbsp; &amp;nbsp; 定理5.1 n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元">
-<meta name="keywords" content="理论">
+<meta name="description" content="TJ第7章 密码学简介&amp;nbsp; &amp;nbsp; &amp;nbsp; 未加密的需要发送的消息称为明文（plaintext） 消息。加密过的消息称为密文（ciphertext）。明文和密文都是由字母表写成，字母表由字母或字符组成。一个密码系统（cryptosystem)由两部分组成，一部分为编码（encryption)，另一部分为译码（decryption)。&amp;nbsp; &amp;nbsp; &amp;nbsp; 编码">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="问求之置换群与拉格朗日定理">
-<meta property="og:url" content="http://yoursite.com/2019/03/09/问求之置换群与拉格朗日定理/index.html">
+<meta property="og:title" content="密码算法">
+<meta property="og:url" content="http://yoursite.com/2019/04/13/密码算法/index.html">
 <meta property="og:site_name" content="Rosalie Miao">
-<meta property="og:description" content="TJ第5章 置换群(Permutation Groups)&amp;nbsp; &amp;nbsp; &amp;nbsp; 集合$S=\{A,B,C\}$的一个置换(permutation)是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。 5.1 定义以及记号&amp;nbsp; &amp;nbsp; 定理5.1 n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元">
+<meta property="og:description" content="TJ第7章 密码学简介&amp;nbsp; &amp;nbsp; &amp;nbsp; 未加密的需要发送的消息称为明文（plaintext） 消息。加密过的消息称为密文（ciphertext）。明文和密文都是由字母表写成，字母表由字母或字符组成。一个密码系统（cryptosystem)由两部分组成，一部分为编码（encryption)，另一部分为译码（decryption)。&amp;nbsp; &amp;nbsp; &amp;nbsp; 编码">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-18T09:32:37.400Z">
+<meta property="og:updated_time" content="2019-04-13T07:16:43.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="问求之置换群与拉格朗日定理">
-<meta name="twitter:description" content="TJ第5章 置换群(Permutation Groups)&amp;nbsp; &amp;nbsp; &amp;nbsp; 集合$S=\{A,B,C\}$的一个置换(permutation)是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。 5.1 定义以及记号&amp;nbsp; &amp;nbsp; 定理5.1 n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元">
+<meta name="twitter:title" content="密码算法">
+<meta name="twitter:description" content="TJ第7章 密码学简介&amp;nbsp; &amp;nbsp; &amp;nbsp; 未加密的需要发送的消息称为明文（plaintext） 消息。加密过的消息称为密文（ciphertext）。明文和密文都是由字母表写成，字母表由字母或字符组成。一个密码系统（cryptosystem)由两部分组成，一部分为编码（encryption)，另一部分为译码（decryption)。&amp;nbsp; &amp;nbsp; &amp;nbsp; 编码">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/09/问求之置换群与拉格朗日定理/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/13/密码算法/"/>
 
 
 
 
 
-  <title>问求之置换群与拉格朗日定理 | Rosalie Miao</title>
+  <title>密码算法 | Rosalie Miao</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/问求之置换群与拉格朗日定理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/密码算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rosalie">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">问求之置换群与拉格朗日定理</h1>
+          <h1 class="post-title" itemprop="name headline">密码算法</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T14:06:09+08:00">
-                2019-03-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T12:07:13+08:00">
+                2019-04-13
               </time>
             
 
@@ -376,62 +376,39 @@
       
 
       
-        <h1 id="TJ第5章-置换群-Permutation-Groups"><a href="#TJ第5章-置换群-Permutation-Groups" class="headerlink" title="TJ第5章 置换群(Permutation Groups)"></a>TJ第5章 置换群(Permutation Groups)</h1><p>&nbsp; &nbsp; &nbsp; 集合$S=\{A,B,C\}$的一个<strong>置换(permutation)</strong>是指一个双射(one-to-one and onto map)$\pi:S\to{S}$。</p>
-<h2 id="5-1-定义以及记号"><a href="#5-1-定义以及记号" class="headerlink" title="5.1 定义以及记号"></a>5.1 定义以及记号</h2><p>&nbsp; &nbsp; <strong>定理5.1</strong> n个字母上的对称群(Symmetric group)$S_n$是一个有$n!$个元素的，二元操作为置换的复合的群。</p>
-<p>&nbsp; &nbsp; &nbsp; $S_n$的子群称为<strong>置换群(permutation group)</strong>。</p>
-<p>&nbsp; &nbsp; &nbsp; 按照惯例，置换的复合计算从右向左，即计算$\sigma\tau$时，先计算$\tau$再计算$\sigma$，$\sigma\tau(x)=\sigma(\tau(x))$。</p>
-<p>&nbsp; &nbsp; &nbsp; 置换的复合不一定有交换律。</p>
-<h3 id="循环记号"><a href="#循环记号" class="headerlink" title="循环记号"></a>循环记号</h3><p>&nbsp; &nbsp; &nbsp; 对于一个置换$\sigma\in{S_X}$，如果存在$a_1,a_2,\cdots,a_k\in{X}$满足：</p>
-<script type="math/tex; mode=display">\sigma(a_1)=a_2</script><script type="math/tex; mode=display">\sigma(a_2)=a_3</script><script type="math/tex; mode=display">\vdots</script><script type="math/tex; mode=display">\sigma(a_k)=a_1</script><p>并且对于所有其他的元素$x\in{X}$，有$\sigma(x)=x$，那么称这个置换是一个长度为k的循环。我们用$(a_1,a_2,\cdots,a_k)$来表示循环$\sigma$。Cycles are building blocks of all permutations.（这句话不知道啥意思。）</p>
-<p>&nbsp; &nbsp; &nbsp; 对于$S_X$中的两个置换$\sigma=(a_1,a_2,\cdots,a_k)$和$\tau=(b_1,b_2,\cdots,b_t)$，如果对于所有的i和j，有$a_i\neq{b_j}$，则称这两个置换是<strong>不相交的(disjoint)</strong>。</p>
-<p>&nbsp; &nbsp; <strong>命题 5.8</strong> 如果$\sigma$和$\tau$是$S_X$种的两个不相交的循环，那么有$\sigma\tau=\tau\sigma$。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.9</strong> 任何一个$S_X$种的置换都可以被写成是不相交循环的乘积(product)。</p>
-<h3 id="换位-Transposition"><a href="#换位-Transposition" class="headerlink" title="换位(Transposition)"></a>换位(Transposition)</h3><p>&nbsp; &nbsp; &nbsp; 长度为2的循环被称作是<strong>换位(transpositions)</strong>。</p>
-<p>&nbsp; &nbsp; <strong>命题 5.12</strong> 所有包含至少两个元素的有限集合的置换都可以被写成是换位的乘积。</p>
-<p>&nbsp; &nbsp; <strong>推论 5.14</strong> 如果一个标准型被写成是r个换位的乘积，即$id=\tau_1\tau_2\cdots\tau_r$，那么r是一个偶数。</p>
-<p>&nbsp; &nbsp; &nbsp; 即标准型可以由本身经过偶数次换位得到（包括0次，即不作换位）。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.15</strong> 如果一个置换$\tau$可以被表示为偶数个换位的乘积，那么所有其他的等于$\tau$的换位的乘积都包含偶数个换位。类似的，如果一个置换$\tau$可以被表示为奇数个换位的乘积，那么所有其他的等于$\tau$的换位的乘积都包含奇数个换位。</p>
-<p>&nbsp; &nbsp; &nbsp; 在定理5.15中，如果一个置换可以被表示为偶数个换位的乘积，那么我们定义这个置换为偶的；如果一个置换可以被表示为及数个换位的乘积，我们定义这个置换为奇的。</p>
-<h3 id="The-Alternating-groups（交错群）"><a href="#The-Alternating-groups（交错群）" class="headerlink" title="The Alternating groups（交错群）"></a>The Alternating groups（交错群）</h3><p>&nbsp; &nbsp; &nbsp; $S_n$的最重要的一个子群之一是所有偶置换的集合$A_n$。群$A_n$被称为是<strong>n个字母上的交错群(the alternating group on n letters)</strong>。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.16</strong> 集合$A_n$是$S_n$的子群。</p>
-<p>&nbsp; &nbsp; <strong>命题 5.17</strong> $S_n(n\ge2)$中偶置换的个数等于奇置换的个数。所以，$A_n$的阶数为$\frac{n!}{2}$。</p>
-<h2 id="5-2-Dihedral-Groups（二平面群）"><a href="#5-2-Dihedral-Groups（二平面群）" class="headerlink" title="5.2 Dihedral Groups（二平面群）"></a>5.2 Dihedral Groups（二平面群）</h2><p>&nbsp; &nbsp; &nbsp; 我们定义正n边形(regular n-gon)的刚性运动(rigid motion)上的群为<strong>n阶平面群(nth dihedral group)</strong>，记作$D_n$</p>
-<p>&nbsp; &nbsp; <strong>定理 5.20</strong> 平面群$D_n$是$S_n$的2n阶子群。</p>
-<p>&nbsp; &nbsp; <strong>定理 5.23</strong> $D_n(n\ge3)$由两个元素r和s的所有积组成。这两个元素满足如下关系：</p>
-<script type="math/tex; mode=display">r^n=1</script><script type="math/tex; mode=display">s^2=1</script><script type="math/tex; mode=display">srs=r^{-1}</script><p>&nbsp; &nbsp; &nbsp; 这里的r是指顺时针旋转$\frac{360}{n}$度，s是指翻折。</p>
-<h3 id="The-Motion-Group-of-a-Cube"><a href="#The-Motion-Group-of-a-Cube" class="headerlink" title="The Motion Group of a Cube"></a>The Motion Group of a Cube</h3><p><del>完全不知道中文应该是啥</del></p>
-<p>&nbsp; &nbsp; <strong>命题 5.27</strong> The group of rigid motions of a cube contains 24 elements.</p>
-<p>&nbsp; &nbsp; <strong>定理 5.28</strong> The group of rigid motions of a cube is $S_4$.</p>
-<h1 id="TJ第6章-陪集-Cosets-和拉格朗日定理"><a href="#TJ第6章-陪集-Cosets-和拉格朗日定理" class="headerlink" title="TJ第6章 陪集(Cosets)和拉格朗日定理"></a>TJ第6章 陪集(Cosets)和拉格朗日定理</h1><p>&nbsp; &nbsp; &nbsp; 陪集的概念是理解拉格朗日定理的核心。</p>
-<h2 id="6-1-陪集-Cosets"><a href="#6-1-陪集-Cosets" class="headerlink" title="6.1 陪集(Cosets)"></a>6.1 陪集(Cosets)</h2><p>&nbsp; &nbsp; &nbsp; G是一个群，H是G的子群。则以$g,g\in{G}$为代表的H的左陪集定义为集合：</p>
-<script type="math/tex; mode=display">gH=\{gh:h\in{H}\}</script><p>右陪集定义为集合：</p>
-<script type="math/tex; mode=display">Hg=\{hg:h\in{H}\}</script><p>&nbsp; &nbsp; &nbsp; 在有交换律的群中，左陪集和右陪集总是相等的。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.3</strong> G是一个群，H是G的子群。假设$g_1,g_2\in{G}$。以下等式等价：</p>
+        <h1 id="TJ第7章-密码学简介"><a href="#TJ第7章-密码学简介" class="headerlink" title="TJ第7章 密码学简介"></a>TJ第7章 密码学简介</h1><p>&nbsp; &nbsp; &nbsp; 未加密的需要发送的消息称为<strong>明文（plaintext）</strong> 消息。加密过的消息称为<strong>密文（ciphertext）</strong>。明文和密文都是由<strong>字母表</strong>写成，字母表由字母或字符组成。一个<strong>密码系统（cryptosystem)</strong>由两部分组成，一部分为<strong>编码（encryption)</strong>，另一部分为<strong>译码（decryption)</strong>。<br>&nbsp; &nbsp; &nbsp; 编码函数也称为<strong>钥匙（key）</strong>，不同的密码系统由不同的钥匙区分。传统的密码系统只有一把钥匙，必须只有收发双方知道这把钥匙。用两把钥匙，一把用于编码，一把用于译码的密码系统称为<strong>公钥加密系统（public key cryptosystem）</strong>。</p>
+<h2 id="7-1-私钥密码学"><a href="#7-1-私钥密码学" class="headerlink" title="7.1 私钥密码学"></a>7.1 私钥密码学</h2><p>&nbsp; &nbsp; &nbsp; 在私钥密码系统中，编码和译码共用一个钥匙。编码过程对明文执行一个函数f得到密文，译码过程则对密文执行编码函数的逆函数$f^{-1}$得到原始信息。<br>&nbsp; &nbsp; &nbsp; <strong>密码破译（cryptanalysis）</strong> 是指破译一个收到的或拦截下来的密文信息。概率论和统计方法对于密码破译十分有用，例如，对字母出现的频率分析使得私钥密码可能得以破解。<br>&nbsp; &nbsp; &nbsp; 简单的移位密码是<strong>单字母密码系统（monoalphabetic cryptosystems）</strong> 的一个例子。<br>&nbsp; &nbsp; &nbsp; 一个稍微复杂一些的密码系统：$f(p)=ap+b\mod{26}$，$f^{-1}(p)=a^{-1}p-a^{-1}b\mod{26}$。这个密码系统称为<strong>仿射密码系统（affine cryptosystem）</strong>。<br>&nbsp; &nbsp; &nbsp; <strong>多字母密码系统（polyalphabetic cryptosystem）</strong><br>&nbsp; &nbsp; &nbsp; 频率分析依旧可以用于多字母密码系统。</p>
+<h2 id="7-2-公钥密码学"><a href="#7-2-公钥密码学" class="headerlink" title="7.2 公钥密码学"></a>7.2 公钥密码学</h2><p>&nbsp; &nbsp; &nbsp; 在传统密码系统中，知道如何编码的人也知道如何译码。1976年，W.Diffie和AM.Hellman提出了公钥密码学，编码和译码使用不同的钥匙，这样编码所需的钥匙就可以被公开，而不需要保密。编码函数$f$计算起来相对容易，但是$f^{-1}$非常难于计算，如果没有额外信息的话。</p>
+<h3 id="RSA密码系统"><a href="#RSA密码系统" class="headerlink" title="RSA密码系统"></a>RSA密码系统</h3><p>&nbsp; &nbsp; &nbsp; RSA密码系统由R.Rivest，A.Shamir和A.Adleman于1978年提出。RSA密码系统建立于大整数分解为素数相乘十分困难，然而找到两个随机的大素数并相乘并不是非常困难。<br>&nbsp; &nbsp; &nbsp; 假设我们选择了两个150位的素数$p$和$q$，接下来，我们计算乘积$n=pq$以及$\phi(n)=m=(p-1)(q-1)$（欧拉-$\phi$函数）。现在我们开始随机选择整数$E$，直到满足$E$和$m$互素，即$\gcd(E,m)=1$。接下来运用欧拉定理我们可以求出$D$，满足$DE\equiv1(\mod{n})$。数字$n$和$E$是公开的。<br>&nbsp; &nbsp; &nbsp; 假设$x$是明文，$y$是密文，则$y=x^E\mod{n}$，$x=y^{D}\mod{n}$。</p>
+<h3 id="信息核实"><a href="#信息核实" class="headerlink" title="信息核实"></a>信息核实</h3><p>&nbsp; &nbsp; &nbsp; 发送信息时可以在最后加上一段用自己的密钥编码的信息（签名），这个签名是公开的，所有人都可以译码，但是只有自己才能够生成。</p>
+<h1 id="TC第31章-续"><a href="#TC第31章-续" class="headerlink" title="TC第31章 续"></a>TC第31章 续</h1><h2 id="31-7-RSA公钥加密系统"><a href="#31-7-RSA公钥加密系统" class="headerlink" title="31.7 RSA公钥加密系统"></a>31.7 RSA公钥加密系统</h2><p>&nbsp; &nbsp; &nbsp; RSA公钥加密系统主要基于以下事实：寻求大素数是很容易的，但要把一个数分解位两个大素数的积却相当困难。</p>
+<h3 id="公钥加密系统"><a href="#公钥加密系统" class="headerlink" title="公钥加密系统"></a>公钥加密系统</h3><p>&nbsp; &nbsp; &nbsp; 在一个公钥加密系统中，每个参与者都拥有一把<strong>公钥</strong>和一把<strong>密钥</strong>。每把密钥都是一段信息。<br>&nbsp; &nbsp; &nbsp; 公钥和密钥指定了可用于任何信息的函数。设$\mathscr{D}$表示允许的信息集合。例如，$\mathscr{D}$可能是所有有限长度的位序列的集合。在最简单、最原始的公钥加密设想中，要求公钥与密钥制定一种从$\mathscr{D}$到其自身的一一对应函数。<br>&nbsp; &nbsp; &nbsp; 系统中任何参与者的公钥和密钥都是一个“匹配对”，它们制定的函数互为反函数，也就是说，对任何消息$M\in\mathscr{D}$，有$M=S_A(P_A(M))$，$M=P_A(S_A(M))$。<br>&nbsp; &nbsp; &nbsp; 在公钥加密系统中，要求除了Alice外，没人能在较实用的时间内计算出函数$S_A()$。<br>&nbsp; &nbsp; &nbsp; 假定Bob要给Alice发送一条加密的消息$M$，舍得该消息对于窃密者像一串无意义的乱码。发送消息的方案如下：</p>
+<ul>
+<li>Bob取得Alice的公钥$P_A$（根据一个公开的目录或直接向Alice索取）。</li>
+<li>Bob计算出相应于$M$的密文$C=P_A(M)$，并把$C$发送给Alice。</li>
+<li>当Alice收到密文$C$后，她运用自己的密钥$S_A$恢复原始信息：$S_A(C)=S_A(P_A(M))=M$。</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; 假设现在Alice希望把一个数字签署的答复$M’$发送给Bob：</p>
+<ul>
+<li>Alice运用她的密钥$S_A$和等式$\sigma=S_A(M’)$计算出信息$M’$的<strong>数字签名$\sigma$</strong>。</li>
+<li>Alice把消息/签名对$(M’,\sigma)$发送给Bob。</li>
+<li>当Bob收到$(M’,\sigma)$时，他可以利用Alice的公钥，通过验证等式$M’=P_A(\sigma)$来证实该消息的确是来自Alice。（假设$M’$包含Alice的名字，这样Bob就直到应该使用谁的公钥。）<br>&nbsp; &nbsp; &nbsp; 因为一个数字签名既证明了签署者身份，也证明了签署的信息内容，所以它是对文件末尾的手写签名的一种模拟。</li>
+</ul>
+<h3 id="RSA加密系统"><a href="#RSA加密系统" class="headerlink" title="RSA加密系统"></a>RSA加密系统</h3><p>&nbsp; &nbsp; &nbsp; 在RSA公钥加密系统中，一个参与者按下列过程创建他的公钥和密钥：</p>
 <ol>
-<li>$g_1H=g_2H$</li>
-<li>$Hg_1^{-1}=Hg_2^{-1}$</li>
-<li>$g_1H\subseteq{g_2H}$</li>
-<li>$g_2\in{g_1H}$</li>
-<li>$g_1^{-1}g_2\in{H}$</li>
+<li>随机选取两个大素数$p$和$q$，使得$p\ne{q}$，例如，素数$p$和$q$可能各有1024位。</li>
+<li>计算$n=pq$。</li>
+<li>选取一个与$\phi(n)$互质的小奇数$e$，其中$\phi(n)=(p-1)(q-1)$。</li>
+<li>对模$\phi(n)$，计算出$e$的乘法逆元$d$的值。</li>
+<li>将对$P=(e,n)$公开，并作为参与者的<strong>RSA公钥</strong>。</li>
+<li>将对$S=(d,n)$保密，并作为参与者的<strong>RSA密钥</strong>。<br>对于这个方案，域$\mathscr{D}$为集合$\mathbb{Z}_n$。$P(M)=M^e\mod{n}$，$S(C)=C^d\mod{n}$。</li>
 </ol>
-<p>&nbsp; &nbsp; <strong>定理 6.4</strong> 如果H是群G的子群，那么H在G中的左陪集划分G。也就是说，G等于H在G中的左陪集的不相交交集。</p>
-<p>&nbsp; &nbsp; &nbsp; H的右陪集也划分G。</p>
-<p>&nbsp; &nbsp; &nbsp; H是G的子群，那么定义H的<strong>索引(index)</strong>为H在G中的左陪集的个数。记为[G:H].</p>
-<p>&nbsp; &nbsp; <strong>定理 6.8</strong> H是群G的子群。H在G中左陪集的个数等于H在G中右陪集的个数。</p>
-<h2 id="6-2-拉格朗日定理"><a href="#6-2-拉格朗日定理" class="headerlink" title="6.2 拉格朗日定理"></a>6.2 拉格朗日定理</h2><p>&nbsp; &nbsp; <strong>命题 6.9</strong> H是G的子群，$g\in{G}$。定义映射$\phi:H\to{gH}$为$\phi(h)=gh$，那么映射$\phi$是一个双射。因此，H中元素的个数和gH中元素的个数相等。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.10(Lagrange)</strong> 如果G是一个有限群，H是G的子群。那么$|H|/|G|=[G:H]$，[G:H]是H在G中左陪集的个数。特别的，H中元素的个数整除G中元素的个数。</p>
-<p>&nbsp; &nbsp; &nbsp; 整除是因为H的陪集划分G。</p>
-<p>&nbsp; &nbsp; <strong>推论 6.11</strong> 假设G是有限群并且$g\in{G}$，那么g的阶数一定整除G中元素的个数。</p>
-<p>&nbsp; &nbsp; <strong>推论 6.12</strong> 如果$|G|=p$并且p是一个素数，那么G是循环的并且任何$g\in{G},g\neq{e}$是G的生成器。</p>
-<p>&nbsp; &nbsp; <strong>推论 6.13</strong> 如果H和K都是有限群G的子群，且有$G\supset{H}\supset{K}$。那么：</p>
-<script type="math/tex; mode=display">[G:K]=[G:H][H:K]</script><p>&nbsp; &nbsp; &nbsp; <em>拉格朗日定理的逆命题是错的</em></p>
-<p>&nbsp; &nbsp; <strong>命题 6.15</strong> 群$A_4$没有6阶子群。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.16</strong> $S_n$中的两个循环$\tau$和$\mu$有相同的长度当且仅当存在一个$\sigma\in{S_n}$使得$\mu=\sigma\tau\sigma^{-1}$。</p>
-<h2 id="6-3-费马定理和欧拉定理"><a href="#6-3-费马定理和欧拉定理" class="headerlink" title="6.3 费马定理和欧拉定理"></a>6.3 费马定理和欧拉定理</h2><p>&nbsp; &nbsp; &nbsp; <strong>欧拉$\phi$函数(Euler $\phi$-function)</strong> 是映射$\phi:H\to{H}$，定义为当$n=1$时$\phi(n)=1$，当$n&gt;1$时，$\phi(n)$是如下定义的正整数m的个数：$1\le{m}&lt;{n}$并且$\gcd(m,n) = 1$。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.17</strong> $U(n)$为$\mathbb{Z}_n$中的单位元素群，那么$|U(n)|=\phi(n)$。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.18(Euler’s Theorem)</strong> 整数a和n满足$n&gt;0$并且$\gcd(a,n)=1$，那么$a^{\phi(n)}\equiv1(\mod{n})$。</p>
-<p>&nbsp; &nbsp; <strong>定理 6.19(Fermat’s Little Theorem)</strong> p是一个素数，假设$p\nmid{a}$（p不整除a），那么：</p>
-<script type="math/tex; mode=display">a^{p-1}\equiv1(\mod{p})</script><p>更进一步的，对于任何整数b，有$b^p\equiv{b}(\mod{p})$。</p>
+<p>&nbsp; &nbsp; &nbsp; 假定公钥$(e,n)$和密钥$(d,n)$满足$\lg{e}=O(1),\lg{d}\le\beta$且$\lg{n}\le\beta$，然后，应用公钥需要执行$O(1)$次模乘法运算和$O(\beta^2)$次位操作。应用密钥需要执行$O(\beta)$次模乘法运算和$O(\beta^3)$次位操作。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定理31.36</strong> （RSA的正确性）RSA等式$P(M)=M^e\mod{n}$，$S(C)=C^d\mod{n}$定义了满足等式$M=S_A(P_A(M))$，$M=P_A(S_A(M))$的$\mathbb{Z}_n$的逆变换。</p>
+<p>&nbsp; &nbsp; &nbsp; 为了提高效率，通常运用一种“混合的”或“密钥管理”模式的RSA，来实现快速的无公钥加密系统。在这样一个系统中，加密密钥与解密密钥是相同的。如果Alice希望私下把一条长消息M发送给Bob，她从快速无公钥加密系统中选取一把随机密钥K，然后运用K对M进行加密，得到密文C。这里，C和M一样长，但K相当短。然后，她利用Bob的公开RSA密钥对K进行加密。因为K很短，所以计算$P_B(K)$的速度也很快。然后，她把$(C,P_B(K))$传送给Bob，Bob对$P_B(K)$解密后得到K，然后再用K对C进行解密，得到M。<br>&nbsp; &nbsp; &nbsp; 类似地，可以利用一种混合的方法来提高数字签名的执行效率。在这种方法中，使RSA与一个公开的<strong>抗冲突散列函数</strong>h相结合，这个函数是易于计算的，但是对于这个函数来说，要找出两条信息$M$和$M’$，使得$h(M)=h(M’)$在计算上是不可行的。$h(M)$是消息M的一个短“指纹”。<br>&nbsp; &nbsp; &nbsp; 最后，我们注意到利用<strong>证书</strong>可以更轻松地分配公钥。</p>
+<h2 id="31-9-整数的因子分解"><a href="#31-9-整数的因子分解" class="headerlink" title="31.9 整数的因子分解"></a>31.9 整数的因子分解</h2><p>&nbsp; &nbsp; &nbsp; 假设希望将一个整数n进行<strong>因子分解</strong>，也就是分解为素数的积。</p>
+<h3 id="Pollard的rho启发式方法"><a href="#Pollard的rho启发式方法" class="headerlink" title="Pollard的rho启发式方法"></a>Pollard的rho启发式方法</h3><p>&nbsp; &nbsp; &nbsp; 对小于R的所有整数进行试除，保证完全获得小于$R^2$的任意数的因子分解。下列过程用相同的工作量，就能对小于$R^4$的任意数进行因子分解（除非运气不佳）。由于该过程仅仅是一种启发性方法，因此既不能保证其运行时间也不能保证其运行成功，尽管该过程在世纪应用中非常有效。POLLARD-RHO过程的另一个优点是，它只使用固定量的存储空间。</p>
+<p>POLLARD_RHO(n)<br>1&nbsp; i = 1<br>2&nbsp; $x_1=RANDOM(0,n-1)$<br>3&nbsp; $y = x_1$<br>4&nbsp; $k=2$<br>5&nbsp; <strong>while</strong> TRUE<br>6&nbsp; &nbsp; &nbsp; &nbsp; $i=i+1$<br>7&nbsp; &nbsp; &nbsp; &nbsp; $x_i=(x_{i-1}^2-1)\mod{n}$<br>8&nbsp; &nbsp; &nbsp; &nbsp; $d=\gcd(y-x_i,n)$<br>9&nbsp; &nbsp; &nbsp; &nbsp; <strong>if</strong> $d\ne1$ and $d\ne{n}$<br>10&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print $d$<br>11&nbsp; &nbsp; &nbsp; &nbsp;<strong>if</strong> $i==k$<br>12&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$y=x_i$<br>13&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$k=2k$</p>
 
       
     </div>
@@ -449,7 +426,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/理论/" rel="tag"># 理论</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -462,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/07/概率论与数理统计/" rel="next" title="概率论与数理统计">
-                <i class="fa fa-chevron-left"></i> 概率论与数理统计
+              <a href="/2019/04/08/字符串匹配/" rel="next" title="字符串匹配">
+                <i class="fa fa-chevron-left"></i> 字符串匹配
               </a>
             
           </div>
@@ -472,8 +449,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/11/气候与全球变化科学基础/" rel="prev" title="气候与全球变化科学基础">
-                气候与全球变化科学基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/23/代数编码/" rel="prev" title="代数编码">
+                代数编码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -610,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第5章-置换群-Permutation-Groups"><span class="nav-number">1.</span> <span class="nav-text">TJ第5章 置换群(Permutation Groups)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-定义以及记号"><span class="nav-number">1.1.</span> <span class="nav-text">5.1 定义以及记号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#循环记号"><span class="nav-number">1.1.1.</span> <span class="nav-text">循环记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换位-Transposition"><span class="nav-number">1.1.2.</span> <span class="nav-text">换位(Transposition)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Alternating-groups（交错群）"><span class="nav-number">1.1.3.</span> <span class="nav-text">The Alternating groups（交错群）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Dihedral-Groups（二平面群）"><span class="nav-number">1.2.</span> <span class="nav-text">5.2 Dihedral Groups（二平面群）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Motion-Group-of-a-Cube"><span class="nav-number">1.2.1.</span> <span class="nav-text">The Motion Group of a Cube</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第6章-陪集-Cosets-和拉格朗日定理"><span class="nav-number">2.</span> <span class="nav-text">TJ第6章 陪集(Cosets)和拉格朗日定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-陪集-Cosets"><span class="nav-number">2.1.</span> <span class="nav-text">6.1 陪集(Cosets)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-拉格朗日定理"><span class="nav-number">2.2.</span> <span class="nav-text">6.2 拉格朗日定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-费马定理和欧拉定理"><span class="nav-number">2.3.</span> <span class="nav-text">6.3 费马定理和欧拉定理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TJ第7章-密码学简介"><span class="nav-number">1.</span> <span class="nav-text">TJ第7章 密码学简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-私钥密码学"><span class="nav-number">1.1.</span> <span class="nav-text">7.1 私钥密码学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-公钥密码学"><span class="nav-number">1.2.</span> <span class="nav-text">7.2 公钥密码学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA密码系统"><span class="nav-number">1.2.1.</span> <span class="nav-text">RSA密码系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息核实"><span class="nav-number">1.2.2.</span> <span class="nav-text">信息核实</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TC第31章-续"><span class="nav-number">2.</span> <span class="nav-text">TC第31章 续</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#31-7-RSA公钥加密系统"><span class="nav-number">2.1.</span> <span class="nav-text">31.7 RSA公钥加密系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#公钥加密系统"><span class="nav-number">2.1.1.</span> <span class="nav-text">公钥加密系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA加密系统"><span class="nav-number">2.1.2.</span> <span class="nav-text">RSA加密系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-9-整数的因子分解"><span class="nav-number">2.2.</span> <span class="nav-text">31.9 整数的因子分解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pollard的rho启发式方法"><span class="nav-number">2.2.1.</span> <span class="nav-text">Pollard的rho启发式方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
