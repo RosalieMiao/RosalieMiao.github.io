@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="理论," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JH 2.3 算法的基础2.3.1 字母表、单词和语言&amp;nbsp; &amp;nbsp; &amp;nbsp; 定义2.3.1.1 任何非空的，有限的集合都可以被称作一个字母表（alphabet）。一个字母表$\Sigma$的任何一个元素都可以被称作是$\Sigma$的一个符号（symbol）。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 定义2.3.1.2 令$\Sigma$是一个字母表。$\Sigma$上的一个">
+<meta name="keywords" content="理论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="问题的形式化描述">
+<meta property="og:url" content="http://yoursite.com/2019/04/28/问题的形式化描述/index.html">
+<meta property="og:site_name" content="Rosalie Miao">
+<meta property="og:description" content="JH 2.3 算法的基础2.3.1 字母表、单词和语言&amp;nbsp; &amp;nbsp; &amp;nbsp; 定义2.3.1.1 任何非空的，有限的集合都可以被称作一个字母表（alphabet）。一个字母表$\Sigma$的任何一个元素都可以被称作是$\Sigma$的一个符号（symbol）。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 定义2.3.1.2 令$\Sigma$是一个字母表。$\Sigma$上的一个">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-01T07:24:02.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="问题的形式化描述">
+<meta name="twitter:description" content="JH 2.3 算法的基础2.3.1 字母表、单词和语言&amp;nbsp; &amp;nbsp; &amp;nbsp; 定义2.3.1.1 任何非空的，有限的集合都可以被称作一个字母表（alphabet）。一个字母表$\Sigma$的任何一个元素都可以被称作是$\Sigma$的一个符号（symbol）。 &amp;nbsp; &amp;nbsp; &amp;nbsp; 定义2.3.1.2 令$\Sigma$是一个字母表。$\Sigma$上的一个">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/28/问题的形式化描述/"/>
+
+
+
+
+
+  <title>问题的形式化描述 | Rosalie Miao</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rosalie Miao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/问题的形式化描述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rosalie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/zz.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rosalie Miao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">问题的形式化描述</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-28T22:45:01+08:00">
+                2019-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/问题求解/" itemprop="url" rel="index">
+                    <span itemprop="name">问题求解</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JH-2-3-算法的基础"><a href="#JH-2-3-算法的基础" class="headerlink" title="JH 2.3 算法的基础"></a>JH 2.3 算法的基础</h1><h2 id="2-3-1-字母表、单词和语言"><a href="#2-3-1-字母表、单词和语言" class="headerlink" title="2.3.1 字母表、单词和语言"></a>2.3.1 字母表、单词和语言</h2><p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.1.1</strong> 任何非空的，有限的集合都可以被称作一个<strong>字母表（alphabet）</strong>。一个字母表$\Sigma$的任何一个元素都可以被称作是$\Sigma$的一个<strong>符号（symbol）</strong>。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.1.2</strong> 令$\Sigma$是一个字母表。$\Sigma$上的一个<strong>单词（word）</strong>是指任意一个有限的$\Sigma$的符号的序列。<strong>空单词（empty word）</strong>$\lambda$是指唯一的一个不含符号的单词。$\Sigma$上的所有单词的集合用$\Sigma^{\ast}$来表示。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.1.3</strong> 字母表$\Sigma$上单词w的<strong>长度（length）</strong>，由$|w|$表示，是指w中字母的个数。对于任意一个单词$w\in\Sigma^{\ast}$以及任意一个字母$a\in\Sigma$，$#_a(w)$是指a在w中出现的次数。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.1.4</strong> 令$\Sigma$是一个字母表。那么，对于任意一个$n\in\mathbb{N}$，$\Sigma^n=\{x\in\Sigma^{\ast}||x|=n\}$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.1.5</strong> 对于字母表$\Sigma$上的两个单词v和w，我们定义v和w的<strong>拼接（concatenation）</strong>为一个由v的符号按顺序排列，后面紧跟着w的符号按顺序排列组成的单词，记为vw，（或者$v\cdot{w}$）。对于任意一个单词$w\in\Sigma^{\ast}$，我们定义<br>（1） $w^0=\lambda$，并且<br>（2） $w^{n + 1}=w\cdot{w^n}=ww^n$，对于所有的正整数n。</p>
+<p>&nbsp; &nbsp; &nbsp; 一个单词$w\in\Sigma^{\ast}$的<strong>前缀（prefix）</strong>是指任何一个单词v满足对于某个$\Sigma$上的单词u，有$w=vu$。一个单词$w\in\Sigma^{\ast}$的<strong>后缀（suffix）</strong>是指任何一个单词u满足对于某个$\Sigma$上的单词x，有$w=xu$。$\Sigma$上的一个单词w的<strong>子单词（subword）</strong>是指任何一个单词z满足对于某两个$\Sigma$上的单词u，v，有$w=uzv$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.1.9</strong> 令$\Sigma$是一个字母表，每一个子集$L\subseteq\Sigma^{\ast}$都可以被称为一个$\Sigma$上的<strong>语言（Language）</strong>。关于$\Sigma$的语言L的<strong>补充（complement）</strong> 是指$L^C=\Sigma^{\ast}-L$。<br>&nbsp; &nbsp; &nbsp; 令$\Sigma_1$和$\Sigma_2$都是字母表，且令$L_1\subseteq\Sigma^{\ast}_1$，$L_2\subseteq\Sigma^{\ast}_2$都是语言，则$L_1$和$L_2$的<strong>拼接（concatenation）</strong> 是指$L_1L_2=L_1\circ{L_2}=\{uv\in(\Sigma_1\cup\Sigma_2)^{\ast}|u\in{L_1},v\in{L_2}\}$。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.1.10</strong> 令$\Sigma=\{s_1,s_2,\cdots,s_m\}$，$m\ge1$，是一个字母表，且令$s_1&lt;s_2\cdots&lt;s_m$是$\Sigma$上第一个线性顺序。我们定义$\Sigma^{\ast}$上的<strong>标准顺序（canonical ordering）</strong> 如下。对于所有的$u,v\in\Sigma^{\ast}$，如果$|u|&lt;|v|$或者$|u|=|v|,u=xs_iu’,v=xs_jv’$，对于某些$x,u’,v’\in\Sigma^{\ast}$，且$i&lt;j$，那么$u&lt;v$。</p>
+<h2 id="2-3-2-算法问题"><a href="#2-3-2-算法问题" class="headerlink" title="2.3.2 算法问题"></a>2.3.2 算法问题</h2><p>&nbsp; &nbsp; &nbsp; 如果一个问题不存在一个已知的确定的算法可以有效的解决它，则我们认为这是一个难问题。有效意味着在低幂的线性时间内可以解决。</p>
+<p>&nbsp; &nbsp; &nbsp; 如果$A$是一个算法，$x$是一个输入，则$A(x)$是指算法A对于输入x得到的输出。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.2.1</strong> 一个<strong>决策问题（decision problem）</strong> 是指一个三元组$(L,U,\Sigma)$，其中$\Sigma$是一个字母表且$L\subseteq{U}\subseteq\Sigma^{\ast}$。一个算法A<strong>解决（solves,decides）</strong> 了决策问题$(L,U,\Sigma)$是指对于所有的$x\in{U}$，<br>（1）$A(x)=1$ 如果$x\in{L}$，并且<br>（2）$A(x)=0$ 如果$x\in{U-L}(x\notin{L})$。</p>
+<p>&nbsp; &nbsp; &nbsp; 接下来是几个基本的决策问题。</p>
+<h3 id="素数测试（PRIMALITY-TESTING）"><a href="#素数测试（PRIMALITY-TESTING）" class="headerlink" title="素数测试（PRIMALITY TESTING）"></a>素数测试（PRIMALITY TESTING）</h3><p><strong>Primality testing</strong><br>&nbsp; &nbsp; &nbsp; Input: &nbsp; &nbsp; An $x\in\Sigma^{\ast}_{bool}$<br>&nbsp; &nbsp; &nbsp; Output: “yes” if <em>Number(x)</em> is a prime, “no” otherwise.</p>
+<h3 id="多项式等价问题（EQUIVALENCE-PROBLEMS-FOR-POLYNOMIALS）"><a href="#多项式等价问题（EQUIVALENCE-PROBLEMS-FOR-POLYNOMIALS）" class="headerlink" title="多项式等价问题（EQUIVALENCE PROBLEMS FOR POLYNOMIALS）"></a>多项式等价问题（EQUIVALENCE PROBLEMS FOR POLYNOMIALS）</h3><p><strong>EQ-POL</strong><br>&nbsp; &nbsp; &nbsp; Input: &nbsp; &nbsp; A prime p, two polynomials $p_1$ and $p_2$ over variables from $X=\{x_1,x_2,\cdots\}$.<br>&nbsp; &nbsp; &nbsp; Output: “yes” if $p_1\equiv{p_2}$ in the field $\mathbb{Z}_p$, “no” otherwise.</p>
+<h3 id="EQUIVALENCE-PROBLEMS-FOR-ONE-TIME-ONLY-BRANCHING-PROGRAMS"><a href="#EQUIVALENCE-PROBLEMS-FOR-ONE-TIME-ONLY-BRANCHING-PROGRAMS" class="headerlink" title="EQUIVALENCE PROBLEMS FOR ONE-TIME-ONLY BRANCHING PROGRAMS"></a>EQUIVALENCE PROBLEMS FOR ONE-TIME-ONLY BRANCHING PROGRAMS</h3><p><strong>EQ-1BP</strong><br>&nbsp; &nbsp; &nbsp; Input: &nbsp; &nbsp; One-time-only branching program $B_1$ and $B_2$ over a set of Boolean variables $X=\{x_1,x_2,x_3,\cdots\}$<br>&nbsp; &nbsp; &nbsp; Output: “yes” if $B_1$ and $B_2$ are equivalent (represent the same Boolean function), “no” otherwise.</p>
+<h3 id="可满足问题（SATISFIABLITY-PROBLEM）"><a href="#可满足问题（SATISFIABLITY-PROBLEM）" class="headerlink" title="可满足问题（SATISFIABLITY PROBLEM）"></a>可满足问题（SATISFIABLITY PROBLEM）</h3><p>&nbsp; &nbsp; &nbsp; 可满足问题是用来决定对于一个给定的合取范式（CNF），这个式子是否可满足。因此，可满足问题是一个决策问题$(SAT,\Sigma_{logic})$，其中$SAT=\{w\in\Sigma_{logic}^+|w$ is a code of a satisfiable formula in CNF $\}$。<br>&nbsp; &nbsp; &nbsp; 我们也考虑分句个数有限制的合取范式的可满足问题。对于任意正整数$k\ge2$，我们定义k-satisfiablity problem为决策问题$(kSAT,\Sigma_{logic})$，其中$kSAT=\{w\in\Sigma_{logic}^+|w$ is a code of a satisfiable formula in kCNF$\}$。</p>
+<p>&nbsp; &nbsp; &nbsp; 接下来我们来定义一些图论方面的可判定性问题。</p>
+<h3 id="团问题（CLIQUE-PROBLEM）"><a href="#团问题（CLIQUE-PROBLEM）" class="headerlink" title="团问题（CLIQUE PROBLEM）"></a>团问题（CLIQUE PROBLEM）</h3><p>&nbsp; &nbsp; &nbsp; 团问题是用于决策对于一个给定的图G和正整数k，判断G中是否包含一个大小为k的团。<br>&nbsp; &nbsp; &nbsp; 团问题是决策问题$(CLIQUE,\{0,1,#\})$，其中$CLIQUE=\{x#w\in\{0,1,#\}^{\ast}|x\in\{0,1\}^{\ast}$ and $w$ represents a graph that contains a clique of size $Number(x)\}$。</p>
+<h3 id="点覆盖问题（VERTEX-COVER-PROBLEM）"><a href="#点覆盖问题（VERTEX-COVER-PROBLEM）" class="headerlink" title="点覆盖问题（VERTEX COVER PROBLEM）"></a>点覆盖问题（VERTEX COVER PROBLEM）</h3><p>&nbsp; &nbsp; &nbsp; 点覆盖问题（VCP）是指决策问题$(VCP,\{0,1,#\})$，其中$VCP=\{u#w\in\{0,1,#\}^+|w\in\{0,1\}^+$ and $w$ represents a graph that contains a vertex cover of size $Number(u)\}$。</p>
+<h3 id="哈密尔顿回路问题（HC）"><a href="#哈密尔顿回路问题（HC）" class="headerlink" title="哈密尔顿回路问题（HC）"></a>哈密尔顿回路问题（HC）</h3><p>&nbsp; &nbsp; &nbsp; 决策问题$(HC,\{0,1,#\})$，其中$HC=\{w\in\{0,1,#\}^{\ast}|w$ represents a graph that contains a Hamiltonian cycle$\}$</p>
+<h3 id="线性规划中存在性问题（EXISTENCE-PROBLEMS-IN-LINEAR-PROGRAMMING）"><a href="#线性规划中存在性问题（EXISTENCE-PROBLEMS-IN-LINEAR-PROGRAMMING）" class="headerlink" title="线性规划中存在性问题（EXISTENCE PROBLEMS IN LINEAR PROGRAMMING）"></a>线性规划中存在性问题（EXISTENCE PROBLEMS IN LINEAR PROGRAMMING）</h3><p>&nbsp; &nbsp; &nbsp; 对于$\mathbb{R}$的任何子集$S$，我们定义$Sol_S(A,b)=\{X\subseteq{S^n}|A\cdot{X}=b\}$<br>&nbsp; &nbsp; &nbsp; 决策问题$(SOL-IP,\{0,1,#\})$，其中$SOL-IP=\{\langle{A,b}\rangle\in\{0,1,#\}^{\ast}|Sol_Z(A,b)\ne\emptyset\}$。<br>&nbsp; &nbsp; &nbsp; 0-1线性规划解的存在性问题为决策问题$(SOL-0/1-IP,\{0,1,#\})$，其中$SOL-0/1-IP=\{\langle{A,b}\rangle\in\{0,1,#\}^{\ast}|Sol_{\{0,1\}}(A,b)\ne\emptyset\}$。<br>&nbsp; &nbsp; &nbsp; 模p线性规划解的存在性问题为决策问题$(SOL-IP_p,\{0,1,\cdots,p-1,#\})$，其中$SOL-IP_p=\{\langle{A,b}\rangle\in\{0,1,\cdots,p-1,#\}^{\ast}|$if A is an $m\times{n}$ matrix over $\mathbb{Z}_p$, $m,n\in\mathbb{N}-\{0\}$, and $b\in\mathbb{Z}_p^m$, then there exists $X\in(\mathbb{Z}_p)^n$ such that $AX\equiv{b}(\mod{p})\}$。</p>
+<p>&nbsp; &nbsp; &nbsp; 接下来我们定义几个最优化问题。<br>&nbsp; &nbsp; &nbsp; <strong>定义2.3.2.2</strong> 一个<strong>最优化问题（optimization problem）</strong> 是指一个7元组$U=(\Sigma_I,\Sigma_O,L,L_I,M,cost,goal)$，其中<br>（1）$\Sigma_I$是一个字母表，称为U的<strong>输入字母表（input alphabet）</strong><br>（2）$\Sigma_O$是一个字母表，称为U的<strong>输出字母表（output alphabet）</strong><br>（3）$L\subseteq\Sigma_I^{\ast}$是<strong>可行的例子的语言（the language of feasible problem instances）</strong><br>（4）$L_I\subseteq{L}$是<strong>U的实际的例子的语言（the language of the (actual) problem instances of U）</strong><br>（5）$M$是从$L$到$Pot(\Sigma_O^{\ast})$（即$\Sigma_O^{\ast}$的所有子集的集合）的一个函数，对于所有的$x\in{L}$，$M(x)$称为x的<strong>可行解集合（the set of feasible solutions）</strong><br>（6）cost是指<strong>消耗方程（cost function）</strong>，也就是对于任意对$(u,x)$，其中对于某个$x\in{L}$，有$u\in{M(x)}$，分配了一个正实数$cost(u,x)$<br>（7）$goal\in\{minimum,maximum\}$。<br>对于任意一个$x\in{L_1}$，对于一个可行解$y\in{M(x)}$，如果$cost(y,x)=goal\{cost(z,x)|z\in{M(x)}\}$，则y被称为<strong>对于x和U最优（optimal for x and U）</strong>。对于一个最优解$y\in{M(x)}$，我们用$Opt_U(x)$来表示。如果$goal=maximum$，则U被称为<strong>最大化问题（maximization problem）</strong>，如果$goal=minimum$，则U是<strong>最小化问题（minimum problem）</strong>。定义$Output_U(x)\subseteq{M(x)}$为所有x在U上的最优解的集合。<br>&nbsp; &nbsp; &nbsp; 如果对于任何$x\in{L_1}$，一个算法A，有$A(x)\in{M(x)}$，则称这个算啊对于U是<strong>一致的（consistent）</strong>。如果满足以下两点，则称算法B解决了最优化问题U：<br>（1）B对于U是一致的，并且<br>（2）对于任意$x\in{L_1}$，$B(x)$是x对于U的最优解。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.2.3</strong> 令$U_1=(\Sigma_I,\Sigma_O,L,L_{I,1},M,cost,goal)$和$U_2=(\Sigma_I,\Sigma_O,L.L_{I,2},M,cost,goal)$为两个最优化问题。如果$L_{I,1}\subseteq{L_{I,2}}$，则称$U_1$是$U_2$的<strong>子问题（subproblem）</strong>。</p>
+<p>&nbsp; &nbsp; &nbsp; 我们通过区分以下四点来定义最优化问题：</p>
+<ul>
+<li>集合$L_1$</li>
+<li>输入的限制</li>
+<li>消耗方程</li>
+<li>目标</li>
+</ul>
+<h3 id="旅行消费者问题（TRAVELING-SALESPERSON-PROBLEM）"><a href="#旅行消费者问题（TRAVELING-SALESPERSON-PROBLEM）" class="headerlink" title="旅行消费者问题（TRAVELING SALESPERSON PROBLEM）"></a>旅行消费者问题（TRAVELING SALESPERSON PROBLEM）</h3><p><strong>Traveling Salesperson Problem(TSP)</strong><br>&nbsp; &nbsp; &nbsp; Input: &nbsp; &nbsp; A weighted complete graph $(G,c)$, where $G=(V,E)$ and $c:E\to\mathbb{N}$. Let $V=\{v_1,\cdots,v_n\}$ for some $n\in\mathbb{N}-\{0\}$.<br>&nbsp; &nbsp; &nbsp; Constraints: For every input instance $(G,c)$, $M(G,c)=\{v_{i_1},v_{i_2},\cdots,v_{i_n},v_{i_1}|(i_1,i_2,\cdots,i_n)$ is a permutation of $(1,2,\cdots,n)\}$,i.e., the set of all Hamiltonian cycles of G.<br>&nbsp; &nbsp; &nbsp; Costs: &nbsp; &nbsp; For every Hamiltonian cycle $H=v_{i_1}v_{i_2}\cdots{v_{i_n}}v_{i_1}\in{M(G,c)}$, $cost((v_{i_1},v_{i_2},<br>\cdots,v_{i_n},v_{i_1}),(G,c))=\sum_{j=1}^nc(\{v_{i_j},v_{i_{(j\mod{n})+1}}\})$, i.e., thet cost of every Hamiltonian cycle H is the sum of the weights of all edges of H.<br>&nbsp; &nbsp; &nbsp; Goal: minimum.</p>
+<h3 id="MAKESPAN-SCHEDULING-PROBLEM"><a href="#MAKESPAN-SCHEDULING-PROBLEM" class="headerlink" title="MAKESPAN SCHEDULING PROBLEM"></a>MAKESPAN SCHEDULING PROBLEM</h3><p>&nbsp; &nbsp; &nbsp; MS是用于策划那个工作，每个工作都有对应的时间，需要在m个不同的机器上以某种方式执行，并使得时间最短。<br><strong>Makespan Scheduling Problem(MS)</strong><br>&nbsp; &nbsp; &nbsp; Input: &nbsp; &nbsp; Positive integers $p_1,p_2,\cdots,p_n$ and an integer $m\ge2$ for some $n\in\mathbb{N}-\{0\}$.{$p_i$ is the processing time of the ith jod on any of the m available machines}.<br>&nbsp; &nbsp; &nbsp; Constraints: For every input instance $(p_1,\cdots,p_n,m)$ of MS, $M(p_1,\cdots,p_n,m)=\{S_1,S_2,\cdots,S_m|S_i\in\{1,2,\cdots,n\}$ for $i=1,\cdots,m,\cup_{k=1}^mS_k=\{1,2,\cdots,n\}$, and $S_i\cap{S_j}=\emptyset$ for $i\ne{j}\}$.{$M(p_1,\cdots,p_n,m)$ contains all partitions of $\{1,2,\cdots,n\}$ into m subsets. The meaning of $(S_1,S_2,\cdots,S_m)$ is that for $i = 1,\cdots,m$, the jobs with indices from $S_i$ have to be processed on the ith machine}.<br>&nbsp; &nbsp; &nbsp; Costs: &nbsp; &nbsp; For each $(S_1,S_2,\cdots,S_m)\in{M(p_1,\cdots,p_n,m)}$, $cost((S_1,\cdots,S_m),(p_1,\cdots,p_n,m))=max\{\sum_{l\in{S_i}}p_l|i=1,\cdots,m\}$.<br>&nbsp; &nbsp; &nbsp; Goal: &nbsp; &nbsp; minimum.</p>
+<h3 id="最小点覆盖（MIN-VCP）"><a href="#最小点覆盖（MIN-VCP）" class="headerlink" title="最小点覆盖（MIN-VCP）"></a>最小点覆盖（MIN-VCP）</h3><p>Input: A graph $G=(V,E)$<br>Constraints: $M(G)=\{S\subseteq{V}|$ every edge of E is incident to at leasr one vertex of S$\}$.<br>Cost: For every $S\in{M(G)},cost(S,G)=|S|$<br>Goal: minimum.</p>
+<h3 id="集合覆盖问题（SCP）"><a href="#集合覆盖问题（SCP）" class="headerlink" title="集合覆盖问题（SCP）"></a>集合覆盖问题（SCP）</h3><p>Input: $(X,F)$, where X is a finite set and $F\subseteq{Pot(X)}$ such that $X=\cup_{S\in{F}}S$.<br>Constraints: For every input $(X,F)$, $M(X,F)=\{C\subseteq{F}|X=\cup_{S\in{C}}S\}$.<br>Costs: For every $C\in{M(X,F)},cost(C,(X,F))=|C|$<br>Goal: minimum</p>
+<h3 id="最小权重点覆盖问题（WEIGHT-VCP）"><a href="#最小权重点覆盖问题（WEIGHT-VCP）" class="headerlink" title="最小权重点覆盖问题（WEIGHT-VCP）"></a>最小权重点覆盖问题（WEIGHT-VCP）</h3><p>Input: A weighted graph $G=(V,E,c)$,$c:V\to\mathbb{N}-\{0\}$.<br>Constraints: For every input instance $G=(V,E,c)$,$M(G)=\{S\subseteq{V}|$ S is a vertex cover of G$\}$.<br>Costs: For every $S\in{M(G)},G=(V,E,c),cost(S,(V,E,c))=\sum_{v\in{S}}c(v)$.<br>Goal: minimum.</p>
+<h3 id="最大团问题（MAX-CL）"><a href="#最大团问题（MAX-CL）" class="headerlink" title="最大团问题（MAX-CL）"></a>最大团问题（MAX-CL）</h3><p>Input: A graph $G=(V,E)$<br>Constraints: $M(G)=\{S\subseteq{V}|\{\{u,v\}|u,v\in{S},u\ne{v}\}\subseteq{E}\}$.{$M(G)$ contains all complete subgraphs (cliques) of G}.<br>Cost: For every $S\in{M(G)},cost(S,G)=|S|$.<br>Goal: maximum</p>
+<h3 id="最大割问题（MAX-CUT）"><a href="#最大割问题（MAX-CUT）" class="headerlink" title="最大割问题（MAX-CUT）"></a>最大割问题（MAX-CUT）</h3><p>Input: A graph $G=(V,E)$<br>Constraints: $M(G)=\{(V_1,V_2)|V_1\cup{V_2}=V,V_1\ne\emptyset\ne{V_2}$ and $V_1\cap{V_2}=\emptyset\}$.<br>Costs: For every cut $(V_1,V_2)\in{M(G)}$, $cost((V_1,V_2),G)=|E\cap\{\{u,v\}|u\in{V_1},v\in{V_2}\}|$<br>Goal: maximum.</p>
+<h3 id="简单背包问题（SKP）"><a href="#简单背包问题（SKP）" class="headerlink" title="简单背包问题（SKP）"></a>简单背包问题（SKP）</h3><p>Input: A positive integer b, and positive integers $w_1,w_2,\cdots,w_n$ for some $n\in\mathbb{N}-\{0\}$.<br>Constraints: $M(b,w_1,w_2,\cdots,w_n)=\{T\subseteq\{1,\cdots,n\}|\sum_{i\in{T}}w_i\le{b}\}$<br>Costs: For each $T\in{M(b,w_1,w_2,\cdots,w_n)}$,$cost(T,b,w_1,w_2,\cdots,w_n)=\sum_{i\in{T}}w_i$.<br>Goal: maximum.</p>
+<h3 id="背包问题（KP）"><a href="#背包问题（KP）" class="headerlink" title="背包问题（KP）"></a>背包问题（KP）</h3><p>Input: A positive integer b, and 2n positive integers $w_1,w_2,\cdots,w_n,c_1,c_2,\cdots,c_n$ for some $n\in\mathbb{N}-\{0\}$<br>Constraints: $M(b,w_1,\cdots,w_n,c_1,\cdots,c_n)=\{T\subseteq\{1,\cdots,n\}|\sum_{i\in{T}}w_i\le{b}\}$.<br>Costs: For each $T\in{M(b,w_1,\cdots,w_n,c_1,\cdots,c_n)},cost(T,b,w_1,\cdots,w_n,c_1,\cdots,c_n)=\sum_{i\in{T}}c_i$.<br>Goal: maximum.</p>
+<h3 id="01背包问题（BIN-P）"><a href="#01背包问题（BIN-P）" class="headerlink" title="01背包问题（BIN-P）"></a>01背包问题（BIN-P）</h3><p>Input: n rational numbers $w_1,w_2,\cdots,w_n\in[0,1]$ for some positive integer n.<br>Constraints: $M(w_1,w_2,\cdots,w_n)=\{S\subseteq\{0,1\}^n|$ for every $s\in{S}$, $s^T\cdot(w_1,w_2,]cdots,w_n)\le1$, and $\sum_{s\in{S}}s=(1,1,\cdots,1)\}$.<br>Costs: For every $S\in{M(w_1,w_2,\cdots,w_n)},cost(S,(w_1,\cdots,w_n))=|S|$.<br>Goal: minimum.</p>
+<h3 id="最大可满足问题（MAX-SAT）"><a href="#最大可满足问题（MAX-SAT）" class="headerlink" title="最大可满足问题（MAX-SAT）"></a>最大可满足问题（MAX-SAT）</h3><p>Input: A formula $\Phi=F_1\land{F_2}\land\cdots\land{F_m}$ over $X=\{x_1,x_2,\cdots\}$ in CNF<br>Constraints: For every formula $Phi$ over the set $\{x_1,\cdots,x_n\}\subseteq{X}$, $n\in\mathbb{N}-\{0\}$, $M(\Phi)=\{0,1\}^n$<br>Costs: For every $Phi$ in CNF, and every $\alpha\in{M(\Phi)}$, $cost(\alpha,\Phi)$ is the number of clauses satisfied by $\alpha$.<br>Goal: maximum.</p>
+<h3 id="线性规划（LP）"><a href="#线性规划（LP）" class="headerlink" title="线性规划（LP）"></a>线性规划（LP）</h3><p>Input: A matrix $A=[a_{ij}]_{i=1,\cdots,m,j=1,\cdots,n}$, a vector $b\in\mathbb{R}^m$, and a vector $c\in\mathbb{R}^n$, $n,m\in\mathbb{N}-\{0\}$.<br>Constraints: $M(A,b,c)=\{X\in\mathbb{R}^n|A\cdot{X}=b$ and the elements of X are non-negtive reals only$\}$.<br>Costs: For every $X=(x_1,\cdots,x_n)\in{M(A,b,c)},c=(c_1,\cdots,c_n)^T,cost(X,(A,b,c))=c^T\cdot{X}=\sum_{i=1}^nc_ix_i$<br>Goal: minimum</p>
+<h3 id="整数线性规划（IP）"><a href="#整数线性规划（IP）" class="headerlink" title="整数线性规划（IP）"></a>整数线性规划（IP）</h3><p>Input: An $m\times{n}$ matrix $A=[a_{ij}]_{i=1,\cdots,m,j=1,\cdots,n}$ and two vectors $b=(b_1,\cdots,b_m)^T,c=(c_1,\cdots,c_n)^T$ for some $n,m\in\mathbb{N}-\{0\},a_ij,b_i,c_j$ are integers for $i=1,\cdots,m,j=1,\cdots,n$<br>Constraints: $M(A,b,c)=\{X=(x_1,\cdots,x_n)\in\mathbb{Z}^n|AX=b$ and $x_i\ge0$ for $i=1,\cdots,n\}$<br>Costs: For every $X=(x_1,\cdots,x_n)\in{M(A,b,c)},cost(X,(A,b,c))=\sum_{i=1}^nc_ix_i$.<br>Goal: minimum.</p>
+<h3 id="最大模k线性方程组问题（MAX-LINMODk）"><a href="#最大模k线性方程组问题（MAX-LINMODk）" class="headerlink" title="最大模k线性方程组问题（MAX-LINMODk）"></a>最大模k线性方程组问题（MAX-LINMODk）</h3><p>Input: A set S of m linear equations over n unkowns, $n,m\in\mathbb{N}-\{0\}$, with coefficients from $\mathbb{Z}_k$<br>Constraints: $M(S)=\mathbb{Z}_k^m$<br>Costs: For every $X\in{M(S)},cost(X,S)$ is the number of linear equations of S satisfied by X<br>Goal: maximum.</p>
+<h2 id="2-3-3-复杂度理论（Complexity-Theory）"><a href="#2-3-3-复杂度理论（Complexity-Theory）" class="headerlink" title="2.3.3 复杂度理论（Complexity Theory）"></a>2.3.3 复杂度理论（Complexity Theory）</h2><p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.3.1</strong> 令$\Sigma_I$和$\Sigma_O$都是字母表，令$A$是实现从$\Sigma_I^{\ast}$到$\Sigma_O^{\ast}$映射的算法。对于任意$x\in\Sigma_I^{\ast}$，<strong>$Time_A(x)$</strong>用于表示对于输入x，算法A在计算时所需要的时间复杂度，<strong>$Space_A(x)$</strong>用于表示对于输入x，算法A在计算时所需要的空间复杂度。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.3.2</strong> 令$\Sigma_I$和$\Sigma_O$是两个字母表，令$A$是实现从$\Sigma_I^{\ast}$到$\Sigma_O^{\ast}$映射的算法。A的<strong>最坏时间复杂度</strong>是一个方程$Time_A:(\mathbb{N}-\{0\})\to\mathbb{N}$，$Time_A(n)=max\{Time_A(x)|x\in\sum_I^n\}$对于所有正整数n。A的<strong>最坏空间复杂度</strong>是一个方程$Space_A:(\mathbb{N}-\{0\})\to\mathbb{N}$，$Space_A(n)=max\{Space_A(x)|x\in\sum_I^n\}$对于所有正整数n。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定理2.3.3.3</strong> 存在一个决策问题$(L,\sum_{bool})$满足对于任何一个算法$A$，存在另外一个算法B，有$Time_B(n)=\log_2(Time_A(n))$，对于无限多个正整数n。</p>
+<p>&nbsp; &nbsp; &nbsp; <strong>定义2.3.3.4</strong> 令U是一个算法问题，令$f,g$是$\mathbb{N}$到$\mathbb{R}^+$的函数。我们称$O(g(N))$是<strong>U的时间复杂度的上限</strong>，如果存在一个算法A可以解决U且$Time_A(n)\in{O(g(n))}$。<br>我们称$\Omega(f(n))$是<strong>U的时间复杂度的下限</strong>如果对于所有解决U的算法B都有$Time_B(n)\in\Omega(f(n))$。<br>一个算法C被称为<strong>最优的</strong>解决U的算法如果$Time_C(n)\in{O(g(n))}$且$\Omega(g(n))$是U的时间复杂度的下限。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/理论/" rel="tag"># 理论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/23/代数编码/" rel="next" title="代数编码">
+                <i class="fa fa-chevron-left"></i> 代数编码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/17/板子/" rel="prev" title="板子">
+                板子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/zz.jpg"
+                alt="Rosalie" />
+            
+              <p class="site-author-name" itemprop="name">Rosalie</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JH-2-3-算法的基础"><span class="nav-number">1.</span> <span class="nav-text">JH 2.3 算法的基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-1-字母表、单词和语言"><span class="nav-number">1.1.</span> <span class="nav-text">2.3.1 字母表、单词和语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-2-算法问题"><span class="nav-number">1.2.</span> <span class="nav-text">2.3.2 算法问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#素数测试（PRIMALITY-TESTING）"><span class="nav-number">1.2.1.</span> <span class="nav-text">素数测试（PRIMALITY TESTING）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多项式等价问题（EQUIVALENCE-PROBLEMS-FOR-POLYNOMIALS）"><span class="nav-number">1.2.2.</span> <span class="nav-text">多项式等价问题（EQUIVALENCE PROBLEMS FOR POLYNOMIALS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EQUIVALENCE-PROBLEMS-FOR-ONE-TIME-ONLY-BRANCHING-PROGRAMS"><span class="nav-number">1.2.3.</span> <span class="nav-text">EQUIVALENCE PROBLEMS FOR ONE-TIME-ONLY BRANCHING PROGRAMS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可满足问题（SATISFIABLITY-PROBLEM）"><span class="nav-number">1.2.4.</span> <span class="nav-text">可满足问题（SATISFIABLITY PROBLEM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#团问题（CLIQUE-PROBLEM）"><span class="nav-number">1.2.5.</span> <span class="nav-text">团问题（CLIQUE PROBLEM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点覆盖问题（VERTEX-COVER-PROBLEM）"><span class="nav-number">1.2.6.</span> <span class="nav-text">点覆盖问题（VERTEX COVER PROBLEM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈密尔顿回路问题（HC）"><span class="nav-number">1.2.7.</span> <span class="nav-text">哈密尔顿回路问题（HC）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性规划中存在性问题（EXISTENCE-PROBLEMS-IN-LINEAR-PROGRAMMING）"><span class="nav-number">1.2.8.</span> <span class="nav-text">线性规划中存在性问题（EXISTENCE PROBLEMS IN LINEAR PROGRAMMING）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旅行消费者问题（TRAVELING-SALESPERSON-PROBLEM）"><span class="nav-number">1.2.9.</span> <span class="nav-text">旅行消费者问题（TRAVELING SALESPERSON PROBLEM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAKESPAN-SCHEDULING-PROBLEM"><span class="nav-number">1.2.10.</span> <span class="nav-text">MAKESPAN SCHEDULING PROBLEM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小点覆盖（MIN-VCP）"><span class="nav-number">1.2.11.</span> <span class="nav-text">最小点覆盖（MIN-VCP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合覆盖问题（SCP）"><span class="nav-number">1.2.12.</span> <span class="nav-text">集合覆盖问题（SCP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小权重点覆盖问题（WEIGHT-VCP）"><span class="nav-number">1.2.13.</span> <span class="nav-text">最小权重点覆盖问题（WEIGHT-VCP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大团问题（MAX-CL）"><span class="nav-number">1.2.14.</span> <span class="nav-text">最大团问题（MAX-CL）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大割问题（MAX-CUT）"><span class="nav-number">1.2.15.</span> <span class="nav-text">最大割问题（MAX-CUT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单背包问题（SKP）"><span class="nav-number">1.2.16.</span> <span class="nav-text">简单背包问题（SKP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背包问题（KP）"><span class="nav-number">1.2.17.</span> <span class="nav-text">背包问题（KP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#01背包问题（BIN-P）"><span class="nav-number">1.2.18.</span> <span class="nav-text">01背包问题（BIN-P）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大可满足问题（MAX-SAT）"><span class="nav-number">1.2.19.</span> <span class="nav-text">最大可满足问题（MAX-SAT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性规划（LP）"><span class="nav-number">1.2.20.</span> <span class="nav-text">线性规划（LP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数线性规划（IP）"><span class="nav-number">1.2.21.</span> <span class="nav-text">整数线性规划（IP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大模k线性方程组问题（MAX-LINMODk）"><span class="nav-number">1.2.22.</span> <span class="nav-text">最大模k线性方程组问题（MAX-LINMODk）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-3-复杂度理论（Complexity-Theory）"><span class="nav-number">1.3.</span> <span class="nav-text">2.3.3 复杂度理论（Complexity Theory）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rosalie</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
