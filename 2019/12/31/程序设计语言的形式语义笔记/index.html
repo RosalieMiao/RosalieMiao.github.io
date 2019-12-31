@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="形式语义Mathematical BackgroundSets Basic Notations $S\subseteq^{fin}T$ : finite subset $ P(S)$ : powerset $=^{def}\{T~|~T\subseteq S\}$   Generalized Unions &amp;amp; Intersections of Sets $\bigcup S=^{def}\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序设计语言的形式语义笔记">
+<meta property="og:url" content="http://yoursite.com/2019/12/31/程序设计语言的形式语义笔记/index.html">
+<meta property="og:site_name" content="Rosalie Miao">
+<meta property="og:description" content="形式语义Mathematical BackgroundSets Basic Notations $S\subseteq^{fin}T$ : finite subset $ P(S)$ : powerset $=^{def}\{T~|~T\subseteq S\}$   Generalized Unions &amp;amp; Intersections of Sets $\bigcup S=^{def}\">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-31T03:22:16.889Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序设计语言的形式语义笔记">
+<meta name="twitter:description" content="形式语义Mathematical BackgroundSets Basic Notations $S\subseteq^{fin}T$ : finite subset $ P(S)$ : powerset $=^{def}\{T~|~T\subseteq S\}$   Generalized Unions &amp;amp; Intersections of Sets $\bigcup S=^{def}\">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/31/程序设计语言的形式语义笔记/"/>
+
+
+
+
+
+  <title>程序设计语言的形式语义笔记 | Rosalie Miao</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rosalie Miao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/31/程序设计语言的形式语义笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rosalie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/zz.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rosalie Miao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">程序设计语言的形式语义笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-31T11:20:24+08:00">
+                2019-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="形式语义"><a href="#形式语义" class="headerlink" title="形式语义"></a>形式语义</h1><h2 id="Mathematical-Background"><a href="#Mathematical-Background" class="headerlink" title="Mathematical Background"></a>Mathematical Background</h2><h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><ol>
+<li><p>Basic Notations</p>
+<p>$S\subseteq^{fin}T$ : finite subset</p>
+<p>$ P(S)$ : powerset $=^{def}\{T~|~T\subseteq S\}$ </p>
+</li>
+<li><p>Generalized Unions &amp; Intersections of Sets</p>
+<p>$\bigcup S=^{def}\{x~|~\exists T\in S. x\in T\}$ (Here S is a set of sets.)</p>
+<p>$\bigcup_{i\in I}S(i)=^{def} \bigcup \{ S(i) ~|~i\in I\}$ </p>
+<p>$\bigcup_{i=m}^nS(i)=^{def}\bigcup_{i\in[m,n]}S(i)$</p>
+<p>$\bigcap S=^{def}\{x~|~\forall T\in S.x\in T\}$ </p>
+<p>$\bigcap_{i\in I}S(i)=^{def} \bigcap \{ S(i) ~|~i\in I\}$ </p>
+<p>$\bigcap_{i=m}^nS(i)=^{def}\bigcap_{i\in[m,n]}S(i)$ </p>
+<p>$\bigcup\empty=\empty$ </p>
+<p>$\bigcap\empty$  meaningless （任给x都满足）</p>
+</li>
+</ol>
+<h3 id="Relations"><a href="#Relations" class="headerlink" title="Relations"></a>Relations</h3><p><em>Cartesian product</em> : $A\times B=\{(x,y)~|~x\in A\text{ and }y\in B\}$ </p>
+<p>Projections over pairs: $\pi_0(x,y)=x$ and $\pi_1(x,y)=y$ </p>
+<p>$\rho$ is a <em>relation</em> from A to B if $\rho\subseteq A\times B$. Or, written as $\rho\in P(A\times B)$.</p>
+<p>$\rho$ is a relation on S if $\rho\subseteq S\times S$.</p>
+<p>$\rho$ relates x and y if  $(x,y)\in\rho$. Sometimes we write it as $x~\rho~y$.</p>
+<p>$\rho$ is an identity relation if  $\forall(x,y)\in\rho. x=y$.</p>
+<h4 id="Basic-Notations"><a href="#Basic-Notations" class="headerlink" title="Basic Notations"></a>Basic Notations</h4><p>$Id_S=^{def}\{(x,x)~|~x\in{S}\}$</p>
+<p>$dom(\rho)=^{def}\{x~|~\exists y.(x,y)\in\rho\}$</p>
+<p>$ran(\rho)=^{def}\{y~|~\exists x.(x,y)\in\rho\}$</p>
+<p>$\rho’\circ\rho=^{def}\{(x,z)~|~\exists y.(x,y)\in\rho\land(y,z)\in\rho’\}$</p>
+<p>$\rho^{-1}=^{def}\{(y,x)~|~(x,y)\in\rho\}$</p>
+<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><script type="math/tex; mode=display">
+(\rho_3\circ\rho_2)\circ\rho_1=\rho_3\circ(\rho_2\circ\rho_1)\\
+\rho\circ Id_S=\rho=Id_T\circ\rho\text{, if }\rho\subseteq S\times T\\
+dom(Id_S)=S=ran(Id_S)\\
+Id_T\circ Id_S=Id_{T\cap S}\\
+Id_S^{-1}=Id_S\\
+(\rho^{-1})^{-1}=\rho\\
+(\rho_2\circ\rho_1)^{-1}=\rho_1^{-1}\circ\rho_2^{-1}\\
+\rho\circ\empty=\empty=\empty\circ\rho\\
+Id_{\empty}=\empty=\empty^{-1}\\
+dom(\rho)=\empty\Longleftrightarrow\rho=\empty</script><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><script type="math/tex; mode=display">
+<~\subseteq~\le\\
+<\cup Id_N~=~\le\\
+\le\cap\ge~=~Id_N\\
+<\cap\ge~=~\empty\\
+<\circ\le~=~<\\
+\le\circ\le~=~\le\\
+\ge=\le^{-1}</script><h4 id="Equivalence-Relations"><a href="#Equivalence-Relations" class="headerlink" title="Equivalence Relations"></a>Equivalence Relations</h4><p>$\rho$ is an <em>equivalence relation</em> on S if it is <strong>reflexive</strong>, <strong>symmetric</strong> and <strong>transitive</strong>.</p>
+<p>Reflexivity: $Id_S\subseteq\rho$</p>
+<p>Symmetry: $\rho^{-1}=\rho$</p>
+<p>Transitivity: $\rho\circ\rho\subseteq\rho$</p>
+<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><p>A relation $\rho$ is a function if, for all $x,y$ and $y’,(x,y)\in\rho$ and $(x,y’)\in\rho$ imply $y=y’$. (排除了多对一和多对多的情况)</p>
+<p>Function application $f(x)$ can also be written as $f~x$.</p>
+<p>$\empty$ and $Id_S$ are functions.</p>
+<p>If $f$ and $g$ are functions, then $g\circ f$ is a function. $(g\circ f)~x=g(f~x)$</p>
+<p>If $f$ is a function, $f^{-1}$ is not necessarily a function. (除非是单射)</p>
+<h4 id="Injection-Surjection-and-Bijection"><a href="#Injection-Surjection-and-Bijection" class="headerlink" title="Injection, Surjection and Bijection"></a>Injection, Surjection and Bijection</h4><p>单射，满射，双射</p>
+<h4 id="Denoted-by-Typed-Lambda-Expressions"><a href="#Denoted-by-Typed-Lambda-Expressions" class="headerlink" title="Denoted by Typed Lambda Expressions"></a>Denoted by Typed Lambda Expressions</h4><p>$\lambda x\in S.E$ denotes the function $f$ with domain S such that $f(x)=E$ for all $x\in{S}$.</p>
+<h4 id="Variation"><a href="#Variation" class="headerlink" title="Variation"></a>Variation</h4><p>单点改值</p>
+<h4 id="Function-Types"><a href="#Function-Types" class="headerlink" title="Function Types"></a>Function Types</h4><p>$\to$ is right associative. That is, $A\to B\to C=A\to(B\to C)$.</p>
+<h3 id="Products"><a href="#Products" class="headerlink" title="Products"></a>Products</h3><p>$S_0\times S_1\times\cdots\times S_{n-1}=\{(x_0,\cdots,x_{n-1})~|~\forall i\in[0,n-1].x_i\in S_i\}$</p>
+<p>We say $(x_0,\cdots,x_{n-1})$ is an $n$-tuple.</p>
+<p>Then we have $\pi_i(x_0,\cdots,x_{n-1})=x_i$.</p>
+<p>We can view an $n$-tuple $(x_0,\cdots,x_{n-1})$ as a function.</p>
+<p>$S_0\times\cdots\times S_{n-1}=^{def}\{f~|~dom(f)=\textbf{n}\text{, and }\forall i\in \textbf{n}.f~i\in S_i\}$</p>
+<p>$\prod_{i\in I}S(i)=^{def}\{f~|~dom(f)=I\text{, and }\forall i\in I. f~i\in S(i)\}$</p>
+<p>$\prod_{i=m}^n S(i)=^{def}\prod_{i\in[m,n]}S(i)$</p>
+<p>We can also define $\sqcap\theta$ for a function $\theta$.</p>
+<p>$\sqcap\theta=^{def}\{f~|~dom(f)=dom(\theta)\text{, and }\forall i\in dom(\theta). f~i\in\theta~i\}$</p>
+<h4 id="Exponentiation"><a href="#Exponentiation" class="headerlink" title="Exponentiation"></a>Exponentiation</h4><p>Recall $\prod_{x\in T}S(x)=\sqcap\lambda x\in T.S(x)$.</p>
+<p>We write $S^T$ for $\prod_{x\in T}S$ if S is independent of x.</p>
+<script type="math/tex; mode=display">
+S^T=\prod_{x\in T}S=\sqcap\lambda x\in T.S\\
+=\{f~|~dom(f)=T\text{, and }\forall x\in T. f~x\in S\}=(T\to S)</script><p>Recall that $T\to S$ is the set of all functions from T to S.</p>
+<h3 id="Sums"><a href="#Sums" class="headerlink" title="Sums"></a>Sums</h3><h4 id="Disjoint-Unions"><a href="#Disjoint-Unions" class="headerlink" title="Disjoint Unions"></a>Disjoint Unions</h4><p>To define the disjoint union of A and B, we need to index the elements according to which set they originated in.</p>
+<p>$A+B=^{def}\{(i,x)~|~i=0\text{ and }x\in A\text{, or } i=1\text{ and }x\in B\}$</p>
+<p>$\sum\theta=^{def}\{(i,x)~|~i\in dom(\theta)\text{ and }x\in\theta~i\}$</p>
+<p>$\sum_{x\in T}S(x)=^{def}\sum\lambda x\in T.S(x)$</p>
+<p>Let $\theta=\lambda i\in\textbf{2}.\textbf{B}$. $\sqcap\theta=\textbf{B}\times\textbf{B}$, $\sum\theta=\textbf{2}\times\textbf{B}$.</p>
+<h2 id="Lambda-Calculus"><a href="#Lambda-Calculus" class="headerlink" title="Lambda Calculus"></a>Lambda Calculus</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><ul>
+<li>Syntax<ul>
+<li>How to write a program?</li>
+<li>Keyword “$\lambda$” for defining functions</li>
+</ul>
+</li>
+<li>Semantics<ul>
+<li>How to describe the executions of a program?</li>
+<li>Calculation rules called <strong>reduction</strong></li>
+</ul>
+</li>
+<li>Others<ul>
+<li>Type system</li>
+<li>Model theory(not covered)</li>
+<li>$\cdots$</li>
+</ul>
+</li>
+</ul>
+<h3 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h3><ul>
+<li><p>$\lambda$ terms or $\lambda$ expressions:</p>
+<p>(Terms) M,N ::= x | $\lambda x$. M | M N</p>
+<ul>
+<li>pure $\lambda$-calculus</li>
+</ul>
+</li>
+<li><p>Add extra operations and data types</p>
+<ul>
+<li>$\lambda x.(x+1)$</li>
+<li>$\lambda z.(x+2*y+z)$</li>
+<li>$(\lambda x.(x+1)) 3 = 3+1$</li>
+<li>$(\lambda z.(x+2<em>y+z)) 5 = x+2</em>y+5$</li>
+</ul>
+</li>
+</ul>
+<h4 id="Conventions"><a href="#Conventions" class="headerlink" title="Conventions"></a>Conventions</h4><ul>
+<li><p>Body of $\lambda$ extends as far to the right as possible</p>
+<p>$\lambda x$.M N means $\lambda x$.(M N), not ($\lambda x.$ M) N</p>
+</li>
+<li><p>Function applications are left-associative</p>
+<p>M N P  means (M N) P, not M (N P)</p>
+</li>
+</ul>
+<h4 id="Higher-order-functions"><a href="#Higher-order-functions" class="headerlink" title="Higher-order functions"></a>Higher-order functions</h4><ul>
+<li>Functions can be returned as return values</li>
+<li>Functions can be passed as arguments</li>
+<li>Given function $f$, return function $f\circ f$: $\lambda f.\lambda x. f(f~x)$</li>
+</ul>
+<h4 id="Curried-functions"><a href="#Curried-functions" class="headerlink" title="Curried functions"></a>Curried functions</h4><ul>
+<li>$\lambda$ abstraction is a function of 1 parameter</li>
+</ul>
+<h4 id="Free-and-bound-variables"><a href="#Free-and-bound-variables" class="headerlink" title="Free and bound variables"></a>Free and bound variables</h4><ul>
+<li><p>$\lambda x.x+y$</p>
+<ul>
+<li>x: bound variable</li>
+<li>y: free variable</li>
+</ul>
+</li>
+<li><p>Bound variable can be renamed</p>
+<ul>
+<li>$\lambda x.(x+y)$ is same function as $\lambda z.(z+y)$ ($\alpha$-equivalence)</li>
+<li>(x+y) is the <em>scope</em> of  the binding $\lambda x$</li>
+</ul>
+</li>
+<li><p>Name of free variable does matter</p>
+<ul>
+<li>$\lambda x.(x+y)$ is not the same function as $\lambda x.(x+z)$ </li>
+</ul>
+</li>
+<li><p>Occurrences</p>
+<ul>
+<li>$(\lambda x.x+y)(x+1)$: x has both a free and a bound occurrence</li>
+</ul>
+</li>
+<li><p>fv(M): the set of free variables in M. (Defined by induction on terms.)</p>
+<script type="math/tex; mode=display">
+fv(x)\equiv\{x\}\\
+fv(\lambda x. M)\equiv fv(M)\setminus\{x\}\\
+fv(M N)\equiv fv(M)\cup fv(N)</script></li>
+<li><p>“x is a free variable in M”: $x\in fv(M)$</p>
+</li>
+<li><p>$\alpha$-equivalence: $\lambda x.M=\lambda y.M[y/x]$, where y fresh</p>
+</li>
+</ul>
+<h3 id="Semantics"><a href="#Semantics" class="headerlink" title="Semantics"></a>Semantics</h3><h4 id="Overview-of-reduction"><a href="#Overview-of-reduction" class="headerlink" title="Overview of reduction"></a>Overview of reduction</h4><ul>
+<li>Basic rule is $\beta$-reduction: $(\lambda x. M) N\to M[N/x]$ (<em>Substitution</em>)</li>
+<li>Repeatedly apply reduction rule to any sub-term</li>
+</ul>
+<h4 id="Substitution"><a href="#Substitution" class="headerlink" title="Substitution"></a>Substitution</h4><ul>
+<li>M[N/x]: replace x by N in M. (Define by induction on terms)<script type="math/tex; mode=display">
+x[N/x]\equiv N\\
+y[N/x]\equiv y\\
+(M~P)[N/x]\equiv(M[N/x])(P[N/x])\\
+(\lambda x.M)[N/x]\equiv\lambda x.M\\
+(\lambda y.M)[N/x]\equiv\lambda y.(M[N/x])\text{, if }y\notin fv(N)\\
+(\lambda y. M)[N/x]\equiv\lambda z.(M[z/y][N/x])\text{, if }y\in fv(N)\text{and z fresh}</script>Easy rule: always rename variables to be distinct</li>
+</ul>
+<h4 id="Reduction-rules"><a href="#Reduction-rules" class="headerlink" title="Reduction rules"></a>Reduction rules</h4><script type="math/tex; mode=display">
+\frac{}{(\lambda x.M)N\to M[N/x]}(\beta)\\
+\frac{M\to M'}{M~N\to M'~N}\\
+\frac{N\to N'}{M~N\to M~N'}\\
+\frac{M\to M'}{\lambda x. M\to\lambda x.M'}</script><h4 id="Normal-form"><a href="#Normal-form" class="headerlink" title="Normal form"></a>Normal form</h4><ul>
+<li>$\beta$-redex: a term of the form $(\lambda x.M)~N$</li>
+<li>$\beta$-normal form: a term containing no $\beta$-redex<ul>
+<li>Stopping point: cannot further apply $\beta$-reduction rules</li>
+</ul>
+</li>
+</ul>
+<h4 id="Confluence-Church-Rosser-Property"><a href="#Confluence-Church-Rosser-Property" class="headerlink" title="Confluence(Church-Rosser Property)"></a>Confluence(Church-Rosser Property)</h4><p>Terms can be evaluated in any order. Final result (if there is one) is uniquely determined.</p>
+<ul>
+<li><p>$M\to^*M’$: zero-or-more steps of $\to$</p>
+<p>$M\to^0M’$ iff $M=M’$</p>
+<p>$M\to^{k+1}M’$ iff $\exists M’’. M\to M’’\land M’’\to^kM’$</p>
+<p>$M\to^*M’$ iff $\exists k.M\to^kM’$</p>
+</li>
+<li><p>Confluence Theorem:</p>
+<p>If $M\to^<em>M_1$ and $M\to^</em>M_2$, then there exists $M’$ such that $M_1\to^<em>M’$ and $M_2\to^</em>M’$.</p>
+</li>
+<li><p>With $\alpha$-equivalence, every term has at most one normal form.</p>
+</li>
+<li><p>Term may have both terminating and non-termination reduction sequences. Some reduction strategies may fail to find a normal form.</p>
+</li>
+</ul>
+<h4 id="Reduction-strategies"><a href="#Reduction-strategies" class="headerlink" title="Reduction strategies"></a>Reduction strategies</h4><ul>
+<li><em>Normal-order</em> reduction: choose the <strong>left-most</strong>, <strong>outer-most</strong> redex first. (Theorem: Normal-order reduction will find normal form if exists.)</li>
+<li><em>Applicative-order</em> reduction: choose the <strong>left-most</strong>, <strong>inner-most</strong> redex first.</li>
+</ul>
+<h4 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h4><ul>
+<li>Only evaluate <strong>closed terms</strong>(i.e. no free variables)</li>
+<li>May not reduce all the way to a normal form<ul>
+<li>Terminate as soon as a canonical form(i.e. a lambda abstraction) is obtained</li>
+</ul>
+</li>
+<li>A closed normal form must be a canonical form</li>
+<li>Not every closed canonical form is a normal form</li>
+</ul>
+<h4 id="Normal-order-evaluation-rules"><a href="#Normal-order-evaluation-rules" class="headerlink" title="Normal-order evaluation rules"></a>Normal-order evaluation rules</h4><script type="math/tex; mode=display">
+\frac{}{\lambda x.M\Rightarrow\lambda x.M}(Term)\\
+\frac{M\Rightarrow\lambda x.M'\qquad M'[N/x]\Rightarrow P}{M~N\Rightarrow P}(\beta)\\</script><ul>
+<li>Small-step:<script type="math/tex; mode=display">
+\frac{}{(\lambda x.M)N\to M[N/x]}(\beta)\\
+\frac{M\to M'}{M~N\to M'~N}</script></li>
+</ul>
+<h4 id="Eager-evaluation-rules"><a href="#Eager-evaluation-rules" class="headerlink" title="Eager evaluation rules"></a>Eager evaluation rules</h4><p><strong>Eager evaluation</strong>: Postpone the substitution until the argument is a canonical form. No need to reduce many copies of the argument separately.</p>
+<script type="math/tex; mode=display">
+\frac{}{\lambda x.M\Rightarrow_E\lambda x.M}(Term)\\
+\frac{M\Rightarrow_E\lambda x.M'\qquad N\Rightarrow_EN'\qquad M'[N'/x]\Rightarrow_EP}{M~N\Rightarrow_EP}(\beta)</script><ul>
+<li>Small-step:<script type="math/tex; mode=display">
+\frac{}{(\lambda x.M)(\lambda y.N)\to M[(\lambda y.N)/x]}(\beta)\\
+\frac{M\to M'}{M~N\to M'~N}\\
+\frac{N\to N'}{(\lambda x.M)~N\to(\lambda x.M)~N'}</script></li>
+</ul>
+<h3 id="Programming-in-lambda-calculus"><a href="#Programming-in-lambda-calculus" class="headerlink" title="Programming in $\lambda$-calculus"></a>Programming in $\lambda$-calculus</h3><ul>
+<li>Encoding Boolean values and operators<ul>
+<li>$True\equiv\lambda x.\lambda y.x$</li>
+<li>$False\equiv\lambda x.\lambda y.y$</li>
+<li>$not\equiv\lambda b.b~False~True$</li>
+<li>$and\equiv\lambda b.\lambda b’.b~b’~Flase$</li>
+<li>$or\equiv\lambda b.\lambda b’.b~True~b’$</li>
+<li>$\text{if b then M else N}\equiv b~M~N$</li>
+<li>$not’\equiv\lambda b.\lambda x.\lambda y.b~y~x$</li>
+</ul>
+</li>
+<li>Church numerals<ul>
+<li><u>0</u> $\equiv\lambda f.\lambda x.x$</li>
+<li><u>1</u> $\equiv\lambda f.\lambda x.f~x$</li>
+<li><u>2</u> $\equiv\lambda f.\lambda x. f~(f~x)$</li>
+<li><u>n</u> $\equiv\lambda f.\lambda x.f^n~x$</li>
+<li>$succ\equiv\lambda n.\lambda f.\lambda x.f~(n~f~x)$</li>
+<li>$succ’\equiv\lambda n.\lambda x.n~f~(f~x)$</li>
+<li>$iszero\equiv\lambda n.\lambda x.\lambda y.n~(\lambda z.y)~x$</li>
+<li>$add\equiv\lambda n.\lambda m.\lambda f.\lambda x.n~f(m~f~x)$</li>
+<li>$mult\equiv\lambda n.\lambda m.\lambda f.n~(m~f)$</li>
+</ul>
+</li>
+<li>Pairs<ul>
+<li>$(M,N)\equiv\lambda f.f~M~N$</li>
+<li>$\pi_0\equiv\lambda p.p~(\lambda x.\lambda y.x)$</li>
+<li>$\pi_1\equiv\lambda p.p~(\lambda x.\lambda y.y)$</li>
+</ul>
+</li>
+<li>Tuples<ul>
+<li>$(M_1,\cdots,M_n)\equiv\lambda f.f~M_1\cdots M_n$</li>
+<li>$\pi_i\equiv\lambda p.p~(\lambda x_1.\cdots\lambda x_n.x_i)$</li>
+</ul>
+</li>
+<li>Recursive functions<ul>
+<li>fact(n) = if (n==0) then 1 else n*fact(n-1)</li>
+<li>Fixpoint in arithmetic<ul>
+<li>x is a fixpoint of f if f(x)=x</li>
+<li>Some functions have fixpoints, while others don’t</li>
+<li>In $\lambda$-calculus, every term has a fixpoint.</li>
+<li>Fixpoint combinator is a higher-order function h satisfying: for all f, (h f) gives a fixpoint of f (i.e. h f = f (h f))</li>
+</ul>
+</li>
+<li>Turing’s fixpoint combinator $\Theta$<ul>
+<li>Let $A=\lambda x.\lambda y.y~(x~x~y)$ and $\Theta=A~A$</li>
+<li>Then, for all f, $\Theta~f=f~(\Theta~f)$</li>
+</ul>
+</li>
+<li>Let $F=\lambda f.\lambda n.$ if (n==0) then 1 else n * f(n-1). fact is a fixpoint of F. ($fact=\Theta~F$)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Simply-Typed-Lambda-Calculus"><a href="#Simply-Typed-Lambda-Calculus" class="headerlink" title="Simply-Typed Lambda Calculus"></a>Simply-Typed Lambda Calculus</h2><h4 id="Why-types"><a href="#Why-types" class="headerlink" title="Why types"></a>Why types</h4><ul>
+<li>Type checking catches “simple” mistakes early</li>
+<li>(<strong>Type safety</strong>) Well-typed programs will not go wrong</li>
+<li>Typed programs are easier to analyze and optimize</li>
+</ul>
+<p>Cons: impose constraints on the programmer. (Some valid programs migt be rejected)</p>
+<h4 id="Why-formal-type-systems"><a href="#Why-formal-type-systems" class="headerlink" title="Why formal type systems"></a>Why formal type systems</h4><ul>
+<li>A formal presentation of a type system is <strong>a precise specification of the type checker</strong> and <strong>allows formal proofs of type safety</strong></li>
+</ul>
+<h3 id="Type-system"><a href="#Type-system" class="headerlink" title="Type system"></a>Type system</h3><h4 id="Simply-typed-lambda-calculus-STLC"><a href="#Simply-typed-lambda-calculus-STLC" class="headerlink" title="Simply-typed $\lambda$-calculus (STLC)"></a>Simply-typed $\lambda$-calculus (STLC)</h4><p>(Types) $\tau,\sigma$ ::= T | $\sigma\to\tau$</p>
+<ul>
+<li>T: base type(e.g. int, bool)</li>
+<li>$\sigma\to\tau$: function type</li>
+<li>$\to$ is right-associative: $\tau\to\tau\to\tau$ is $\tau\to(\tau\to\tau)$</li>
+</ul>
+<p>(Terms) M, N ::= x | $\lambda x:\tau$. M | M N</p>
+<h4 id="Reduction-rules-1"><a href="#Reduction-rules-1" class="headerlink" title="Reduction rules"></a>Reduction rules</h4><script type="math/tex; mode=display">
+\frac{}{(\lambda x:\tau.M)N\to M[N/x]}(\beta)\\
+\frac{M\to M'}{M~N\to M'~N}\\
+\frac{N\to N'}{M~N\to M~N'}\\
+\frac{M\to M'}{\lambda x:\tau. M\to\lambda x:\tau.M'}</script><h4 id="Typing-judgment"><a href="#Typing-judgment" class="headerlink" title="Typing judgment"></a>Typing judgment</h4><script type="math/tex; mode=display">
+\Gamma\vdash M:\tau</script><ul>
+<li><p>M is of type $\tau$ in context $\Gamma$</p>
+</li>
+<li><p><strong>Typing context</strong> (a set of typing assumptions)</p>
+<script type="math/tex; mode=display">
+\Gamma ::= \cdot~|~\Gamma,x:\tau</script><ul>
+<li>Include types of all the <strong>free variables</strong> in M (each free variable x is of type $\tau$)</li>
+<li>Empty context $\cdot$ is for closed terms</li>
+</ul>
+</li>
+<li><p>Under $\Gamma$, M is a <strong>well-typed</strong> term of type $\tau$</p>
+</li>
+</ul>
+<h4 id="Typing-rules"><a href="#Typing-rules" class="headerlink" title="Typing rules"></a>Typing rules</h4><script type="math/tex; mode=display">
+\frac{}{\Gamma,x:\tau\vdash x:\tau}(var)\\
+\frac{\Gamma\vdash M:\sigma\to\tau\qquad\Gamma\vdash N:\sigma}{\Gamma\vdash M~N:\tau}(app)\\
+\frac{\Gamma,x:\sigma\vdash M:\tau}{\Gamma\vdash(\lambda x:\sigma.M):\sigma\to\tau}(abs)</script><h4 id="Soundness-and-completeness"><a href="#Soundness-and-completeness" class="headerlink" title="Soundness and completeness"></a>Soundness and completeness</h4><ul>
+<li><p>A <strong>sound</strong> type system never accepts a program that can go wrong</p>
+<ul>
+<li>No false negatives</li>
+<li>The language is <strong>type-safe</strong></li>
+</ul>
+</li>
+<li><p>A <strong>complete</strong> type system never rejects a program that can’t go wrong</p>
+<ul>
+<li>No false positives</li>
+</ul>
+</li>
+<li><p>However, for any Turing-complete PL, the set of programs that may go wrong is undecidable</p>
+<ul>
+<li>Type system cannot be sound and complete</li>
+<li>Choose soundness, try to reduce false positives in practice</li>
+</ul>
+</li>
+<li><p><strong>Soundness</strong>: well-typed terms in STLC never go wrong</p>
+<p>Theorem (Type Safety):</p>
+<p>If  $\cdot\vdash M:\tau$ and $M\to^*M’$, then $\cdot\vdash M’:\tau$ and either $M’\in$ Values or  $\exists M’’. M’\to M’’$.</p>
+<ul>
+<li><p><strong>Preservation (subject reduction)</strong>: well-typed terms reduce only to well-typed terms of the same type</p>
+<p>If  $\cdot\vdash M:\tau$ and $M\to M’$, then $\cdot\vdash M’:\tau$</p>
+</li>
+<li><p><strong>Progress</strong>: a well-typed term is either a value or can be reduced</p>
+<p>If  $\cdot\vdash M:\tau$, then either $M\in$ Values or $\exists M’. M\to M’$</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Not complete</strong>: the type system may reject terms that do not go wrong</p>
+</li>
+<li><p>Well-typed terms in STLC always terminate (string normalization theorem)</p>
+</li>
+</ul>
+<h4 id="Adding-product-type"><a href="#Adding-product-type" class="headerlink" title="Adding product type"></a>Adding product type</h4><p>(Types) $\tau, \sigma$ ::= $\cdots$ | $\sigma\times\tau$</p>
+<p>(Terms) M, N ::= $\cdots$ | <m, n=""> | proj1 M | proj2 M</m,></p>
+<p>Consider structures in C.</p>
+<p>Reduction rules</p>
+<script type="math/tex; mode=display">
+\frac{}{proj1<M,N>\to M}\qquad\frac{}{proj2<M,N>\to N}\\
+\frac{M\to M'}{<M,N>\to<M',N>}\qquad\frac{N\to N'}{<M,N>\to<M,N'>}\\
+\frac{M\to M'}{proj1~M\to proj1~M'}\qquad\frac{M\to M'}{prj2~M\to proj2~M'}</script><p>Typing rules</p>
+<script type="math/tex; mode=display">
+\frac{\Gamma\vdash M:\sigma\qquad\Gamma\vdash N:\tau}{\Gamma\vdash<M,N>:\sigma\times\tau}(pair)\\
+\frac{\Gamma\vdash M:\sigma\times\tau}{\Gamma\vdash proj1~M:\sigma}(proj1)\qquad\frac{\Gamma\vdash M:\sigma\times\tau}{\Gamma\vdash proj2~M:\tau}(proj2)</script><h4 id="Adding-sum-type"><a href="#Adding-sum-type" class="headerlink" title="Adding sum type"></a>Adding sum type</h4><p>(Type) $\tau,\sigma$ ::= $\cdots$ | $\sigma+\tau$</p>
+<p>(Terms) M, N ::= $\cdots$ | left M | right M | case M do M1 M2</p>
+<p>Consider union in C.</p>
+<p>Reduction rules</p>
+<script type="math/tex; mode=display">
+\frac{}{\text{case (left M) do M1 M2}\to\text{M1 M}}\qquad\frac{M\to M'}{\text{left M}\to\text{left M'}}\\
+\frac{}{\text{case (right M) do M1 M2}\to\text{M2 M}}\qquad\frac{M\to M'}{\text{right M}\to\text{right M'}}\\
+\frac{M\to M'}{\text{case M do M1 M2}\to\text{case M' do M1 M2}}\\
+\frac{M1\to M1'}{\text{case M do M1 M2}\to\text{case M do M1' M2}}\\
+\frac{M2\to M2'}{\text{case M do M1 M2}\to\text{case M do M1 M2'}}</script><p>Typing rules</p>
+<script type="math/tex; mode=display">
+\frac{\Gamma\vdash M:\sigma}{\Gamma\vdash\text{left M}:\sigma +\tau}(left)\qquad\frac{\Gamma\vdash M:\tau}{\Gamma\vdash\text{right M}:\sigma+\tau}(right)\\
+\frac{\Gamma\vdash M:\sigma+\tau\qquad\Gamma\vdash M1: \sigma\to\rho\qquad\Gamma\vdash M2:\tau\to\rho}{\Gamma\vdash\text{case M do M1 M2}:\rho}</script><h4 id="Products-vs-sums"><a href="#Products-vs-sums" class="headerlink" title="Products vs. sums"></a>Products vs. sums</h4><ul>
+<li>“logical duals”<ul>
+<li>To make a $\sigma\times\tau$, we need a $\sigma$ and a $\tau$</li>
+<li>To make a $\sigma+\tau$, we need a $\sigma$ or a $\tau$</li>
+<li>Given a $\sigma\times\tau$, we ca get a $\sigma$ or a $\tau$ or both</li>
+<li>Given a $\sigma+\tau$, we must be prepared for either a $\sigma$ or a $\tau$</li>
+</ul>
+</li>
+</ul>
+<h4 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h4><p>(Terms) M, N ::= $\cdots$ | <strong>fix</strong> M</p>
+<p>(Types) $\tau,\sigma$ ::= $\cdots$ (no new types)</p>
+<p>Reduction rules</p>
+<script type="math/tex; mode=display">
+\frac{}{\textbf{fix }\lambda x.M\to M[\textbf{fix }\lambda x.M/x]}\qquad \frac{M\to M'}{\textbf{fix }M\to\textbf{fix }M'}</script><p>Typing fix</p>
+<script type="math/tex; mode=display">
+\frac{\Gamma\vdash M:\tau\to\tau}{\Gamma\vdash\textbf{fix }M:\tau}(fix)</script><ul>
+<li>Strong normalization is eliminated</li>
+</ul>
+<h3 id="Connection-to-constructive-propositional-logic"><a href="#Connection-to-constructive-propositional-logic" class="headerlink" title="Connection to constructive propositional logic"></a>Connection to constructive propositional logic</h3><ul>
+<li>Curry-Howard Isomorphism</li>
+<li>“nonempty” types (closed terms of that type): can be proved in propositional logic</li>
+<li>“empty” type (no closed terms of that type): cannot be proved in propositional logic</li>
+<li>$\to$ vs. $\Rightarrow$ </li>
+<li>$\times$ vs. $\land$</li>
+<li>$+$ vs. $\lor$</li>
+<li>Constructive (hold that thought) propositional logic and simply-typed lambda-calculus with pairs and sums are <strong>the same thing</strong>.<ul>
+<li>Computation and logic are <strong>deeply</strong> connected</li>
+<li>$\lambda$ is no more or less made up than implication</li>
+</ul>
+</li>
+</ul>
+<h2 id="Operational-Semantics"><a href="#Operational-Semantics" class="headerlink" title="Operational Semantics"></a>Operational Semantics</h2><h3 id="Syntax-of-a-Simple-Imperative-Language"><a href="#Syntax-of-a-Simple-Imperative-Language" class="headerlink" title="Syntax of a Simple Imperative Language"></a>Syntax of a Simple Imperative Language</h3><p>(IntExp) e ::= <strong>n</strong> | x | e + e | e - e | $\cdots$</p>
+<p>(BoolExp) b ::=  <strong>true</strong> | <strong>false</strong> | e = e | e &lt; e | e &gt; e| $\lnot$b | b $\land$ b | b $\lor$ b | $\cdots$</p>
+<p>(Comm) c ::= <strong>skip</strong> | x := e | c ; c | <strong>if</strong> b <strong>then</strong> c <strong>else</strong> c | <strong>while</strong> b <strong>do</strong> c</p>
+<p><em>numerals</em> vs. <em>natural numbers</em></p>
+<p>We write $\lfloor$<strong>n</strong>$\rfloor$ to denote the meaning of <strong>n</strong>. We assume that $\lfloor$<strong>n</strong>$\rfloor$=n.</p>
+<h3 id="Operational-Semantics-1"><a href="#Operational-Semantics-1" class="headerlink" title="Operational Semantics"></a>Operational Semantics</h3><p>(State) $\sigma$ $\in$ Var $\to$ Values</p>
+<p>For example, $\sigma_1=\{(x,2),(y,3),(a,10)\}$, which we will write as $\{x\leadsto2,y\leadsto3,a\leadsto10\}$.</p>
+<h4 id="Small-step-structural-operational-semantics-SOS"><a href="#Small-step-structural-operational-semantics-SOS" class="headerlink" title="Small-step structural operational semantics (SOS)"></a>Small-step structural operational semantics (SOS)</h4><p>“Structural”: syntax oriented and inductive</p>
+<ul>
+<li><p>Small-step SOS for expression evaluation:</p>
+<script type="math/tex; mode=display">
+\frac{(e_1,\sigma)\to(e_1',\sigma)}{(e_1+e_2,\sigma)\to(e_1'+e_2,\sigma)}\qquad\frac{(e_2,\sigma)\to(e_2',\sigma)}{(\textbf{n}+e_2,\sigma)\to(\textbf{n}+e_2',\sigma)}\\
+\frac{(e_1,\sigma)\to(e_1',\sigma)}{(e_1-e_2,\sigma)\to(e_1'-e_2,\sigma)}\qquad\frac{(e_2,\sigma)\to(e_2',\sigma)}{(\textbf{n}-e_2,\sigma)\to(\textbf{n}-e_2',\sigma)}\\
+\frac{\lfloor\textbf{n}_1\rfloor\lfloor+\rfloor\lfloor\textbf{n}_2\rfloor=\lfloor\textbf{n}\rfloor}{(\textbf{n}_1+\textbf{n}_2,\sigma)\to(\textbf{n},\sigma)}\qquad
+\frac{\lfloor\textbf{n}_1\rfloor\lfloor-\rfloor\lfloor\textbf{n}_2\rfloor=\lfloor\textbf{n}\rfloor}{(\textbf{n}_1-\textbf{n}_2,\sigma)\to(\textbf{n},\sigma)}\qquad\frac{\sigma(x)=\lfloor\textbf{n}\rfloor}{(x,\sigma)\to(\textbf{n},\sigma)}</script></li>
+<li><p>Small-step SOS for boolean expressions:</p>
+<script type="math/tex; mode=display">
+\frac{(e_1,\sigma)\to(e_1',\sigma)}{(e_1=e_2,\sigma)\to(e_1'=e_2,\sigma)}\qquad\frac{(e_2,\sigma)\to(e_2',\sigma)}{(\textbf{n}=e_2,\sigma)\to(\textbf{n}=e_2',\sigma)}\\
+\frac{\lfloor\textbf{n}_1\rfloor\lfloor=\rfloor\lfloor\textbf{n}_2\rfloor}{(\textbf{n}_1=\textbf{n}_2,\sigma)\to(\textbf{true},\sigma)}\qquad\frac{\lnot(\lfloor\textbf{n}_1\rfloor\lfloor=\rfloor\lfloor\textbf{n}_2\rfloor)}{(\textbf{n}_1=\textbf{n}_2,\sigma)\to(\textbf{false},\sigma)}\\
+\frac{(b,\sigma)\to(b',\sigma)}{(\lnot b,\sigma)\to(\lnot b',\sigma)}\\
+\frac{}{(\lnot\textbf{true},\sigma)\to(\textbf{false},\sigma)}\qquad\frac{}{(\lnot\textbf{false},\sigma)\to(\textbf{true},\sigma)}\\
+\frac{(b_1,\sigma)\to(b_1',\sigma)}{(b_1\land b_2,\sigma)\to(b_1'\land b_2,\sigma)}\\
+\frac{(b_2,\sigma)\to(b_2',\sigma)}{(\textbf{true}\land b_2,\sigma)\to(\textbf{true}\land b_2',\sigma)}\qquad\frac{(b_2,\sigma)\to(b_2',\sigma)}{(\textbf{false}\land b_2,\sigma)\to(\textbf{false}\land b_2',\sigma)}\\
+\frac{}{(\textbf{true}\land\textbf{true},\sigma)\to(\textbf{true},\sigma)}\qquad\frac{}{(\textbf{true}\land\textbf{false},\sigma)\to(\textbf{false},\sigma)}\\
+\frac{}{(\textbf{false}\land\textbf{true},\sigma)\to(\textbf{false},\sigma)}\qquad\frac{}{(\textbf{false}\land\textbf{false},\sigma)\to(\textbf{false},\sigma)}</script></li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{}{(\textbf{skip},\sigma)\to\sigma}\\
+\frac{(e,\sigma)\to(e',\sigma)}{(x:=e,\sigma)\to(x:=e',\sigma)}\qquad\frac{}{(x:=\textbf{n},\sigma)\to\sigma\{x\leadsto\lfloor\textbf{n}\rfloor\}}\\
+\frac{(c_0,\sigma)\to(c_0',\sigma')}{(c_0;c_1,\sigma)\to(c_0';c_1,\sigma')}\qquad\frac{(c_0,\sigma)\to\sigma'}{(c_0;c_1,\sigma)\to(c_1,\sigma')}\\
+\frac{(b,\sigma)\to(b',\sigma')}{(\textbf{if }b\textbf{ then }c_0\textbf{ else }c_1,\sigma)\to(\textbf{if }b'\textbf{ then }c_0\textbf{ else }c_1,\sigma)}\\
+\frac{}{(\textbf{if true then }c_0\textbf{ else }c_1,\sigma)\to(c_0,\sigma)}\\
+\frac{}{(\textbf{if false then }c_0\textbf{ else }c_1,\sigma)\to(c_1,\sigma)}\\
+\frac{(b,\sigma)\to(b',\sigma')}{(\textbf{while }b\textbf{ do }c,\sigma)\to(\textbf{while }b'\textbf{ do }c,\sigma)}\\
+\frac{}{(\textbf{while false do }c,\sigma)\to\sigma}\\
+\frac{}{(\textbf{while true do }c,\sigma)\to(\textbf{if }b\textbf{ then }(c;\textbf{ while }b\textbf{ do }c)\textbf{ else skp},\sigma)}</script><ul>
+<li><p>Zero-or-multiple steps</p>
+<p>We define $\to^<em>$ as the </em>reflexive transitive closure* of $\to$.</p>
+</li>
+<li><p>Some facts about $\to$</p>
+<ul>
+<li><strong>Theorem (Determinism)</strong>: For all c, $\sigma$, c’, $\sigma’$, c’’, $\sigma’’$, if $(c,\sigma)\to(c’,\sigma’)$ and $(c,\sigma)\to(c’’,\sigma’’)$, then $(c’,\sigma’)=(c’’,\sigma’’)$.</li>
+<li><strong>Corollary (Confluence)</strong>: For all c, $\sigma$, c’, $\sigma’$, c’’, $\sigma’’$, if $(c,\sigma)\to^<em>(c’,\sigma’)$ and $(c,\sigma)\to^</em>(c’’,\sigma’’)$, then there exists c’’’ and $\sigma’’’$ such that $(c’,\sigma’)\to^<em>(c’’’,\sigma’’’)$ and $(c’’,\sigma’’)\to^</em>(c’’’,\sigma’’’)$.</li>
+<li><strong>Normalization</strong>: There are no infinite sequences of configurations $(e_1,\sigma_1),(e_2,\sigma_2),\cdots$ such that, for all i, $(e_i,\sigma_i)\to(e_{i+1},\sigma_{i+1})$. That is, every evaluation path eventually reaches a <em>normal form</em>.<ul>
+<li>Normal Forms:<ul>
+<li>For expressions, the normal forms are $(\textbf{n},\sigma)$ for numeral <strong>n</strong>.</li>
+<li>For booleans, the normal forms are $(\textbf{true},\sigma)$ and $(\textbf{false},\sigma)$.</li>
+</ul>
+</li>
+<li>Facts: The transition relations on $(e,\sigma)$ and $(b,\sigma)$ are normalizing. But, the transition relation on $(c,\sigma)$ is not normalizing. (<strong>while</strong> loop may not stop)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Variations</p>
+<ul>
+<li><p>I: Assignment:</p>
+<script type="math/tex; mode=display">
+\frac{[\![e]\!]_{intexp}\sigma=n}{(x:=e,\sigma)\to\sigma\{x\leadsto n\}}\\
+\frac{[\![b]\!]_{boolexp}\sigma=true}{(\textbf{while }b\textbf{ do }c, \sigma)\to(c;\textbf{while }b\textbf{ do }c, \sigma)}\\
+\frac{[\![b]\!]_{boolexp}\sigma=false}{(\textbf{while }b\textbf{ do }c, \sigma)\to\sigma}</script><p>Here: $[![e]!]_{intexp}\sigma=n$ iff $(e,\sigma)\to^*(\textbf{n},\sigma)$ and $n=\lfloor\textbf{n}\rfloor$</p>
+</li>
+<li><p>II: Assignment:</p>
+<script type="math/tex; mode=display">
+\frac{[\![e]\!]_{intexp}\sigma=n}{(x:=e,\sigma)\to(\textbf{skip},\sigma\{x\leadsto n\})}\\
+\frac{(c_0,\sigma)\to(c_0,\sigma')}{(c_0;c_1,\sigma)\to(c_0';c_1,\sigma')}\qquad\frac{}{(\textbf{skip};c_1,\sigma)\to(c_1,\sigma)}\\
+\frac{[\![b]\!]_{boolexp}\sigma=true}{(\textbf{if }b\textbf{ then }c_0\textbf{ else }c_1,\sigma)\to(c_0,\sigma)}\\
+\frac{[\![b]\!]_{boolexp}\sigma=false}{(\textbf{if }b\textbf{ then }c_0\textbf{ else }c_1,\sigma)\to(c_1,\sigma)}\\
+\frac{[\![b]\!]_{boolexp}\sigma=true}{(\textbf{while }b\textbf{ do }c, \sigma)\to(c;\textbf{while }b\textbf{ do }c, \sigma)}\\
+\frac{[\![b]\!]_{boolexp}\sigma=true}{(\textbf{while }b\textbf{ do }c, \sigma)\to(\textbf{skip},\sigma)}</script><p>Here <strong>skip</strong> is overloaded as a flag for termination. (So there is no rule for $(\textbf{skip},\sigma)$.</p>
+<ul>
+<li><p>We introduce another configuration: <strong>abort</strong>. <strong>abort</strong> cannot step anymore.</p>
+<ul>
+<li><p>Divide by 0 and access non-existing data will lead to <strong>abort</strong></p>
+</li>
+<li><p>expressions: e ::= $\cdots$ | e/e</p>
+</li>
+<li><p>expression evaluation:</p>
+<script type="math/tex; mode=display">
+\frac{\textbf{n}_2\ne\textbf{0}\qquad\lfloor\textbf{n}_1\rfloor\lfloor/\rfloor\lfloor\textbf{n}_2\rfloor=\lfloor\textbf{n}\rfloor}{(\textbf{n}_1/\textbf{n}_2,\sigma)\to(\textbf{n},\sigma)}\qquad\frac{}{(\textbf{n}_1/\textbf{0},\sigma)\to\textbf{abort}}</script></li>
+<li><p>Assignment:</p>
+<script type="math/tex; mode=display">
+\frac{[\![e]\!]_{intexp}\sigma=n}{(x:=e,\sigma)\to(\textbf{skip},\sigma\{x\leadsto n\})}\qquad\frac{[\![e]\!]_{intexp}\sigma=\perp}{(x:=e,\sigma)\to\textbf{abort}}</script><p>Here: $[![e]!]_{intexp}\sigma=\perp$ iff $(e,\sigma)\to^*\textbf{abort}$</p>
+</li>
+<li><p>Add new rules:</p>
+<script type="math/tex; mode=display">
+\frac{(c_0,\sigma)\to\textbf{abort}}{(c_0;c_1,\sigma)\to\textbf{abort}}\\
+\frac{[\![b]\!]_{boolexp}\sigma=\perp}{(\textbf{if }b\textbf{ then }c_0\textbf{ else }c_1,\sigma)\to\textbf{abort}}\\
+\frac{[\![b]\!]_{boolexp}\sigma=\perp}{(\textbf{while }b\textbf{ do }c, \sigma)\to\textbf{abort}}</script></li>
+<li><p>We distinguish “going wrong” from “getting stuck”</p>
+<ul>
+<li>We say c <em>gets stuck</em> at state $\sigma$ iff there’s no $c’.\sigma’$ such that $(c,\sigma)\to(c’,\sigma’)$.</li>
+<li>In the semantics “Version II”, <strong>skip</strong> gets stuck at any state.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>local variable declaration(局部变量)</p>
+<ul>
+<li><p>Statements: c ::= $\cdots$ | <strong>newvar</strong> x := e <strong>in</strong> c</p>
+</li>
+<li><p>Semantics for <strong>newvar</strong>:</p>
+<script type="math/tex; mode=display">
+\frac{n=[\![e]\!]_{intexp}\sigma\qquad(c,\sigma\{x\leadsto n\})\to(c',\sigma')\qquad\sigma'x=\lfloor\textbf{n}'\rfloor}{(\textbf{newvar }x:=e\textbf{ in }c,\sigma)\to(\textbf{newvar }x:=\textbf{n}'\textbf{ in }c', \sigma'\{x\leadsto\sigma x\})}\\
+\frac{}{(\textbf{newvar }x:=e\textbf{ in skip},\sigma)\to(\textbf{skip},\sigma)}\\
+\frac{[\![e]\!]_{intexp}\sigma=\perp}{(\textbf{newvar }x:=e\textbf{ in }c,\sigma)\to\textbf{abort}}\\
+\frac{n=[\![e]\!]_{intexp}\sigma\qquad(c,\sigma\{x\leadsto n\})\to\textbf{abort}}{(\textbf{newvar }x:=e\textbf{ in }c,\sigma)\to\textbf{abort}}\\</script></li>
+</ul>
+</li>
+<li><p>Heap for dynamically-allocated data</p>
+<p>(States) $\sigma$ ::= (s, h)</p>
+<p>(Stores) s $\in$ Var $\to$ Values</p>
+<p>(Heaps) h $\in$ Loc $\rightharpoonup_{fin}$ Values</p>
+<p>(Values) v $\in$ Int $\cup$ Bool $\cup$ Loc</p>
+<p>Here $\rightharpoonup_{fin}$ represents a partial mapping</p>
+<ul>
+<li><p>Statements:</p>
+<p>c ::= $\cdots$ | x := <strong>alloc</strong>(e) | y := [x] | [x] := e | <strong>free</strong>(x)</p>
+</li>
+<li><p>Configurations: (c, (s, h))</p>
+</li>
+<li><p>Semantics:</p>
+<script type="math/tex; mode=display">
+\frac{l\notin dom(h)\qquad[\![e]\!]_{intexp}s=n}{(x:=\textbf{alloc}(e),(s,h))\to(\textbf{skip},(s\{x\leadsto l\},h\uplus\{l\leadsto n\}))}\\
+\frac{s~x=l\qquad l\in dom(h)}{(\textbf{free}(x),(s,h))\to(\textbf{skip},(s,h\setminus\{l\}))}\\
+\frac{s~x=l\qquad h~l=n}{(y:=[x],(s,h))\to(\textbf{skip},(s\{y\leadsto n\},h))}\\
+\frac{s~x=l\qquad l\in dom(h)\qquad [\![e]\!]_{intexp}s=n}{([x]:=e,(s,h))\to(\textbf{skip},(s,h\{l\leadsto n\}))}</script></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Contextual-semantics"><a href="#Contextual-semantics" class="headerlink" title="Contextual semantics"></a>Contextual semantics</h4><p>An alternative presentation of small-step operational semantics using <em>redex</em> and <em>evaluation contexts</em>.</p>
+<ul>
+<li><p>Redex</p>
+<p>A <em>redex</em> is a syntactic expression or command that can be reduced (transformed) in one atomic step.</p>
+</li>
+<li><p>Local reduction rules</p>
+</li>
+<li><p>Evaluation contexts</p>
+<p>An evaluation context is a term with a “hole” in the place of a sub-term.</p>
+<ul>
+<li>Location of the hole indicates the next place for evaluation</li>
+<li>If $\mathcal{E}$ is a context, then $\mathcal{E}[r]$ is the expression obtained by replacing redex r for the hole in context $\mathcal{E}$</li>
+<li>Now, if $(r,\sigma)\to(t,\sigma’)$, then $(\mathcal{E}[r],\sigma)\to(\mathcal{E}[t],\sigma’)$.</li>
+</ul>
+</li>
+<li><p>Evaluation contexts</p>
+<p>(Ctxt) $\mathcal{E}$ ::= [ ] | $\mathcal{E}+e$ | <strong>n</strong>$+\mathcal{E}$ | x := $\mathcal{E}$ | $\mathcal{E}$ ; c | <strong>if</strong>  $\mathcal{E}$ <strong>then</strong> c <strong>else</strong> c | $\cdots$</p>
+<ul>
+<li>$\mathcal{E}$ has exactly one hole</li>
+<li>$\mathcal{E}$ uniquely identifies the next redex to be evaluated</li>
+<li>Decomposition theorem:<ul>
+<li>If $c\ne$<strong>skip</strong>, then there exist unique $\mathcal{E}$ and r such that $c=\mathcal{E}[r]$</li>
+<li>If $e\ne$<strong>n</strong>, then there exist unique $\mathcal{E}$ and r such that $e=\mathcal{E}[r]$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Global reduction rule</p>
+<ul>
+<li><p>General idea of the contextual semantics:</p>
+<ul>
+<li>Decompose the current term into<ul>
+<li>the next redex r</li>
+<li>and an evaluation context $\mathcal{E}$ (the remaining program).</li>
+</ul>
+</li>
+<li>Reduce the redex r to some other term t.</li>
+<li>Put t back into the original context, yielding $\mathcal{E}[t]$.</li>
+</ul>
+</li>
+<li><p>Formalized as a small-step rule:</p>
+<script type="math/tex; mode=display">
+\frac{(r,\sigma)\to(t,\sigma')}{(\mathcal{E}[r],\sigma)\to(\mathcal{E}[t],\sigma')}</script></li>
+<li><p>Contextual semantics rules = Global reduction rule + Local reduction rules for individual r</p>
+</li>
+</ul>
+</li>
+<li><p>for boolean expressions:</p>
+<ul>
+<li><p>Normal evaluation of $\land$:</p>
+<p>$\mathcal{E}$ ::= $\cdots$ | $\mathcal{E}\land b$ | <strong>true</strong>$\land\mathcal{E}$ | <strong>false</strong>$\land\mathcal{E}$ </p>
+<p>r ::= $\cdots$ | <strong>true</strong>$\land$<strong>true</strong> | <strong>true</strong>$\land$<strong>false</strong> | <strong>false</strong>$\land$<strong>true</strong> | <strong>false</strong>$\land$<strong>false</strong></p>
+<p>(<strong>true</strong>$\land$<strong>true</strong>,$\sigma$)$\to$(<strong>true</strong>,$\sigma$) $\cdots$</p>
+</li>
+<li><p>Short-circuit evaluation of $\land$:</p>
+<p>$\mathcal{E}$ ::= $\cdots$ | $\mathcal{E}\land b$ </p>
+<p>r ::= $\cdots$ | <strong>true</strong>$\land$b | <strong>false</strong>$\land$b</p>
+<p>$(\textbf{true}\land b, \sigma)\to(b,\sigma)\qquad(\textbf{false}\land b, \sigma)\to(\textbf{false},\sigma)$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Big-Step-Semantics"><a href="#Big-Step-Semantics" class="headerlink" title="Big-Step Semantics"></a>Big-Step Semantics</h4><p>Big-step semantics describes the <em>overall result</em> of the execution.</p>
+<script type="math/tex; mode=display">
+\frac{}{(\textbf{n},\sigma)\Downarrow\lfloor\textbf{n}\rfloor}\qquad\frac{\sigma~x=n}{(x,\sigma)\Downarrow n}\\
+\frac{(e_1,\sigma)\Downarrow n_1\qquad(e_2,\sigma)\Downarrow n_2}{(e_1\textbf{ op }e_2,\sigma)\Downarrow n_1\lfloor\textbf{op}\rfloor n_2}</script><ul>
+<li><p><strong>Theorem (Determinism)</strong>: For all $e,\sigma,n,n’$, if $(e,\sigma)\Downarrow n$ and $(e,\sigma)\Downarrow n’$, then $n=n’$.</p>
+</li>
+<li><p>T<strong>heorem (Totality)</strong>: For all $e,\sigma$, there exists n such that $(e,\sigma)\Downarrow n$.</p>
+</li>
+<li><p><strong>Theorem (Equivalence to small-step semantics)</strong>: </p>
+<p>$(e,\sigma)\Downarrow\lfloor\textbf{n}\rfloor$ iff $(e,\sigma)\to^*(\textbf{n},\sigma)$</p>
+</li>
+</ul>
+<p>For boolean expressions:</p>
+<script type="math/tex; mode=display">
+\frac{}{(\textbf{true},\sigma)\Downarrow true}\qquad\frac{}{(\textbf{false},\sigma)\Downarrow false}\\
+\frac{(b_1,\sigma)\Downarrow false\qquad (b_2,\sigma)\Downarrow true}{(b_1\land b_2,\sigma)\Downarrow false}\text{(Normal evaluation)}\qquad\cdots\\
+\frac{(b_1,\sigma)\Downarrow false}{(b_1\land b_2,\sigma)\Downarrow false}\text{(Short-circuit evaluation)}\qquad\cdots\\</script><p>For statements:</p>
+<script type="math/tex; mode=display">
+\frac{(e,\sigma)\Downarrow n}{(x:=e,\sigma)\Downarrow\sigma\{x\leadsto n\}}\qquad\frac{}{(\textbf{skip},\sigma)\Downarrow\sigma}\\
+\frac{(c_0,\sigma)\Downarrow\sigma'\qquad(c_1,\sigma')\Downarrow\sigma''}{(c_0;c_1,\sigma)\Downarrow\sigma''}\qquad\frac{(b,\sigma)\Downarrow true\qquad(c_0,\sigma)\Downarrow\sigma'}{(\textbf{if }b\textbf{ then }c_0\textbf{ else c_1},\sigma)\Downarrow\sigma'}\\
+\frac{(b,\sigma)\Downarrow false\qquad(c_1,\sigma)\Downarrow\sigma'}{(\textbf{if }b\textbf{ then }c_0\textbf{ else }c_1,\sigma)\Downarrow\sigma'}\qquad\frac{(b,\sigma)\Downarrow false\qquad(c_0,\sigma)\Downarrow\sigma'}{(\textbf{while }b\textbf{ do }c,\sigma)\Downarrow\sigma}\\
+\frac{(b,\sigma)\Downarrow true\qquad(c,\sigma)\Downarrow\sigma'\qquad(\textbf{while }b\textbf{ do }c,\sigma')\Downarrow\sigma''}{(\textbf{while }b\textbf{ do }c,\sigma)\Downarrow\sigma''}</script><p>For <strong>newvar</strong>:</p>
+<script type="math/tex; mode=display">
+\frac{(e,\sigma)\Downarrow n\qquad(c,\sigma\{x\leadsto n\})\Downarrow\sigma'}{(\textbf{newvar }x:=e\textbf{ in }c,\sigma)\Downarrow\sigma'\{x\leadsto\sigma~x\}}</script><p>For <strong>abort</strong>:</p>
+<script type="math/tex; mode=display">
+\frac{(e,\sigma)\Downarrow\textbf{abort}}{(x:=e,\sigma)\Downarrow\textbf{abort}}\qquad\frac{(c_0,\sigma)\Downarrow\textbf{abort}}{(c_0;c_1,\sigma)\Downarrow\textbf{abort}}</script><h2 id="Hoare-Logic"><a href="#Hoare-Logic" class="headerlink" title="Hoare Logic"></a>Hoare Logic</h2><p>Hoare Logic is a method of reasoning mathematically about <em>imperative</em> programs.</p>
+<p>It is the basis of mechanized program verification systems.</p>
+<p>It is a kind of <em>axiomatic semantics</em> of imperative programs.</p>
+<h3 id="Program-Specifications-using-Hoare’s-Notation"><a href="#Program-Specifications-using-Hoare’s-Notation" class="headerlink" title="Program Specifications using Hoare’s Notation"></a>Program Specifications using Hoare’s Notation</h3><h4 id="Hoare’s-notation-Hoare-triples"><a href="#Hoare’s-notation-Hoare-triples" class="headerlink" title="Hoare’s notation (Hoare triples)"></a>Hoare’s notation (Hoare triples)</h4><p>For a program c,</p>
+<ul>
+<li>partial correctness specification: {p}c{q}</li>
+<li>total correctness specification: [p]c[q]</li>
+</ul>
+<p>Here p and q are <strong>assertions</strong>, i.e., conditions on the program variables used in c.</p>
+<ul>
+<li>p is called <strong>precondition</strong>, and q is called <strong>postcondition</strong></li>
+</ul>
+<h4 id="Meanings-of-Hoare-triples"><a href="#Meanings-of-Hoare-triples" class="headerlink" title="Meanings of Hoare triples"></a>Meanings of Hoare triples</h4><p>A <strong>partial</strong> correctness specification {p}c{q} is valid, iff</p>
+<ul>
+<li>if c is executed in a state initially satisfying p</li>
+<li>and <em>if</em> the execution of c terminates</li>
+<li>then the final state satisfies p</li>
+</ul>
+<p>A <strong>total</strong> correctness specification [p]c[q] is valid, iff</p>
+<ul>
+<li>if c is executed in a state initially satisfying p</li>
+<li>then <em>the execution of c terminates</em></li>
+<li>and the final state satisfies q</li>
+</ul>
+<p>Informally: Total correctness = Termination + Partial correctness</p>
+<h4 id="Logical-variables"><a href="#Logical-variables" class="headerlink" title="Logical variables"></a>Logical variables</h4><script type="math/tex; mode=display">
+\{x=x_0\land y=y_0\}r:=x;x:=y;y:=r\{x=y_0\land y=x_0\}</script><p>The variables $x_0$ and $y_0$ are used to name the initial values of program variables x and y.</p>
+<ul>
+<li>Used in assertions only. Not occur in the program.</li>
+<li>Have constant values.</li>
+</ul>
+<p>They are called <strong>logical variables</strong>.</p>
+<h4 id="Derivation-of-assertions"><a href="#Derivation-of-assertions" class="headerlink" title="Derivation of assertions"></a>Derivation of assertions</h4><p>$\vdash p$: there exists a <em>proof</em> or <em>derivation</em> of p following the inference rules.</p>
+<h4 id="Semantics-of-assertions"><a href="#Semantics-of-assertions" class="headerlink" title="Semantics of assertions"></a>Semantics of assertions</h4><p>$\sigma\models p$: p <em>holds (is true)</em> in $\sigma$, or $\sigma$ <em>satisfies</em> p</p>
+<h4 id="Quantification"><a href="#Quantification" class="headerlink" title="Quantification"></a>Quantification</h4><p>$\sigma\models\forall x.p$ iff $\forall n.\sigma\{x\leadsto n\}\models p$</p>
+<p>$\sigma\models\exists x.p$ iff $\exists n.\sigma\{x\leadsto n\}\models p$</p>
+<h4 id="Validity-of-assertions"><a href="#Validity-of-assertions" class="headerlink" title="Validity of assertions"></a>Validity of assertions</h4><ul>
+<li>p <em>holds</em> in $\sigma$ (i.e. $\sigma\models p$)</li>
+<li>p is <em>valid</em>: for all $\sigma$, p holds i $\sigma$</li>
+<li>p is <em>unsatisfiable</em>: $\lnot p$ is valid</li>
+</ul>
+<h3 id="Inference-Rules-of-Hoare-Logic"><a href="#Inference-Rules-of-Hoare-Logic" class="headerlink" title="Inference Rules of Hoare Logic"></a>Inference Rules of Hoare Logic</h3><h4 id="Judgments"><a href="#Judgments" class="headerlink" title="Judgments"></a>Judgments</h4><ul>
+<li>Three kinds of things that can be judgments<ul>
+<li>predicate logic formulas, e.g. x+1&gt;x</li>
+<li>partial correctness specification {p}c{q}</li>
+<li>total correctness specification [p]c[q]</li>
+</ul>
+</li>
+<li>$\vdash J$ means $J$ can be proved</li>
+</ul>
+<h4 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h4><script type="math/tex; mode=display">
+\frac{}{\{p[e/x]\}x:=e\{p\}}\text{(AS)}\\
+\frac{}{\{p\}x:=e\{\exists v.x=e[v/x]\land p[v/x]\}}\text{(AS-FW)}\\
+\frac{p\Rightarrow q\qquad \{q\}c\{r\}}{\{p\}c\{r\}}\text{(SP)}\qquad\frac{\{p\}c\{q\}\qquad q\Rightarrow r}{\{p\}c\{r\}}\text{(WC)}\\
+\frac{p\Rightarrow p'\qquad\{p'\}c\{q'\}\qquad q'\Rightarrow q}{\{p\}c\{q\}}\text{(CONSEQ)}\\
+\frac{\{p\}c_1\{r\}\qquad\{r\}c_2\{q\}}{\{p\}c_1;c_2\{q\}}\text{(SC)}\qquad\frac{}{\{p\}\textbf{skip}\{p\}}\text{(SK)}\\
+\frac{\{p\land b\}c_1\{q\}\qquad\{p\land\lnot b\}c_2\{q\}}{\{p\}\textbf{if }b\textbf{ then }c_1\textbf{ else }c_2\{q\}}\text{(CD)}\\
+\frac{\{p\}c\{q\}\qquad\{p'\}c\{q'\}}{\{p\land p'\}c\{q\land q'\}}\text{(CA)}\qquad\frac{\{p\}c\{q\}\qquad\{p'\}c\{q'\}}{\{p\lor p'\}c\{q\lor q'\}}\text{(DA)}\\
+\frac{\{i\land b\}c\{i\}}{\{i\}\textbf{while }b\textbf{ do }c\{i\land\lnot b\}}\text{(WHP)}\\
+\frac{[i\land b\land(e=x_0)]c[i\land(e<x_0)]\qquad i\land b\Rightarrow e\ge 0}{[i]\textbf{while }b\textbf{ do }c[i\land\lnot b]}\text{(WHT)}</script><h4 id="Derived-rules"><a href="#Derived-rules" class="headerlink" title="Derived rules"></a>Derived rules</h4><script type="math/tex; mode=display">
+\frac{p\Rightarrow q[e/x]}{\{p\}x:=e\{q\}}\qquad\frac{\{p\}c\{q[e/x]\}}{\{p\}c;x:=e\{q\}}\\
+\frac{p\Rightarrow i\qquad\{i\land b\}c\{i\}\qquad i\land\lnot b\Rightarrow q}{\{p\}\textbf{while }b\textbf{ do }c\{q\}}\\
+\frac{p\Rightarrow i\\i\land b\Rightarrow e\ge 0\\i\land\lnot\Rightarrow q\\
+ [i\land b\land (e=x_0)]c[i\land (e<x_0)]}{[p]\textbf{while }b\textbf{ do }c[q]}\\
+ \frac{p_0\Rightarrow q_0\\ \{q_0\}c_0\{p_1\}\qquad p_1\Rightarrow q_1\\\cdots\\\{q_{n-1}\}c_{n-1}\{p_{n-1}\}\qquad p_n\Rightarrow q_n}{\{p_0\}c_0;\cdots;c_{n-1}\{q_n\}}(\text{MSQ}_n)</script><h4 id="Annotate-first"><a href="#Annotate-first" class="headerlink" title="Annotate first"></a>Annotate first</h4><h3 id="Automated-Program-Verification"><a href="#Automated-Program-Verification" class="headerlink" title="Automated Program Verification"></a>Automated Program Verification</h3><h4 id="Verification-conditions-VCs"><a href="#Verification-conditions-VCs" class="headerlink" title="Verification conditions (VCs)"></a>Verification conditions (VCs)</h4><p>The three steps in proving {p}c{q} with a verifier</p>
+<ol>
+<li>The program c is <strong>annotated</strong> by inserting <strong>assertions</strong> that are meant to hold at intermediate points<ul>
+<li>tricky: needs intelligence and good understanding of how the program works</li>
+<li>automating it is an artificial intelligence problem</li>
+</ul>
+</li>
+<li>A set of logic formulas called <strong>verification conditions</strong> (VCs) is then generated from the annotated specification<ul>
+<li>this is purely mechanical and easily done by a program</li>
+</ul>
+</li>
+<li>The verification conditions are proved<ul>
+<li>needs automated theorem proving (i.e. artificial intelligence)</li>
+</ul>
+</li>
+</ol>
+<p>A command is <strong>properly annotated</strong> if assertions have been inserted at the following places</p>
+<ol>
+<li>before each command $c_i$ in the command sequence $c_1;c_2;\cdots;c_n$ if $c_i$ is not an assignment command</li>
+<li>after the word <strong>do</strong> in <strong>while</strong> commands</li>
+</ol>
+<p>The inserted assertions should express the conditions one expects to hold <em>whenever</em> control reaches the point at which the assertion occurs</p>
+<p>The algorithm for generating VCs from an annotated specification {p}c{q} is <em>recursive</em> on the structure of c</p>
+<p>Proof by <strong>induction on the structure of c</strong></p>
+<ul>
+<li><em>base case</em>: show the result holds for atomic commands</li>
+<li><em>inductive step</em>: show that when c is not an atomic command, then if  the result holds for the constituent commands of c(<em>induction hypothesis</em>), then it holds also for c</li>
+</ul>
+<h4 id="VCs-for-skip"><a href="#VCs-for-skip" class="headerlink" title="VCs for skip"></a>VCs for skip</h4><p>The single verification condition generated by {p}<strong>skip</strong>{q} is $p\Rightarrow q$</p>
+<h4 id="VCs-for-assignments"><a href="#VCs-for-assignments" class="headerlink" title="VCs for assignments"></a>VCs for assignments</h4><p>The single verification condition generated by {p}x:=e{q} is $p\Rightarrow q[e/x]$</p>
+<h4 id="VCs-for-conditionals"><a href="#VCs-for-conditionals" class="headerlink" title="VCs for conditionals"></a>VCs for conditionals</h4><p>The verification conditions generated by {p}<strong>if</strong> b <strong>then</strong> $c_1$ <strong>else</strong> $c_2${q} are the union of</p>
+<ol>
+<li>the verification conditions generated by $\{p\land b\}c_1\{q\}$</li>
+<li>the verification conditions generated by $\{p\land\lnot b\}c_2\{q\}$</li>
+</ol>
+<h4 id="VCs-for-sequences"><a href="#VCs-for-sequences" class="headerlink" title="VCs for sequences"></a>VCs for sequences</h4><ul>
+<li>The verification conditions generated by $\{p\}c_1;\cdots;c_{n-1};\{r\}c_n\{q\}$ (where $c_n$ is not an assignment) are the union of <ol>
+<li>the verification conditions generated by $\{p\}c_1;\cdots;c_{n-1}\{r\}$</li>
+<li>The verification conditions generated by $\{r\}c_n\{q\}$</li>
+</ol>
+</li>
+<li>The verification conditions generated by $\{p\}c_1;\cdots;c_{n-1};x:=e\{q\}$ are the verification conditions generated by $\{p\}c_1;\cdots;c_{n-1}\{q[e/x\}$</li>
+</ul>
+<h4 id="VCs-for-while-commands-partial-correctness"><a href="#VCs-for-while-commands-partial-correctness" class="headerlink" title="VCs for while commands (partial correctness)"></a>VCs for while commands (partial correctness)</h4><p>A properly annotated specification for <strong>while</strong> has the form </p>
+<p>{p} <strong>while</strong> b <strong>do</strong> {i} c {q}</p>
+<p>The annotation i is the loop invariant</p>
+<p>The verification conditions generated by {p} <strong>while</strong> b <strong>do</strong> {i} c {q} are the union of </p>
+<ol>
+<li>$p\Rightarrow i$</li>
+<li>$i\land\lnot b\Rightarrow q$</li>
+<li>the verification conditions generated by $\{i\land b\}c\{i\}$</li>
+</ol>
+<h4 id="VCs-for-while-commands-total-correctness"><a href="#VCs-for-while-commands-total-correctness" class="headerlink" title="VCs for while commands (total correctness)"></a>VCs for while commands (total correctness)</h4><p>The verification conditions generated by [p] <strong>while</strong> b <strong>do</strong> {i}[e] c [q] are the union of </p>
+<ol>
+<li>$p\Rightarrow i$</li>
+<li>$i\land\lnot b\Rightarrow q$</li>
+<li>$i\land b\Rightarrow e\ge 0$</li>
+<li>the verification conditions generated by $\{i\land b\land e=x_0\}c\{i\land e&lt;x_0\}$ where $x_0\notin fv(p)\cup fv(q)\cup fv(c)\cup fv(e)\cup fv(i)\cup fv(b)$</li>
+</ol>
+<h3 id="Soundness-and-Completeness"><a href="#Soundness-and-Completeness" class="headerlink" title="Soundness and Completeness"></a>Soundness and Completeness</h3><p>We use $\vdash\{p\}c\{q\}$ to represent that there is a derivation of {p}c{q} following the rules.</p>
+<p>We use $\models \{p\}c\{q\}$ to represent the meaning of {p}c{q}.</p>
+<ul>
+<li><p><strong>Soundness of the program logic</strong>:</p>
+<p>If $\vdash\{p\}c\{q\}$ , we have  $\models\{p\}c\{q\}$ .</p>
+<p>If $\vdash[p]c[q]$, we have  $\models[p]c[q]$.</p>
+</li>
+<li><p><strong>Completeness of the program logic</strong>:</p>
+<p>If $\models\{p\}c\{q\}$ , we have  $\vdash\{p\}c\{q\}$ .</p>
+<p>If $\models[p]c[q]$ , we have  $\vdash[p]c[q]$.</p>
+</li>
+</ul>
+<p>Hoare logic is both sound and complete, provided that the underlying logic is! (Often, the underlying logic is sound but incomplete.)</p>
+<p><strong>Godel’s incompleteness theorem</strong>: there exists no proof system for arithmetic in which all valid assertions are systematically derivable.</p>
+<h4 id="Soundness-proof-for-partial-correctness"><a href="#Soundness-proof-for-partial-correctness" class="headerlink" title="Soundness proof (for partial correctness)"></a>Soundness proof (for partial correctness)</h4><p><strong>Soundness</strong>: if $\vdash\{p\}c\{q\}$, then $\models\{p\}c\{q\}$.</p>
+<p><strong>Definition</strong> $\text{Safe}^n(c,\sigma,q)$:</p>
+<ul>
+<li>$\text{Safe}^0(c,\sigma,q)$ always holds;</li>
+<li>$\text{Safe}^{n+1}(c,\sigma,q)$ holds iff one of the following is true:<ul>
+<li>c = <strong>skip</strong> and $\sigma\models q$; or</li>
+<li>there exists c’ and $\sigma’$ such that $(c,\sigma)\to(c’,\sigma’)$ and $\text{Safe}^n(c’,\sigma’,q)$</li>
+</ul>
+</li>
+</ul>
+<p>We say $\text{Safe}(c,\sigma,q)$ iff $\text{Safe}^n(c,\sigma,q)$ holds for all n.</p>
+<p><strong>Lemma</strong> 1: For all $\sigma$, if $\sigma\models p$ implies $\text{Safe}(c,\sigma,q)$, then $\models\{p\}c\{q\}$.</p>
+<ul>
+<li><strong>Lemma</strong> (Progress): If $\text{Safe}(c,\sigma,q)$, then either c is <strong>skip</strong>, or there exist c’ and $\sigma’$ such that $(c,\sigma)\to(c’,\sigma’)$.</li>
+<li><strong>Lemma</strong> (Progress): If $\text{Safe}(c,\sigma,q)$ and $(c,\sigma)\to(c’,\sigma’)$, then $\text{Safe}(c’,\sigma’,q)$.</li>
+</ul>
+<p><strong>Lemma</strong> 2: If $\vdash\{p\}c\{q\}$, then for all $\sigma$ such that $\sigma\models p$, we have $\text{Safe}(c,\sigma,q)$.</p>
+<ul>
+<li>Proof by <strong>induction over the derivation of</strong> $\vdash\{p\}c\{q\}$.<ul>
+<li><em>Base case</em>: show the result holds if the last step of the derivation is by axioms, i.e. the (SK) and (AS) rules</li>
+<li><em>Inductive step</em>: show that when the last step of the derivation is by applying a rule (with judgments in hypothesis), then if the result holds for the judgments in the hypotheses of the rule (<em>induction hypothesis</em>), then it holds also for the judgment in the conclusion</li>
+</ul>
+</li>
+</ul>
+<p><strong>Lemma</strong> (AS): For all $\sigma$ such that $\sigma\models p[e/x]$, we have $\text{Safe}(x:=e,\sigma,p)$.</p>
+<p><strong>Substitution Lemma</strong>: If $\sigma\models p[e/x]$ and $[![e]!]_{intexp}\sigma=n$, then $\sigma\{x\leadsto n\}\models p$.</p>
+<p><strong>Lemma</strong> (SC): If </p>
+<ol>
+<li>for all $\sigma$, if $\sigma\models p$, then $\text{Safe}(c_1,\sigma,r)$; </li>
+<li>for all $\sigma$, if $\sigma\models r$, then $\text{Safe}(c_2,\sigma,q)$;</li>
+</ol>
+<p>then, for all $\sigma$ such that $\sigma\models p$, we have $\text{Safe}(c_1;c_2,\sigma,q)$.</p>
+<p><strong>Lemma</strong> (WHP): If</p>
+<ol>
+<li>for all $\sigma$, if $\sigma\models i\land b$, then $\text{Safe}(c,\sigma,i)$</li>
+</ol>
+<p>then, for all $\sigma$ such that $\sigma\models i$, we’ve $\text{Safe}(\textbf{while }b\textbf{ do }c,\sigma,i\land\lnot b)$.</p>
+<p><strong>Lemma</strong> (SP): If</p>
+<ol>
+<li>$p\Rightarrow q$;</li>
+<li>for all $\sigma$, if $\sigma\models q$, then $\text{Safe}(c,\sigma,r)$</li>
+</ol>
+<p>then, for all $\sigma$ such that $\sigma\models p$, we have $\text{Safe}(c,\sigma,r)$.</p>
+<p>Other rules are similar.</p>
+<p>The soundness can also be defined with respect to big-step semantics. The proof is simpler.</p>
+<h4 id="Incompleteness-of-Hoare-logic"><a href="#Incompleteness-of-Hoare-logic" class="headerlink" title="Incompleteness of Hoare logic"></a>Incompleteness of Hoare logic</h4><p><strong>Completeness</strong>: if $\models\{p\}c\{q\}$ then $\vdash\{p\}c\{q\}$</p>
+<ul>
+<li><p>to show this is not possible, first observe that for any p,</p>
+<script type="math/tex; mode=display">
+\models\{\textbf{true}\}\textbf{skip}\{p\}\iff\models p\\
+\vdash\{\textbf{true}\}\textbf{skip}\{p\}\iff\vdash p</script><p>thus, if Hoare logic was complete, then contradicting Godel’s theorem</p>
+</li>
+<li><p>alternative proof (using computability theory):</p>
+<p>$\models\{\textbf{true}\}c\{\textbf{false}\}$ iff c does not halt. But the halting problem is undecidable.</p>
+</li>
+</ul>
+<h4 id="Relative-completeness"><a href="#Relative-completeness" class="headerlink" title="Relative completeness"></a>Relative completeness</h4><p>Actual reason of incompleteness are rules (SP) and (WC) since they are based on the <em>validity of implications</em> within predicate logic.</p>
+<p>Therefore: <em>separation</em> of proof system (Hoare logic) and assertion language (predicate logic)</p>
+<p><strong>Theorem</strong>: Hoare logic is <em>relatively complete</em>, i.e., if $\models\{p\}c\{q\}$ then $\Gamma\vdash\{p\}c\{q\}$ where $\Gamma=\{p|(\models p)\}$</p>
+<p>Thus: if we know that a partial correctness property is valid, then we know that there is a corresponding derivation.</p>
+<p><strong>Weakest precondition</strong></p>
+<ul>
+<li><p>Definition: Given command c and assertion q, the <em>weakest precondition</em> $wp(c,q)$ is an assertion such that </p>
+<script type="math/tex; mode=display">
+\sigma\models wp(c,q)\iff (\forall\sigma'.(c,\sigma)\to^*(\textbf{skip},\sigma')\Rightarrow\sigma'\models q)</script></li>
+<li><p>Corollary: For all p, c and q, $\models\{p\}c\{q\}\iff\models(p\Rightarrow wp(c,q))$</p>
+</li>
+<li><p>Definition: An assertion language is called <em>expressive</em> if, for every c and q, the weakest precondition $wp(c,q)$ is an assertion in the language.</p>
+</li>
+</ul>
+<p><strong>Lemma</strong>: For every c and q, $\vdash\{wp(c,q)\}c\{q\}$</p>
+<p><strong>Proof of Cook’s Completeness Theorem</strong>. We have to show:</p>
+<p>$\models\{p\}c\{q\}\Rightarrow\Gamma\vdash\{p\}c\{q\}$ where $\Gamma=\{p|(\models p)\}$.</p>
+<ul>
+<li>From the above lemma, we know $\vdash\{wp(c,q)\}c\{q\}$</li>
+<li>Since $\models\{p\}c\{q\}$, we know $\models p\Rightarrow\{wp(c,q)\}c\{q\}$</li>
+<li>Thus $p\Rightarrow wp(c,q)$ is in $\Gamma$.</li>
+<li>By the (SP) rule, we have $\Gamma\vdash\{p\}c\{q\}$.</li>
+</ul>
+<h4 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h4><ul>
+<li>Hoare logic is sound</li>
+<li>Hoare logic for our simple language is complete relative to an oracle<ul>
+<li>oracle must be able to prove $p\Rightarrow wp(c,q)$</li>
+<li>$wp(c,q)$ must be expressible in assertion language</li>
+</ul>
+</li>
+<li>The incompleteness of the proof system for simple Hoare logic stems from the weakness of the proof system of the assertion language logic, not any weakness of the Hoare logic proof system.</li>
+<li>Clarke showed relative completeness fails for complex language</li>
+</ul>
+<h3 id="Discussions"><a href="#Discussions" class="headerlink" title="Discussions"></a>Discussions</h3><h4 id="Formal-semantics-of-a-programming-language"><a href="#Formal-semantics-of-a-programming-language" class="headerlink" title="Formal semantics of a programming language"></a>Formal semantics of a programming language</h4><ul>
+<li>Operational semantics</li>
+<li>Denotational semantics</li>
+<li>Axiomatic semantics</li>
+</ul>
+<h4 id="Summary-of-Hoare-logic"><a href="#Summary-of-Hoare-logic" class="headerlink" title="Summary of Hoare logic"></a>Summary of Hoare logic</h4><ul>
+<li>Hoare logic is a deductive proof system for Hoare triples {p}c{q}</li>
+<li>Formal proof is syntactic “symbol pushing”.<ul>
+<li>The rules say “if you have a string of characters of this form, you can obtain a new string of characters of the other form”</li>
+<li>Even if you don’t know what the strings are intended to mean, provided the rules are designed properly and you apply them correctly, you will get correct results (though not necessarily the desired result)</li>
+</ul>
+</li>
+<li>Hoare logic is compositional.<ul>
+<li>The structure of a program’s correctness proof mirrors the structure of the program itself.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Coq-Implementations"><a href="#Coq-Implementations" class="headerlink" title="Coq Implementations"></a>Coq Implementations</h4><ul>
+<li>Deep embedding:<ol>
+<li>define a datatype representing the syntax for your logic</li>
+<li>give a model of the syntax</li>
+<li>prove that axioms about your syntax are sound with respect to the model</li>
+</ol>
+</li>
+<li>Shallow embedding: just start with a model, and prove entailments between formulas</li>
+</ul>
+<h2 id="Separation-Logic"><a href="#Separation-Logic" class="headerlink" title="Separation Logic"></a>Separation Logic</h2><ul>
+<li>Extension of Hoare logic for reasoning about pointers</li>
+</ul>
+<h3 id="Overview-of-Separation-Logic"><a href="#Overview-of-Separation-Logic" class="headerlink" title="Overview of Separation Logic"></a>Overview of Separation Logic</h3><ul>
+<li>Low-level programming language<ul>
+<li>Extension of simple imperative language</li>
+<li>Commands for allocating, accessing, mutating and deal-locating data structures</li>
+<li>Dangling pointer faults (if pointer is dereferenced)</li>
+</ul>
+</li>
+<li>Program specification and proof<ul>
+<li>Extension of Hoare logic</li>
+<li>Separating (independent, spatial) conjuction ($\ast$) and implication($-\ast$)</li>
+</ul>
+</li>
+<li>Inductive definitions over abstract structures</li>
+</ul>
+<h3 id="Programming-Language"><a href="#Programming-Language" class="headerlink" title="Programming Language"></a>Programming Language</h3><p>(comm) c ::= $\cdots$ | x := <strong>cons</strong>($e_1,\cdots,e_n$) | <strong>dispose</strong>(e) | x := [e] | [e] := e</p>
+<ul>
+<li>Expressions depend only upon the store.<ul>
+<li>no side effects or nontermination.</li>
+<li><strong>cons</strong> and [-] are parts of commands.</li>
+</ul>
+</li>
+<li>Allocation is nondeterminate.</li>
+</ul>
+<h4 id="Operational-Semantics-2"><a href="#Operational-Semantics-2" class="headerlink" title="Operational Semantics"></a>Operational Semantics</h4><script type="math/tex; mode=display">
+\frac{h([\![e]\!]_{intexp}s)=n}{(x:=e,(s,h))\to(\textbf{skip},(s\{x\leadsto n\},h))}\\
+\frac{[\![e]\!]_{intexp}s\notin dom(h)}{(x:=[e],(s,h))\to\textbf{abort}}\\
+\frac{[\![e]\!]_{intexp}s=l\qquad l\in dom(h)}{([e]:=e',(s,h))\to(\textbf{skip},(s,h\{l\leadsto[\![e]\!]_{intexp}s\}))}\\
+\frac{[\![e]\!]_{intexp}s\notin dom(h)}{([e]:=e',(s,h))\to\textbf{abort}}\\
+\frac{[\![e_1]\!]_{intexp}s=n_1\quad [\![e_2]\!]_{intexp}s=n_2\quad\{l,l+1\}\cap dom(h)=\empty}{(x:=\textbf{cons}(e_1,e_2),(s,h))\to(\textbf{skip},s\{x\leadsto l\},h\{l\leadsto n_1,l+1\leadsto n_2\})}</script><h3 id="Assertions"><a href="#Assertions" class="headerlink" title="Assertions"></a>Assertions</h3><p>Standard predicate calculus: $\qquad\land\qquad\lor\qquad\lnot\qquad\Rightarrow\qquad\forall\qquad\exists$</p>
+<p>plus:</p>
+<ul>
+<li><strong>emp</strong> (empty heap): The heap is empty.</li>
+<li>$e\mapsto e’$ (singleton heap): The heap contains one cell, at address e with contents e’.</li>
+<li>$p_1\ast p_2$ (separating conjunction): The heap can be split into two disjoint parts such that $p_1$ holds for one part and $p_2$ holds for the other.</li>
+<li>$p_1-! ! \ast p_2$ (separating implication): If the heap is extended with a disjoint part in which $p_1$ holds, then $p_2$ holds for the extended heap.</li>
+</ul>
+<h4 id="Some-Abbreviations"><a href="#Some-Abbreviations" class="headerlink" title="Some Abbreviations"></a>Some Abbreviations</h4><ul>
+<li><p>$e\mapsto-=^{def}\exists x’.e\mapsto x’$  where x’ not free in e</p>
+</li>
+<li><p>$e\hookrightarrow e’=^{def}e\mapsto e’\ast\textbf{true}$</p>
+</li>
+<li><p>$e\mapsto e_1,\cdots,e_n=^{def}e\mapsto e_1\ast\cdots\ast e+n-1\mapsto e_n$</p>
+</li>
+<li><p>$e\hookrightarrow e_1,\cdots,e_n=^{def}e\hookrightarrow e_1\ast\cdots\ast e+n-1\hookrightarrow e_n$</p>
+<p>iff $e\mapsto e_1,\cdots, e_n\ast\textbf{true}$</p>
+</li>
+</ul>
+<h4 id="Formal-Semantics-of-Assertions"><a href="#Formal-Semantics-of-Assertions" class="headerlink" title="Formal Semantics of Assertions"></a>Formal Semantics of Assertions</h4><p>We write $[x_1:y_1|\cdots|x_n:y_n]$ for the function with domain $\{x_1,\cdots,x_n\}$ that maps each $x_i$ into $y_i$, and $[f|x_1:y_1|\cdots|x_n:y_n]$ for the function whose domain is the union of the domain of f with $\{x_1,\cdots,x_n\}$, that maps each $x_i$ into $y_i$ and all other members x of the domain of f into f x.</p>
+<p>For heaps, we write $h_0\perp h_1$ when $h_0$ and $h_1$ have disjoint domains, and $h_0\cdot h_1$ to denote the union of heaps with disjoint domains.</p>
+<p>When s is a store, h is a heap, and p is an assertion whose free variables belong to the domai of s, we write $s,h\models p$ to indicate that the state s,h satisfies p, or p is true in s, h, or p holds in s, h. Then:</p>
+<ul>
+<li>$s,h\models b$ iff $[![b]!]_{boolexp}s=\textbf{true}$,</li>
+<li>$s,h\models\lnot p$ iff $s,h\models p$ is false,</li>
+<li>$s,h\models p_0\land p_1$ iff $s,h\models p_0$ and $s,h\models p_1$ (and similary for $\lor,\Rightarrow,\iff$)</li>
+<li>$s,h\models\forall v.p$ iff $\forall x\in\mathbb{Z},[s|v:x],h\models p$,</li>
+<li>$s,h\models\exists v.p$ iff $\exists x\in\mathbb{Z},[s|v:x],h\models p$,</li>
+<li>$s,h\models\textbf{emp}$ iff $dom\;h=\{\}$,</li>
+<li>$s,h\models e\mapsto e’$ iff $dom\; h=\{[![e]!]_{exp}s\}$ and $h([![e]!]_{exp}s)=[![e’]!]_{exp}s$,</li>
+<li>$s,h\models p_0\ast p_1$ iff $\exists h_0,h_1. h_0\perp h_1$ and $h_0\cdot h_1=h$ and $s,h_0\models p_0$ and $s,h_1\models p_1$,</li>
+<li>$s,h\models p_0-!!\ast p_1$ iff $\forall h’.(h’\perp h\text{ and }s,h’\models p_0)$ implies $s,h\cdot h’\models p_1$.</li>
+</ul>
+<p>When $s,h\models p$ holds for all states s, h (such that the domain of s contains the free variables of p), we say that p is <em>valid</em>.</p>
+<p>When $s,h\models p$ holds for some state s, h, we say that p is <em>satisfiable</em>.</p>
+<h4 id="Inference-Rules-for-Assertions"><a href="#Inference-Rules-for-Assertions" class="headerlink" title="Inference Rules for Assertions"></a>Inference Rules for Assertions</h4><p>$\frac{p}{q}$ is sound iff, for all instances, if p is valid, then q is valid, i.e., if p holds in all states, then q holds in all states.</p>
+<p>$\frac{}{p\Rightarrow q}$ is sound iff, for all instances, $p\Rightarrow q$ is valid, i.e. for all states, if p holds, then q holds.</p>
+<p><strong>Inference Rules for</strong> $\ast$ <strong>and</strong> $-!!\ast$</p>
+<ul>
+<li><p>$p_0\ast p_1\iff p_1\ast p_0$</p>
+</li>
+<li><p>$(p_0\ast p_1)\ast p_2\iff p_0\ast(p_1\ast p_2)$</p>
+</li>
+<li><p>$p\ast\textbf{emp}\iff p$</p>
+</li>
+<li><p>$(p_0\lor p_1)\ast q\iff (p_0\ast q)\lor(p_1\ast q)$</p>
+</li>
+<li><p>$(p_0\land p_1)\ast q\Rightarrow(p_0\ast q)\land (p_1\ast q)$</p>
+</li>
+<li><p>$(\exists x.p_0)\ast p_1\iff\exists x.(p_0\ast p_1)$ when x not free in $p_1$</p>
+</li>
+<li><p>$(\forall x.p_0)\ast p_1\Rightarrow\forall x.(p_0\ast p_1)$ when x not free in $p_1$</p>
+</li>
+<li><script type="math/tex; mode=display">
+\frac{p_0\Rightarrow p_1\quad q_0\Rightarrow q_1}{p_0\ast q_0\Rightarrow p_1\ast q_1}(monotonicity)</script></li>
+<li><script type="math/tex; mode=display">
+\frac{p_0\ast p_1\Rightarrow p_2}{p_0\Rightarrow(p_1-\!\!\ast\ p_2)}(currying)\quad \frac{p_0\Rightarrow(p_1-\!\!\ast\ p_2)}{p_0\ast p_1\Rightarrow p_2}(decurrying)</script></li>
+</ul>
+<p><strong>Some Axiom Schemata for</strong> $\mapsto$</p>
+<ul>
+<li>$e_1\mapsto e_1’\land e_2\mapsto e_2’\iff e_1\mapsto e_1’\land e_1=e_2 \land e_1’=e_2’$</li>
+<li>$e_1\hookrightarrow e_1’\ast e_2\hookrightarrow e_2’\Rightarrow e_1\ne e_2$</li>
+<li>$\textbf{emp}\iff \forall x.\lnot(x\hookrightarrow -)$</li>
+<li>$(e\hookrightarrow e’)\land p\Rightarrow (e\mapsto e’)\ast((e\mapsto e’)-!!\ast p)$</li>
+</ul>
+<p>(Regrettably, these are far from complete.)</p>
+<h4 id="Pure-Assertions"><a href="#Pure-Assertions" class="headerlink" title="Pure Assertions"></a>Pure Assertions</h4><p>An assertion p is pure iff, for all stores s and all heaps h and h’, $s,h\models p$ iff $s,h’\models p$.</p>
+<p>A sufficient syntactic criteria is that an assertion is pure if it does not contain <strong>emp</strong>, $\mapsto$, or $\hookrightarrow$.</p>
+<p><strong>Axiom Schemata for Purity</strong>:</p>
+<ul>
+<li>$p_0\land p_1\Rightarrow p_0\ast p_1$ when $p_0$ or $p_1$ is pure</li>
+<li>$p_0\ast p_1\Rightarrow p_0\land p_1$ when $p_0$ and $p_1$ are pure</li>
+<li>$(p\land q)\ast r\iff(p\ast r)\land q$ when q is pure</li>
+<li>$(p_0-!!\ast p_1)\Rightarrow(p_0\Rightarrow p_1)$ when $p_0$ is pure</li>
+<li>$(p_0\Rightarrow p_1)\Rightarrow(p_0-!!\ast p_1)$ when $p_0$ and $p_1$ are pure</li>
+</ul>
+<h4 id="Strictly-Exact-Assertions-Yang"><a href="#Strictly-Exact-Assertions-Yang" class="headerlink" title="Strictly Exact Assertions (Yang)"></a>Strictly Exact Assertions (Yang)</h4><p>An assertion is <em>strictly exact</em> iff, for all stores s and all heaps h and h’, $s,h\models p$ and $s,h’\models p$ implies $h=h’$.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>emp</strong>.</li>
+<li>$e\mapsto e’$.</li>
+<li>$p\ast q$, when p and q are strictly exact.</li>
+<li>$p\land q$, when p or q is strictly exact.</li>
+<li>p, when $p\Rightarrow q$ is valid and q is strictly exact.</li>
+</ul>
+<p><strong>Porposition 4</strong> When q is strictly exact, $((q\ast\textbf{true})\land p)\Rightarrow (q\ast(q-!!\ast p))$ is valid.</p>
+<h4 id="Precise-Assertions"><a href="#Precise-Assertions" class="headerlink" title="Precise Assertions"></a>Precise Assertions</h4><p>An assertion q is <em>precise</em> iff for all s and h, there is at most one $h’\subseteq h$ such that $s,h’\models q$.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li>Strictly exact assertions.</li>
+<li>$e\mapsto -$.</li>
+<li>$p\ast q$, when p and q are precise.</li>
+<li>$p\land q$, when p or q is precise.</li>
+<li>p, when $p\Rightarrow q$ is valid and q is precise.</li>
+<li>list $\alpha~e$ and $\exists\alpha.$ list $\alpha~e$.</li>
+</ul>
+<p><strong>Proposition 5</strong> When q is precise, $(p_0\ast q)\land(p_1\ast q)\Rightarrow(p_0\land p_1)\ast q$ is valid. When q is precise and x is not free in q, $\forall x.(p\ast q)\Rightarrow(\forall x.p)\ast q$ is valid.</p>
+<h4 id="Intuitionistic-Assertions"><a href="#Intuitionistic-Assertions" class="headerlink" title="Intuitionistic Assertions"></a>Intuitionistic Assertions</h4><p>An assertion is <em>intuitionistic</em> iff, for all stores s and heaps h and h’:</p>
+<script type="math/tex; mode=display">
+(h\subseteq h'\text{ and }s,h\models i)\text{ implies }s,h'\models i.</script><p>Assume i and i’ are intuitionistic assertions, and p is any assertion. Then:</p>
+<ul>
+<li><p>The following assertions are intuitionistic:</p>
+<script type="math/tex; mode=display">
+\text{Any pure assertion}\qquad p\ast i\\
+p-\!\!\ast\ i\qquad i-\!\!\ast\ p\\
+i\and i'\qquad i\lor i'\\
+\forall v.i\qquad\exists v.i</script><p>and as special cases:</p>
+<script type="math/tex; mode=display">
+p\ast\textbf{true}\qquad\textbf{true}-\!\!\ast\ p\qquad e\hookrightarrow e'.</script></li>
+<li><p>The following inference rules are sound:</p>
+<script type="math/tex; mode=display">
+(i\ast i')\Rightarrow(i\land i')\\
+(i\ast p)\Rightarrow i\qquad i\Rightarrow(p-\!\!\ast\ i)\\
+\frac{p\Rightarrow i}{(p\ast\textbf{true})\Rightarrow i}\qquad\frac{i\Rightarrow p}{i\Rightarrow(\textbf{ture}-\!\!\ast\ p)}</script></li>
+</ul>
+<h3 id="Specifications-and-Inference-Rules"><a href="#Specifications-and-Inference-Rules" class="headerlink" title="Specifications and Inference Rules"></a>Specifications and Inference Rules</h3><h4 id="Specifications"><a href="#Specifications" class="headerlink" title="Specifications"></a>Specifications</h4><ul>
+<li><p>{p}c{q}    (partial correctness) </p>
+<p>  Starting in any state in which p hold</p>
+<ul>
+<li>No execution of c aborts.</li>
+<li>When some execution of c terminates in a final state, then q holds in the final state.</li>
+</ul>
+</li>
+<li><p>[p]c[q]       (total correctness)</p>
+<p>Starting in any state in which p holds:</p>
+<ul>
+<li>No execution of c aborts.</li>
+<li>Every execution of c terminates.</li>
+<li>When some execution of c terminates in a final state, then q holds in the final state.</li>
+</ul>
+</li>
+</ul>
+<h4 id="The-Differences-with-Hoare-Logic"><a href="#The-Differences-with-Hoare-Logic" class="headerlink" title="The Differences with Hoare Logic"></a>The Differences with Hoare Logic</h4><ul>
+<li>Specifications are universally quantified implicitly over both stores ad heaps,</li>
+<li>Specifications are universally quantified implicitly over all possible executions.</li>
+<li>Any execution (starting in a state satisfying p) that gives a memory fault falsifies both partial and total specifications.</li>
+</ul>
+<p>Thus: <strong>Well-specified programs don’t go wrong.</strong></p>
+<h4 id="Hoare’-Inference-Rules"><a href="#Hoare’-Inference-Rules" class="headerlink" title="Hoare’ Inference Rules"></a>Hoare’ Inference Rules</h4><p>remain sound:</p>
+<ul>
+<li><p>Strengthening precedent</p>
+<script type="math/tex; mode=display">
+\frac{p\Rightarrow q\qquad\{q\}c\{r\}}{\{p\}c\{r\}}.</script></li>
+<li><p>Weakening Consequent</p>
+<script type="math/tex; mode=display">
+\frac{\{p\}c\{q\}\qquad q\Rightarrow r}{\{p\}c\{r\}}.</script></li>
+</ul>
+<p>unsound:</p>
+<ul>
+<li>Rule of Constance<script type="math/tex; mode=display">
+\frac{\{p\}c\{q\}}{\{p\land r\}c\{q\land r\}},</script>where no variable occurring free in r is modified by c.</li>
+</ul>
+<h4 id="The-Frame-Rule"><a href="#The-Frame-Rule" class="headerlink" title="The Frame Rule"></a>The Frame Rule</h4><ul>
+<li>Frame Rule(O’Hearn) (FR)<script type="math/tex; mode=display">
+\frac{\{p\}c\{q\}}{\{p\ast r\}c\{q\ast r\}},</script>where no variable occurring free in r is modified by c.</li>
+</ul>
+<h4 id="Local-Reasoning"><a href="#Local-Reasoning" class="headerlink" title="Local Reasoning"></a>Local Reasoning</h4><ul>
+<li>The set of variables and heap cells that may actually be used by a commad (starting from a given state) is called its <em>footprint</em>.</li>
+<li>If {p}c{q} is valid, then p will assert that the heap contains all the cells in the footprint of c (excluding the cells that are freshly allocated by c).</li>
+<li>If p asserts that the heap contains only cells in the footprint of c, then {p}c{q} is a <em>local specification</em>.</li>
+<li>If c’ contains c, it may have a larger footprint described, say, by $p\ast r$. Then the frame rule is needed to move from $\{p\}c\{q\}$ to $\{p\ast r\}c\{q\ast r\}$.</li>
+</ul>
+<p>Soundness of the frame rule is sensitive to the semantics of programming language</p>
+<p>We define:</p>
+<ul>
+<li>If, starting in the state s, h, no execution of a command c aborts, then c is <em>safe</em> at s, h.</li>
+<li>If, starting in the state s, h, every execution of c terminates without aborting, then c <em>must terminate normally</em> at s, h.</li>
+</ul>
+<p>Then our programming language satisfies:</p>
+<p><strong>Safety monotonicity</strong> If $\hat{h}\subseteq h$ and c is saft at $s,h-\hat{h}$, then c is safe at $s,h$. If $\hat{h}\subseteq h$ and c must terminate normally at $s,h-\hat{h}$, then c must terminate normally at $s,h$.</p>
+<script type="math/tex; mode=display">
+\forall s,h_1,h_2.(h_1\perp h_2)\land (c\text{ is safe at }(s,h_1))\Rightarrow (c\text{ is safe at }(s,h_1\cdot h_2))</script><p><strong>The Frame Property</strong> If $\hat{h}\subseteq h$, c is safe at $s,h-\hat{h}$, and some execution of c starting at $s,h$ terminates normally in the state $s’,h’$, then $\hat{h}\subseteq{h’}$ and some execution of c starting at $s,h-\hat{h}$, terminates normally in the state $s’,h’-\hat{h}$.</p>
+<script type="math/tex; mode=display">
+\forall s, h_1,h_2,s',h'.\\
+(h_1\perp h_2)\land(c\text{ is safe at }(s,h_1))\land((c,(s,h_1\cdot h_2))\to^{\ast}(\textbf{skip},(s',h')))\\
+\Rightarrow\exists h_1'.((c,(s,h_1))\to^{\ast}(\textbf{skip},(s',h_1')))\land (h_1'\perp h_2)\land(h'=h_1'\cdot h_2)</script><p><strong>Proposition 11</strong> If the programming langurage satisfies safety monotonicity and the frame property, then the frame rule is sound for both partial and total correctness.</p>
+<p><strong>Locality: Safety monotonicity + Frame property</strong></p>
+<h4 id="Inference-Rules-for-Mutation"><a href="#Inference-Rules-for-Mutation" class="headerlink" title="Inference Rules for Mutation:"></a>Inference Rules for Mutation:</h4><ul>
+<li><p>The local form (MUL):</p>
+<script type="math/tex; mode=display">
+\frac{}{\{e\mapsto-\}[e]:=e'\{e\mapsto e'\}.}</script></li>
+<li><p>The global form (MUG):</p>
+<script type="math/tex; mode=display">
+\frac{}{\{(e\mapsto-)\ast r\}[e]:=e'\{(e\mapsto e')\ast r\}.}</script></li>
+<li><p>The backward-reasoning form (MUBR):</p>
+<script type="math/tex; mode=display">
+\frac{}{\{(e\mapsto-)\ast((e\mapsto e')-\!\!\ast\ p)\}[e]:=e'\{p\}.}</script></li>
+</ul>
+<h4 id="Inference-Rules-for-Deallocation"><a href="#Inference-Rules-for-Deallocation" class="headerlink" title="Inference Rules for Deallocation"></a>Inference Rules for Deallocation</h4><ul>
+<li><p>The local form (DISL):</p>
+<script type="math/tex; mode=display">
+\frac{}{\{e\mapsto-\}\textbf{dispose }e\{\textbf{emp}\}.}</script></li>
+<li><p>The global (and backward-reasoning) form (DSIBR):</p>
+<script type="math/tex; mode=display">
+\frac{}{\{(e\mapsto-)\ast r\}\textbf{dispose }e\{r\}.}</script></li>
+</ul>
+<h4 id="Inference-Rules-for-Nonoverwriting-Allocation"><a href="#Inference-Rules-for-Nonoverwriting-Allocation" class="headerlink" title="Inference Rules for Nonoverwriting Allocation"></a>Inference Rules for Nonoverwriting Allocation</h4><p>We abbreviate the sequence $e_1,\cdots,e_n$ of expressions by $\overline{e}$:</p>
+<ul>
+<li><p>The local form (CONSNOL)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{\textbf{emp}\}v:=\textbf{cons}(\overline{e})\{v\mapsto \overline{e}\},}</script><p>where $v\notin\text{FV}(\overline{e})$.</p>
+</li>
+<li><p>The global form (CONSNOG)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{r\}v:=\textbf{cons}(\overline{e})\{(v\mapsto\overline{e})\ast r\},}</script><p>where $v\notin\text{FV}(\overline{e},r)$.</p>
+</li>
+</ul>
+<h4 id="Inference-Rules-for-General-Allocation"><a href="#Inference-Rules-for-General-Allocation" class="headerlink" title="Inference Rules for General Allocation"></a>Inference Rules for General Allocation</h4><ul>
+<li><p>The local form (CONSL)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{v=v'\land\textbf{emp}\}v:=\textbf{cons}(\overline{e})\{v\mapsto\overline{e}'\},}</script><p>where v’ is distinct from v, and $\overline{e}’$ denotes $\overline{e}/v\to v’$ (i.e., each $e_i’$ denotes $e_i/v\to v’$).</p>
+</li>
+<li><p>The global form (CONSG)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{r\}v:=\textbf{cons}(\overline{e})\{\exists v'.(v\mapsto\overline{e}')\ast r'\},}</script><p>where v’ is distinct from v, $v’\notin\text{FV}(\overline{e},r)$, $\overline{e}’$ denotes $\overline{e}/v\to v’$, and $r’$ denotes $r/v\to v’$.</p>
+</li>
+<li><p>The backward-reasoning form (CONSBR)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{\forall v'',(v''\mapsto\overline{e})-\!\!\ast\ p''\}v:=\textbf{cons}(\overline{e})\{p\},}</script><p>where $v’’$ is distict from $v$, $v’’\notin\text{FV}(\overline{e},p)$, and $p’’$ denotes $p/v\to v’’$.</p>
+</li>
+</ul>
+<h4 id="Inference-Rules-for-Nonoverwriting-Lookup"><a href="#Inference-Rules-for-Nonoverwriting-Lookup" class="headerlink" title="Inference Rules for Nonoverwriting Lookup"></a>Inference Rules for Nonoverwriting Lookup</h4><ul>
+<li><p>The local nonoverwriting form (LKNOL)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{e\mapsto v''\}v:=[e]\{v=v''\land(e\mapsto v)\},}</script><p>where $v\notin\text{FV}(e)$.</p>
+</li>
+<li><p>The global nonoverwriting form (LKNOG)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{\exists v''.(e\mapsto v'')\ast p''\}v:=[e]\{(e\mapsto v)\ast p\},}</script><p>where $v\notin\text{FV}(e)$, $v’’\notin\text{FV}(e)\cup(\text{FV}(p)-\{v\})$, and $p’’$ denotes $p/v\to v’’$.</p>
+</li>
+</ul>
+<h4 id="Inference-Rules-for-General-Lookup"><a href="#Inference-Rules-for-General-Lookup" class="headerlink" title="Inference Rules for General Lookup"></a>Inference Rules for General Lookup</h4><ul>
+<li><p>The local form (LKL)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{v=v'\land (e\mapsto v'')\}v:=[e]\{v=v''\land(e'\mapsto v)\},}</script><p>where $v$, $v’$ and $v’’$ are distinct, and $e’$ denotes $e/v\to v’$.</p>
+</li>
+<li><p>The global form (LKG)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{\exists v''.(e\mapsto v'')\ast (r/v'\to v)\}v:=[e]\{\exists v'.(e'\mapsto v)\ast(r/v''\to v)\},}</script><p>where $v$, $v’$, and $v’’$ are distinct, $v’,v’’\notin\textbf{FV}(e), v\notin\text{FV}(r)$, and $e’$ denotes $e/v\to v’$.</p>
+</li>
+<li><p>The first backward-reasoning form (LKBR1)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{\exists v''.(e\mapsto v'')\ast((e\mapsto v'')-\!\!\ast\ p'')\}v:=[e]\{p\},}</script><p>where $v’’\notin\text{FV}(e)\cup(\text{FV}(p)-\{v\})$, and $p’’$ denotes $p/v\to v’’$.</p>
+</li>
+<li><p>The second backward-reasoning form (LKBR2)</p>
+<script type="math/tex; mode=display">
+\frac{}{\{\exists v''.(e\hookrightarrow v'')\land p''\}v:=[e]\{p\},}</script><p>where $v’’\notin\text{FV}(e)\cup(\text{FV}(p)-\{v\})$, and $p’’$ denotes $p/v\to v’’$.</p>
+</li>
+</ul>
+<h3 id="Lists-and-List-Segments"><a href="#Lists-and-List-Segments" class="headerlink" title="Lists and List Segments"></a>Lists and List Segments</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/01/托福/" rel="next" title="托福">
+                <i class="fa fa-chevron-left"></i> 托福
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/31/数据库复习笔记/" rel="prev" title="数据库复习笔记">
+                数据库复习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/zz.jpg"
+                alt="Rosalie" />
+            
+              <p class="site-author-name" itemprop="name">Rosalie</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#形式语义"><span class="nav-number">1.</span> <span class="nav-text">形式语义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mathematical-Background"><span class="nav-number">1.1.</span> <span class="nav-text">Mathematical Background</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sets"><span class="nav-number">1.1.1.</span> <span class="nav-text">Sets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-number">1.1.2.</span> <span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Notations"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Basic Notations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Equivalence-Relations"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">Equivalence Relations</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Functions"><span class="nav-number">1.1.3.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Injection-Surjection-and-Bijection"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Injection, Surjection and Bijection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Denoted-by-Typed-Lambda-Expressions"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Denoted by Typed Lambda Expressions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Variation"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">Variation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-Types"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">Function Types</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Products"><span class="nav-number">1.1.4.</span> <span class="nav-text">Products</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Exponentiation"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Exponentiation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sums"><span class="nav-number">1.1.5.</span> <span class="nav-text">Sums</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Disjoint-Unions"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Disjoint Unions</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda-Calculus"><span class="nav-number">1.2.</span> <span class="nav-text">Lambda Calculus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview"><span class="nav-number">1.2.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntax"><span class="nav-number">1.2.2.</span> <span class="nav-text">Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Conventions"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Conventions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Higher-order-functions"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Higher-order functions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Curried-functions"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">Curried functions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Free-and-bound-variables"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">Free and bound variables</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semantics"><span class="nav-number">1.2.3.</span> <span class="nav-text">Semantics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Overview-of-reduction"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Overview of reduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Substitution"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Substitution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduction-rules"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">Reduction rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normal-form"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">Normal form</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Confluence-Church-Rosser-Property"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">Confluence(Church-Rosser Property)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduction-strategies"><span class="nav-number">1.2.3.6.</span> <span class="nav-text">Reduction strategies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Evaluation"><span class="nav-number">1.2.3.7.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normal-order-evaluation-rules"><span class="nav-number">1.2.3.8.</span> <span class="nav-text">Normal-order evaluation rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Eager-evaluation-rules"><span class="nav-number">1.2.3.9.</span> <span class="nav-text">Eager evaluation rules</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Programming-in-lambda-calculus"><span class="nav-number">1.2.4.</span> <span class="nav-text">Programming in $\lambda$-calculus</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simply-Typed-Lambda-Calculus"><span class="nav-number">1.3.</span> <span class="nav-text">Simply-Typed Lambda Calculus</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Why-types"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">Why types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Why-formal-type-systems"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">Why formal type systems</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-system"><span class="nav-number">1.3.1.</span> <span class="nav-text">Type system</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Simply-typed-lambda-calculus-STLC"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Simply-typed $\lambda$-calculus (STLC)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduction-rules-1"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Reduction rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Typing-judgment"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">Typing judgment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Typing-rules"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">Typing rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Soundness-and-completeness"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">Soundness and completeness</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adding-product-type"><span class="nav-number">1.3.1.6.</span> <span class="nav-text">Adding product type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adding-sum-type"><span class="nav-number">1.3.1.7.</span> <span class="nav-text">Adding sum type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Products-vs-sums"><span class="nav-number">1.3.1.8.</span> <span class="nav-text">Products vs. sums</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Recursion"><span class="nav-number">1.3.1.9.</span> <span class="nav-text">Recursion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connection-to-constructive-propositional-logic"><span class="nav-number">1.3.2.</span> <span class="nav-text">Connection to constructive propositional logic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operational-Semantics"><span class="nav-number">1.4.</span> <span class="nav-text">Operational Semantics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntax-of-a-Simple-Imperative-Language"><span class="nav-number">1.4.1.</span> <span class="nav-text">Syntax of a Simple Imperative Language</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operational-Semantics-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">Operational Semantics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Small-step-structural-operational-semantics-SOS"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">Small-step structural operational semantics (SOS)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Contextual-semantics"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">Contextual semantics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Big-Step-Semantics"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">Big-Step Semantics</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hoare-Logic"><span class="nav-number">1.5.</span> <span class="nav-text">Hoare Logic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Program-Specifications-using-Hoare’s-Notation"><span class="nav-number">1.5.1.</span> <span class="nav-text">Program Specifications using Hoare’s Notation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hoare’s-notation-Hoare-triples"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">Hoare’s notation (Hoare triples)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Meanings-of-Hoare-triples"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">Meanings of Hoare triples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Logical-variables"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">Logical variables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Derivation-of-assertions"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">Derivation of assertions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Semantics-of-assertions"><span class="nav-number">1.5.1.5.</span> <span class="nav-text">Semantics of assertions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Quantification"><span class="nav-number">1.5.1.6.</span> <span class="nav-text">Quantification</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Validity-of-assertions"><span class="nav-number">1.5.1.7.</span> <span class="nav-text">Validity of assertions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inference-Rules-of-Hoare-Logic"><span class="nav-number">1.5.2.</span> <span class="nav-text">Inference Rules of Hoare Logic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Judgments"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">Judgments</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rules"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">Rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Derived-rules"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">Derived rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Annotate-first"><span class="nav-number">1.5.2.4.</span> <span class="nav-text">Annotate first</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Automated-Program-Verification"><span class="nav-number">1.5.3.</span> <span class="nav-text">Automated Program Verification</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Verification-conditions-VCs"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">Verification conditions (VCs)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VCs-for-skip"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">VCs for skip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VCs-for-assignments"><span class="nav-number">1.5.3.3.</span> <span class="nav-text">VCs for assignments</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VCs-for-conditionals"><span class="nav-number">1.5.3.4.</span> <span class="nav-text">VCs for conditionals</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VCs-for-sequences"><span class="nav-number">1.5.3.5.</span> <span class="nav-text">VCs for sequences</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VCs-for-while-commands-partial-correctness"><span class="nav-number">1.5.3.6.</span> <span class="nav-text">VCs for while commands (partial correctness)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VCs-for-while-commands-total-correctness"><span class="nav-number">1.5.3.7.</span> <span class="nav-text">VCs for while commands (total correctness)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Soundness-and-Completeness"><span class="nav-number">1.5.4.</span> <span class="nav-text">Soundness and Completeness</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Soundness-proof-for-partial-correctness"><span class="nav-number">1.5.4.1.</span> <span class="nav-text">Soundness proof (for partial correctness)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Incompleteness-of-Hoare-logic"><span class="nav-number">1.5.4.2.</span> <span class="nav-text">Incompleteness of Hoare logic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Relative-completeness"><span class="nav-number">1.5.4.3.</span> <span class="nav-text">Relative completeness</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Summary"><span class="nav-number">1.5.4.4.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Discussions"><span class="nav-number">1.5.5.</span> <span class="nav-text">Discussions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Formal-semantics-of-a-programming-language"><span class="nav-number">1.5.5.1.</span> <span class="nav-text">Formal semantics of a programming language</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Summary-of-Hoare-logic"><span class="nav-number">1.5.5.2.</span> <span class="nav-text">Summary of Hoare logic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Coq-Implementations"><span class="nav-number">1.5.5.3.</span> <span class="nav-text">Coq Implementations</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Separation-Logic"><span class="nav-number">1.6.</span> <span class="nav-text">Separation Logic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-of-Separation-Logic"><span class="nav-number">1.6.1.</span> <span class="nav-text">Overview of Separation Logic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Programming-Language"><span class="nav-number">1.6.2.</span> <span class="nav-text">Programming Language</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Operational-Semantics-2"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">Operational Semantics</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Assertions"><span class="nav-number">1.6.3.</span> <span class="nav-text">Assertions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Some-Abbreviations"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">Some Abbreviations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Formal-Semantics-of-Assertions"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">Formal Semantics of Assertions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inference-Rules-for-Assertions"><span class="nav-number">1.6.3.3.</span> <span class="nav-text">Inference Rules for Assertions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pure-Assertions"><span class="nav-number">1.6.3.4.</span> <span class="nav-text">Pure Assertions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strictly-Exact-Assertions-Yang"><span class="nav-number">1.6.3.5.</span> <span class="nav-text">Strictly Exact Assertions (Yang)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Precise-Assertions"><span class="nav-number">1.6.3.6.</span> <span class="nav-text">Precise Assertions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Intuitionistic-Assertions"><span class="nav-number">1.6.3.7.</span> <span class="nav-text">Intuitionistic Assertions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Specifications-and-Inference-Rules"><span class="nav-number">1.6.4.</span> <span class="nav-text">Specifications and Inference Rules</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Specifications"><span class="nav-number">1.6.4.1.</span> <span class="nav-text">Specifications</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Differences-with-Hoare-Logic"><span class="nav-number">1.6.4.2.</span> <span class="nav-text">The Differences with Hoare Logic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hoare’-Inference-Rules"><span class="nav-number">1.6.4.3.</span> <span class="nav-text">Hoare’ Inference Rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Frame-Rule"><span class="nav-number">1.6.4.4.</span> <span class="nav-text">The Frame Rule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Local-Reasoning"><span class="nav-number">1.6.4.5.</span> <span class="nav-text">Local Reasoning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inference-Rules-for-Mutation"><span class="nav-number">1.6.4.6.</span> <span class="nav-text">Inference Rules for Mutation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inference-Rules-for-Deallocation"><span class="nav-number">1.6.4.7.</span> <span class="nav-text">Inference Rules for Deallocation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inference-Rules-for-Nonoverwriting-Allocation"><span class="nav-number">1.6.4.8.</span> <span class="nav-text">Inference Rules for Nonoverwriting Allocation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inference-Rules-for-General-Allocation"><span class="nav-number">1.6.4.9.</span> <span class="nav-text">Inference Rules for General Allocation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inference-Rules-for-Nonoverwriting-Lookup"><span class="nav-number">1.6.4.10.</span> <span class="nav-text">Inference Rules for Nonoverwriting Lookup</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inference-Rules-for-General-Lookup"><span class="nav-number">1.6.4.11.</span> <span class="nav-text">Inference Rules for General Lookup</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lists-and-List-Segments"><span class="nav-number">1.6.5.</span> <span class="nav-text">Lists and List Segments</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rosalie</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
