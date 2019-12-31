@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Rosalie Miao">
 <meta property="og:description" content="形式语义Mathematical BackgroundSets Basic Notations $S\subseteq^{fin}T$ : finite subset $ P(S)$ : powerset $=^{def}\{T~|~T\subseteq S\}$   Generalized Unions &amp;amp; Intersections of Sets $\bigcup S=^{def}\">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-31T03:22:16.889Z">
+<meta property="og:updated_time" content="2019-12-31T03:31:48.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程序设计语言的形式语义笔记">
 <meta name="twitter:description" content="形式语义Mathematical BackgroundSets Basic Notations $S\subseteq^{fin}T$ : finite subset $ P(S)$ : powerset $=^{def}\{T~|~T\subseteq S\}$   Generalized Unions &amp;amp; Intersections of Sets $\bigcup S=^{def}\">
@@ -365,8 +365,8 @@
 <p>$\bigcap S=^{def}\{x~|~\forall T\in S.x\in T\}$ </p>
 <p>$\bigcap_{i\in I}S(i)=^{def} \bigcap \{ S(i) ~|~i\in I\}$ </p>
 <p>$\bigcap_{i=m}^nS(i)=^{def}\bigcap_{i\in[m,n]}S(i)$ </p>
-<p>$\bigcup\empty=\empty$ </p>
-<p>$\bigcap\empty$  meaningless （任给x都满足）</p>
+<p>$\bigcup\emptyset=\emptyset$ </p>
+<p>$\bigcap\emptyset$  meaningless （任给x都满足）</p>
 </li>
 </ol>
 <h3 id="Relations"><a href="#Relations" class="headerlink" title="Relations"></a>Relations</h3><p><em>Cartesian product</em> : $A\times B=\{(x,y)~|~x\in A\text{ and }y\in B\}$ </p>
@@ -388,13 +388,13 @@ Id_T\circ Id_S=Id_{T\cap S}\\
 Id_S^{-1}=Id_S\\
 (\rho^{-1})^{-1}=\rho\\
 (\rho_2\circ\rho_1)^{-1}=\rho_1^{-1}\circ\rho_2^{-1}\\
-\rho\circ\empty=\empty=\empty\circ\rho\\
-Id_{\empty}=\empty=\empty^{-1}\\
-dom(\rho)=\empty\Longleftrightarrow\rho=\empty</script><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><script type="math/tex; mode=display">
+\rho\circ\emptyset=\emptyset=\emptyset\circ\rho\\
+Id_{\emptyset}=\emptyset=\emptyset^{-1}\\
+dom(\rho)=\emptyset\Longleftrightarrow\rho=\emptyset</script><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><script type="math/tex; mode=display">
 <~\subseteq~\le\\
 <\cup Id_N~=~\le\\
 \le\cap\ge~=~Id_N\\
-<\cap\ge~=~\empty\\
+<\cap\ge~=~\emptyset\\
 <\circ\le~=~<\\
 \le\circ\le~=~\le\\
 \ge=\le^{-1}</script><h4 id="Equivalence-Relations"><a href="#Equivalence-Relations" class="headerlink" title="Equivalence Relations"></a>Equivalence Relations</h4><p>$\rho$ is an <em>equivalence relation</em> on S if it is <strong>reflexive</strong>, <strong>symmetric</strong> and <strong>transitive</strong>.</p>
@@ -403,7 +403,7 @@ dom(\rho)=\empty\Longleftrightarrow\rho=\empty</script><h4 id="Examples"><a href
 <p>Transitivity: $\rho\circ\rho\subseteq\rho$</p>
 <h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><p>A relation $\rho$ is a function if, for all $x,y$ and $y’,(x,y)\in\rho$ and $(x,y’)\in\rho$ imply $y=y’$. (排除了多对一和多对多的情况)</p>
 <p>Function application $f(x)$ can also be written as $f~x$.</p>
-<p>$\empty$ and $Id_S$ are functions.</p>
+<p>$\emptyset$ and $Id_S$ are functions.</p>
 <p>If $f$ and $g$ are functions, then $g\circ f$ is a function. $(g\circ f)~x=g(f~x)$</p>
 <p>If $f$ is a function, $f^{-1}$ is not necessarily a function. (除非是单射)</p>
 <h4 id="Injection-Surjection-and-Bijection"><a href="#Injection-Surjection-and-Bijection" class="headerlink" title="Injection, Surjection and Bijection"></a>Injection, Surjection and Bijection</h4><p>单射，满射，双射</p>
@@ -1261,7 +1261,7 @@ y[N/x]\equiv y\\
 \frac{[\![e]\!]_{intexp}s\notin dom(h)}{(x:=[e],(s,h))\to\textbf{abort}}\\
 \frac{[\![e]\!]_{intexp}s=l\qquad l\in dom(h)}{([e]:=e',(s,h))\to(\textbf{skip},(s,h\{l\leadsto[\![e]\!]_{intexp}s\}))}\\
 \frac{[\![e]\!]_{intexp}s\notin dom(h)}{([e]:=e',(s,h))\to\textbf{abort}}\\
-\frac{[\![e_1]\!]_{intexp}s=n_1\quad [\![e_2]\!]_{intexp}s=n_2\quad\{l,l+1\}\cap dom(h)=\empty}{(x:=\textbf{cons}(e_1,e_2),(s,h))\to(\textbf{skip},s\{x\leadsto l\},h\{l\leadsto n_1,l+1\leadsto n_2\})}</script><h3 id="Assertions"><a href="#Assertions" class="headerlink" title="Assertions"></a>Assertions</h3><p>Standard predicate calculus: $\qquad\land\qquad\lor\qquad\lnot\qquad\Rightarrow\qquad\forall\qquad\exists$</p>
+\frac{[\![e_1]\!]_{intexp}s=n_1\quad [\![e_2]\!]_{intexp}s=n_2\quad\{l,l+1\}\cap dom(h)=\emptyset}{(x:=\textbf{cons}(e_1,e_2),(s,h))\to(\textbf{skip},s\{x\leadsto l\},h\{l\leadsto n_1,l+1\leadsto n_2\})}</script><h3 id="Assertions"><a href="#Assertions" class="headerlink" title="Assertions"></a>Assertions</h3><p>Standard predicate calculus: $\qquad\land\qquad\lor\qquad\lnot\qquad\Rightarrow\qquad\forall\qquad\exists$</p>
 <p>plus:</p>
 <ul>
 <li><strong>emp</strong> (empty heap): The heap is empty.</li>
